@@ -1,0 +1,33 @@
+.image{
+    width: 250px;
+    height: 250px;
+}
+
+.card-list {
+    border-style: solid;
+    border-width: 2px;
+    /* width: 25%; */
+    margin: 5px;
+    padding: 10px;
+    display: flex;
+    flex-flow: row wrap;
+    width: auto;
+    /* align-items: center; */
+}
+
+.space-b {
+    justify-content: space-between;
+}
+
+.card {
+    border-style: solid;
+    border-width: 2px;
+    width: auto;
+    margin: 5px auto;
+    padding: 5px;
+}
+
+.column {
+    display: flex;
+    flex-flow: row wrap;
+}

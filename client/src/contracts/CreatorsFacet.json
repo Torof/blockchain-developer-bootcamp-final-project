@@ -1,0 +1,3210 @@
+{
+  "contractName": "CreatorsFacet",
+  "abi": [
+    {
+      "inputs": [],
+      "name": "creatorWithdrawal",
+      "outputs": [],
+      "stateMutability": "payable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "checkCreatorBalance",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.8.11+commit.d7f03943\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"checkCreatorBalance\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"creatorWithdrawal\",\"outputs\":[],\"stateMutability\":\"payable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/facets/CreatorsFacet.sol\":\"CreatorsFacet\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/facets/CreatorsFacet.sol\":{\"keccak256\":\"0xb2a4e8a596f4332b221c9b4c4c7354d56f185352e5e0d9ea5b68b8e68a4921e0\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://f147bf381bce30c73726860805046871c49c16e94623f9bc1f97d3a4c7d99c0c\",\"dweb:/ipfs/QmYC3FsqfJNyRcSDJ7vVaHACvQKhWNr3aTknAxFkoomRS7\"]},\"project:/contracts/libraries/LibDixel.sol\":{\"keccak256\":\"0xd4a980d7f37a3788ee8d016f1088a1eac38c8731e10299d07a49c9ef1578859e\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://e99f89a6d29bdd8e5d975bf89726835dc3b02ce7c755ae807f107245e42c29bc\",\"dweb:/ipfs/QmRjoMkYz63p7LBryiVnNaGZoG8ruAyEbW1DFRf4bgEq9G\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b50610521806100206000396000f3fe6080604052600436106100295760003560e01c806352cc97fc1461002e578063bd8921e614610038575b600080fd5b610036610063565b005b34801561004457600080fd5b5061004d610268565b60405161005a9190610424565b60405180910390f35b600061006d6103de565b9050806001016000600281106100865761008561043f565b5b0160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614806101445750806001016001600281106100f3576100f261043f565b5b0160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff16145b610183576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040161017a906104cb565b60405180910390fd5b600061018d6103de565b905060008160000160003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002054905060008260000160003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020819055503373ffffffffffffffffffffffffffffffffffffffff166108fc829081150290604051600060405180830381858888f19350505050158015610262573d6000803e3d6000fd5b50505050565b6000806102736103de565b90508060010160006002811061028c5761028b61043f565b5b0160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff16148061034a5750806001016001600281106102f9576102f861043f565b5b0160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff16145b610389576040517f08c379a0000000000000000000000000000000000000000000000000000000008152600401610380906104cb565b60405180910390fd5b60006103936103de565b90508060000160003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020549250505090565b6000807faaecf6edcf861fc17fc9c5b0a28686a3e50a6d0beadccbac12a685bd4ed4771790508091505090565b6000819050919050565b61041e8161040b565b82525050565b60006020820190506104396000830184610415565b92915050565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052603260045260246000fd5b600082825260208201905092915050565b7f6f6e6c792063726561746f727300000000000000000000000000000000000000600082015250565b60006104b5600d8361046e565b91506104c08261047f565b602082019050919050565b600060208201905081810360008301526104e4816104a8565b905091905056fea2646970667358221220fe5bd413e1f03387190b55f2bf008b1b2120b3b5d807e7c1b47a2d937b7b47f664736f6c634300080b0033",
+  "deployedBytecode": "0x6080604052600436106100295760003560e01c806352cc97fc1461002e578063bd8921e614610038575b600080fd5b610036610063565b005b34801561004457600080fd5b5061004d610268565b60405161005a9190610424565b60405180910390f35b600061006d6103de565b9050806001016000600281106100865761008561043f565b5b0160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614806101445750806001016001600281106100f3576100f261043f565b5b0160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff16145b610183576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040161017a906104cb565b60405180910390fd5b600061018d6103de565b905060008160000160003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002054905060008260000160003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020819055503373ffffffffffffffffffffffffffffffffffffffff166108fc829081150290604051600060405180830381858888f19350505050158015610262573d6000803e3d6000fd5b50505050565b6000806102736103de565b90508060010160006002811061028c5761028b61043f565b5b0160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff16148061034a5750806001016001600281106102f9576102f861043f565b5b0160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff16145b610389576040517f08c379a0000000000000000000000000000000000000000000000000000000008152600401610380906104cb565b60405180910390fd5b60006103936103de565b90508060000160003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020549250505090565b6000807faaecf6edcf861fc17fc9c5b0a28686a3e50a6d0beadccbac12a685bd4ed4771790508091505090565b6000819050919050565b61041e8161040b565b82525050565b60006020820190506104396000830184610415565b92915050565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052603260045260246000fd5b600082825260208201905092915050565b7f6f6e6c792063726561746f727300000000000000000000000000000000000000600082015250565b60006104b5600d8361046e565b91506104c08261047f565b602082019050919050565b600060208201905081810360008301526104e4816104a8565b905091905056fea2646970667358221220fe5bd413e1f03387190b55f2bf008b1b2120b3b5d807e7c1b47a2d937b7b47f664736f6c634300080b0033",
+  "immutableReferences": {},
+  "generatedSources": [],
+  "deployedGeneratedSources": [
+    {
+      "ast": {
+        "nodeType": "YulBlock",
+        "src": "0:1766:21",
+        "statements": [
+          {
+            "body": {
+              "nodeType": "YulBlock",
+              "src": "52:32:21",
+              "statements": [
+                {
+                  "nodeType": "YulAssignment",
+                  "src": "62:16:21",
+                  "value": {
+                    "name": "value",
+                    "nodeType": "YulIdentifier",
+                    "src": "73:5:21"
+                  },
+                  "variableNames": [
+                    {
+                      "name": "cleaned",
+                      "nodeType": "YulIdentifier",
+                      "src": "62:7:21"
+                    }
+                  ]
+                }
+              ]
+            },
+            "name": "cleanup_t_uint256",
+            "nodeType": "YulFunctionDefinition",
+            "parameters": [
+              {
+                "name": "value",
+                "nodeType": "YulTypedName",
+                "src": "34:5:21",
+                "type": ""
+              }
+            ],
+            "returnVariables": [
+              {
+                "name": "cleaned",
+                "nodeType": "YulTypedName",
+                "src": "44:7:21",
+                "type": ""
+              }
+            ],
+            "src": "7:77:21"
+          },
+          {
+            "body": {
+              "nodeType": "YulBlock",
+              "src": "155:53:21",
+              "statements": [
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "name": "pos",
+                        "nodeType": "YulIdentifier",
+                        "src": "172:3:21"
+                      },
+                      {
+                        "arguments": [
+                          {
+                            "name": "value",
+                            "nodeType": "YulIdentifier",
+                            "src": "195:5:21"
+                          }
+                        ],
+                        "functionName": {
+                          "name": "cleanup_t_uint256",
+                          "nodeType": "YulIdentifier",
+                          "src": "177:17:21"
+                        },
+                        "nodeType": "YulFunctionCall",
+                        "src": "177:24:21"
+                      }
+                    ],
+                    "functionName": {
+                      "name": "mstore",
+                      "nodeType": "YulIdentifier",
+                      "src": "165:6:21"
+                    },
+                    "nodeType": "YulFunctionCall",
+                    "src": "165:37:21"
+                  },
+                  "nodeType": "YulExpressionStatement",
+                  "src": "165:37:21"
+                }
+              ]
+            },
+            "name": "abi_encode_t_uint256_to_t_uint256_fromStack",
+            "nodeType": "YulFunctionDefinition",
+            "parameters": [
+              {
+                "name": "value",
+                "nodeType": "YulTypedName",
+                "src": "143:5:21",
+                "type": ""
+              },
+              {
+                "name": "pos",
+                "nodeType": "YulTypedName",
+                "src": "150:3:21",
+                "type": ""
+              }
+            ],
+            "src": "90:118:21"
+          },
+          {
+            "body": {
+              "nodeType": "YulBlock",
+              "src": "312:124:21",
+              "statements": [
+                {
+                  "nodeType": "YulAssignment",
+                  "src": "322:26:21",
+                  "value": {
+                    "arguments": [
+                      {
+                        "name": "headStart",
+                        "nodeType": "YulIdentifier",
+                        "src": "334:9:21"
+                      },
+                      {
+                        "kind": "number",
+                        "nodeType": "YulLiteral",
+                        "src": "345:2:21",
+                        "type": "",
+                        "value": "32"
+                      }
+                    ],
+                    "functionName": {
+                      "name": "add",
+                      "nodeType": "YulIdentifier",
+                      "src": "330:3:21"
+                    },
+                    "nodeType": "YulFunctionCall",
+                    "src": "330:18:21"
+                  },
+                  "variableNames": [
+                    {
+                      "name": "tail",
+                      "nodeType": "YulIdentifier",
+                      "src": "322:4:21"
+                    }
+                  ]
+                },
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "name": "value0",
+                        "nodeType": "YulIdentifier",
+                        "src": "402:6:21"
+                      },
+                      {
+                        "arguments": [
+                          {
+                            "name": "headStart",
+                            "nodeType": "YulIdentifier",
+                            "src": "415:9:21"
+                          },
+                          {
+                            "kind": "number",
+                            "nodeType": "YulLiteral",
+                            "src": "426:1:21",
+                            "type": "",
+                            "value": "0"
+                          }
+                        ],
+                        "functionName": {
+                          "name": "add",
+                          "nodeType": "YulIdentifier",
+                          "src": "411:3:21"
+                        },
+                        "nodeType": "YulFunctionCall",
+                        "src": "411:17:21"
+                      }
+                    ],
+                    "functionName": {
+                      "name": "abi_encode_t_uint256_to_t_uint256_fromStack",
+                      "nodeType": "YulIdentifier",
+                      "src": "358:43:21"
+                    },
+                    "nodeType": "YulFunctionCall",
+                    "src": "358:71:21"
+                  },
+                  "nodeType": "YulExpressionStatement",
+                  "src": "358:71:21"
+                }
+              ]
+            },
+            "name": "abi_encode_tuple_t_uint256__to_t_uint256__fromStack_reversed",
+            "nodeType": "YulFunctionDefinition",
+            "parameters": [
+              {
+                "name": "headStart",
+                "nodeType": "YulTypedName",
+                "src": "284:9:21",
+                "type": ""
+              },
+              {
+                "name": "value0",
+                "nodeType": "YulTypedName",
+                "src": "296:6:21",
+                "type": ""
+              }
+            ],
+            "returnVariables": [
+              {
+                "name": "tail",
+                "nodeType": "YulTypedName",
+                "src": "307:4:21",
+                "type": ""
+              }
+            ],
+            "src": "214:222:21"
+          },
+          {
+            "body": {
+              "nodeType": "YulBlock",
+              "src": "470:152:21",
+              "statements": [
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "kind": "number",
+                        "nodeType": "YulLiteral",
+                        "src": "487:1:21",
+                        "type": "",
+                        "value": "0"
+                      },
+                      {
+                        "kind": "number",
+                        "nodeType": "YulLiteral",
+                        "src": "490:77:21",
+                        "type": "",
+                        "value": "35408467139433450592217433187231851964531694900788300625387963629091585785856"
+                      }
+                    ],
+                    "functionName": {
+                      "name": "mstore",
+                      "nodeType": "YulIdentifier",
+                      "src": "480:6:21"
+                    },
+                    "nodeType": "YulFunctionCall",
+                    "src": "480:88:21"
+                  },
+                  "nodeType": "YulExpressionStatement",
+                  "src": "480:88:21"
+                },
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "kind": "number",
+                        "nodeType": "YulLiteral",
+                        "src": "584:1:21",
+                        "type": "",
+                        "value": "4"
+                      },
+                      {
+                        "kind": "number",
+                        "nodeType": "YulLiteral",
+                        "src": "587:4:21",
+                        "type": "",
+                        "value": "0x32"
+                      }
+                    ],
+                    "functionName": {
+                      "name": "mstore",
+                      "nodeType": "YulIdentifier",
+                      "src": "577:6:21"
+                    },
+                    "nodeType": "YulFunctionCall",
+                    "src": "577:15:21"
+                  },
+                  "nodeType": "YulExpressionStatement",
+                  "src": "577:15:21"
+                },
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "kind": "number",
+                        "nodeType": "YulLiteral",
+                        "src": "608:1:21",
+                        "type": "",
+                        "value": "0"
+                      },
+                      {
+                        "kind": "number",
+                        "nodeType": "YulLiteral",
+                        "src": "611:4:21",
+                        "type": "",
+                        "value": "0x24"
+                      }
+                    ],
+                    "functionName": {
+                      "name": "revert",
+                      "nodeType": "YulIdentifier",
+                      "src": "601:6:21"
+                    },
+                    "nodeType": "YulFunctionCall",
+                    "src": "601:15:21"
+                  },
+                  "nodeType": "YulExpressionStatement",
+                  "src": "601:15:21"
+                }
+              ]
+            },
+            "name": "panic_error_0x32",
+            "nodeType": "YulFunctionDefinition",
+            "src": "442:180:21"
+          },
+          {
+            "body": {
+              "nodeType": "YulBlock",
+              "src": "724:73:21",
+              "statements": [
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "name": "pos",
+                        "nodeType": "YulIdentifier",
+                        "src": "741:3:21"
+                      },
+                      {
+                        "name": "length",
+                        "nodeType": "YulIdentifier",
+                        "src": "746:6:21"
+                      }
+                    ],
+                    "functionName": {
+                      "name": "mstore",
+                      "nodeType": "YulIdentifier",
+                      "src": "734:6:21"
+                    },
+                    "nodeType": "YulFunctionCall",
+                    "src": "734:19:21"
+                  },
+                  "nodeType": "YulExpressionStatement",
+                  "src": "734:19:21"
+                },
+                {
+                  "nodeType": "YulAssignment",
+                  "src": "762:29:21",
+                  "value": {
+                    "arguments": [
+                      {
+                        "name": "pos",
+                        "nodeType": "YulIdentifier",
+                        "src": "781:3:21"
+                      },
+                      {
+                        "kind": "number",
+                        "nodeType": "YulLiteral",
+                        "src": "786:4:21",
+                        "type": "",
+                        "value": "0x20"
+                      }
+                    ],
+                    "functionName": {
+                      "name": "add",
+                      "nodeType": "YulIdentifier",
+                      "src": "777:3:21"
+                    },
+                    "nodeType": "YulFunctionCall",
+                    "src": "777:14:21"
+                  },
+                  "variableNames": [
+                    {
+                      "name": "updated_pos",
+                      "nodeType": "YulIdentifier",
+                      "src": "762:11:21"
+                    }
+                  ]
+                }
+              ]
+            },
+            "name": "array_storeLengthForEncoding_t_string_memory_ptr_fromStack",
+            "nodeType": "YulFunctionDefinition",
+            "parameters": [
+              {
+                "name": "pos",
+                "nodeType": "YulTypedName",
+                "src": "696:3:21",
+                "type": ""
+              },
+              {
+                "name": "length",
+                "nodeType": "YulTypedName",
+                "src": "701:6:21",
+                "type": ""
+              }
+            ],
+            "returnVariables": [
+              {
+                "name": "updated_pos",
+                "nodeType": "YulTypedName",
+                "src": "712:11:21",
+                "type": ""
+              }
+            ],
+            "src": "628:169:21"
+          },
+          {
+            "body": {
+              "nodeType": "YulBlock",
+              "src": "909:57:21",
+              "statements": [
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "arguments": [
+                          {
+                            "name": "memPtr",
+                            "nodeType": "YulIdentifier",
+                            "src": "931:6:21"
+                          },
+                          {
+                            "kind": "number",
+                            "nodeType": "YulLiteral",
+                            "src": "939:1:21",
+                            "type": "",
+                            "value": "0"
+                          }
+                        ],
+                        "functionName": {
+                          "name": "add",
+                          "nodeType": "YulIdentifier",
+                          "src": "927:3:21"
+                        },
+                        "nodeType": "YulFunctionCall",
+                        "src": "927:14:21"
+                      },
+                      {
+                        "hexValue": "6f6e6c792063726561746f7273",
+                        "kind": "string",
+                        "nodeType": "YulLiteral",
+                        "src": "943:15:21",
+                        "type": "",
+                        "value": "only creators"
+                      }
+                    ],
+                    "functionName": {
+                      "name": "mstore",
+                      "nodeType": "YulIdentifier",
+                      "src": "920:6:21"
+                    },
+                    "nodeType": "YulFunctionCall",
+                    "src": "920:39:21"
+                  },
+                  "nodeType": "YulExpressionStatement",
+                  "src": "920:39:21"
+                }
+              ]
+            },
+            "name": "store_literal_in_memory_b6c951c92f5855a5a37904c1f010b28a8dd8e076610a335acf6d9e0433540351",
+            "nodeType": "YulFunctionDefinition",
+            "parameters": [
+              {
+                "name": "memPtr",
+                "nodeType": "YulTypedName",
+                "src": "901:6:21",
+                "type": ""
+              }
+            ],
+            "src": "803:163:21"
+          },
+          {
+            "body": {
+              "nodeType": "YulBlock",
+              "src": "1118:220:21",
+              "statements": [
+                {
+                  "nodeType": "YulAssignment",
+                  "src": "1128:74:21",
+                  "value": {
+                    "arguments": [
+                      {
+                        "name": "pos",
+                        "nodeType": "YulIdentifier",
+                        "src": "1194:3:21"
+                      },
+                      {
+                        "kind": "number",
+                        "nodeType": "YulLiteral",
+                        "src": "1199:2:21",
+                        "type": "",
+                        "value": "13"
+                      }
+                    ],
+                    "functionName": {
+                      "name": "array_storeLengthForEncoding_t_string_memory_ptr_fromStack",
+                      "nodeType": "YulIdentifier",
+                      "src": "1135:58:21"
+                    },
+                    "nodeType": "YulFunctionCall",
+                    "src": "1135:67:21"
+                  },
+                  "variableNames": [
+                    {
+                      "name": "pos",
+                      "nodeType": "YulIdentifier",
+                      "src": "1128:3:21"
+                    }
+                  ]
+                },
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "name": "pos",
+                        "nodeType": "YulIdentifier",
+                        "src": "1300:3:21"
+                      }
+                    ],
+                    "functionName": {
+                      "name": "store_literal_in_memory_b6c951c92f5855a5a37904c1f010b28a8dd8e076610a335acf6d9e0433540351",
+                      "nodeType": "YulIdentifier",
+                      "src": "1211:88:21"
+                    },
+                    "nodeType": "YulFunctionCall",
+                    "src": "1211:93:21"
+                  },
+                  "nodeType": "YulExpressionStatement",
+                  "src": "1211:93:21"
+                },
+                {
+                  "nodeType": "YulAssignment",
+                  "src": "1313:19:21",
+                  "value": {
+                    "arguments": [
+                      {
+                        "name": "pos",
+                        "nodeType": "YulIdentifier",
+                        "src": "1324:3:21"
+                      },
+                      {
+                        "kind": "number",
+                        "nodeType": "YulLiteral",
+                        "src": "1329:2:21",
+                        "type": "",
+                        "value": "32"
+                      }
+                    ],
+                    "functionName": {
+                      "name": "add",
+                      "nodeType": "YulIdentifier",
+                      "src": "1320:3:21"
+                    },
+                    "nodeType": "YulFunctionCall",
+                    "src": "1320:12:21"
+                  },
+                  "variableNames": [
+                    {
+                      "name": "end",
+                      "nodeType": "YulIdentifier",
+                      "src": "1313:3:21"
+                    }
+                  ]
+                }
+              ]
+            },
+            "name": "abi_encode_t_stringliteral_b6c951c92f5855a5a37904c1f010b28a8dd8e076610a335acf6d9e0433540351_to_t_string_memory_ptr_fromStack",
+            "nodeType": "YulFunctionDefinition",
+            "parameters": [
+              {
+                "name": "pos",
+                "nodeType": "YulTypedName",
+                "src": "1106:3:21",
+                "type": ""
+              }
+            ],
+            "returnVariables": [
+              {
+                "name": "end",
+                "nodeType": "YulTypedName",
+                "src": "1114:3:21",
+                "type": ""
+              }
+            ],
+            "src": "972:366:21"
+          },
+          {
+            "body": {
+              "nodeType": "YulBlock",
+              "src": "1515:248:21",
+              "statements": [
+                {
+                  "nodeType": "YulAssignment",
+                  "src": "1525:26:21",
+                  "value": {
+                    "arguments": [
+                      {
+                        "name": "headStart",
+                        "nodeType": "YulIdentifier",
+                        "src": "1537:9:21"
+                      },
+                      {
+                        "kind": "number",
+                        "nodeType": "YulLiteral",
+                        "src": "1548:2:21",
+                        "type": "",
+                        "value": "32"
+                      }
+                    ],
+                    "functionName": {
+                      "name": "add",
+                      "nodeType": "YulIdentifier",
+                      "src": "1533:3:21"
+                    },
+                    "nodeType": "YulFunctionCall",
+                    "src": "1533:18:21"
+                  },
+                  "variableNames": [
+                    {
+                      "name": "tail",
+                      "nodeType": "YulIdentifier",
+                      "src": "1525:4:21"
+                    }
+                  ]
+                },
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "arguments": [
+                          {
+                            "name": "headStart",
+                            "nodeType": "YulIdentifier",
+                            "src": "1572:9:21"
+                          },
+                          {
+                            "kind": "number",
+                            "nodeType": "YulLiteral",
+                            "src": "1583:1:21",
+                            "type": "",
+                            "value": "0"
+                          }
+                        ],
+                        "functionName": {
+                          "name": "add",
+                          "nodeType": "YulIdentifier",
+                          "src": "1568:3:21"
+                        },
+                        "nodeType": "YulFunctionCall",
+                        "src": "1568:17:21"
+                      },
+                      {
+                        "arguments": [
+                          {
+                            "name": "tail",
+                            "nodeType": "YulIdentifier",
+                            "src": "1591:4:21"
+                          },
+                          {
+                            "name": "headStart",
+                            "nodeType": "YulIdentifier",
+                            "src": "1597:9:21"
+                          }
+                        ],
+                        "functionName": {
+                          "name": "sub",
+                          "nodeType": "YulIdentifier",
+                          "src": "1587:3:21"
+                        },
+                        "nodeType": "YulFunctionCall",
+                        "src": "1587:20:21"
+                      }
+                    ],
+                    "functionName": {
+                      "name": "mstore",
+                      "nodeType": "YulIdentifier",
+                      "src": "1561:6:21"
+                    },
+                    "nodeType": "YulFunctionCall",
+                    "src": "1561:47:21"
+                  },
+                  "nodeType": "YulExpressionStatement",
+                  "src": "1561:47:21"
+                },
+                {
+                  "nodeType": "YulAssignment",
+                  "src": "1617:139:21",
+                  "value": {
+                    "arguments": [
+                      {
+                        "name": "tail",
+                        "nodeType": "YulIdentifier",
+                        "src": "1751:4:21"
+                      }
+                    ],
+                    "functionName": {
+                      "name": "abi_encode_t_stringliteral_b6c951c92f5855a5a37904c1f010b28a8dd8e076610a335acf6d9e0433540351_to_t_string_memory_ptr_fromStack",
+                      "nodeType": "YulIdentifier",
+                      "src": "1625:124:21"
+                    },
+                    "nodeType": "YulFunctionCall",
+                    "src": "1625:131:21"
+                  },
+                  "variableNames": [
+                    {
+                      "name": "tail",
+                      "nodeType": "YulIdentifier",
+                      "src": "1617:4:21"
+                    }
+                  ]
+                }
+              ]
+            },
+            "name": "abi_encode_tuple_t_stringliteral_b6c951c92f5855a5a37904c1f010b28a8dd8e076610a335acf6d9e0433540351__to_t_string_memory_ptr__fromStack_reversed",
+            "nodeType": "YulFunctionDefinition",
+            "parameters": [
+              {
+                "name": "headStart",
+                "nodeType": "YulTypedName",
+                "src": "1495:9:21",
+                "type": ""
+              }
+            ],
+            "returnVariables": [
+              {
+                "name": "tail",
+                "nodeType": "YulTypedName",
+                "src": "1510:4:21",
+                "type": ""
+              }
+            ],
+            "src": "1344:419:21"
+          }
+        ]
+      },
+      "contents": "{\n\n    function cleanup_t_uint256(value) -> cleaned {\n        cleaned := value\n    }\n\n    function abi_encode_t_uint256_to_t_uint256_fromStack(value, pos) {\n        mstore(pos, cleanup_t_uint256(value))\n    }\n\n    function abi_encode_tuple_t_uint256__to_t_uint256__fromStack_reversed(headStart , value0) -> tail {\n        tail := add(headStart, 32)\n\n        abi_encode_t_uint256_to_t_uint256_fromStack(value0,  add(headStart, 0))\n\n    }\n\n    function panic_error_0x32() {\n        mstore(0, 35408467139433450592217433187231851964531694900788300625387963629091585785856)\n        mstore(4, 0x32)\n        revert(0, 0x24)\n    }\n\n    function array_storeLengthForEncoding_t_string_memory_ptr_fromStack(pos, length) -> updated_pos {\n        mstore(pos, length)\n        updated_pos := add(pos, 0x20)\n    }\n\n    function store_literal_in_memory_b6c951c92f5855a5a37904c1f010b28a8dd8e076610a335acf6d9e0433540351(memPtr) {\n\n        mstore(add(memPtr, 0), \"only creators\")\n\n    }\n\n    function abi_encode_t_stringliteral_b6c951c92f5855a5a37904c1f010b28a8dd8e076610a335acf6d9e0433540351_to_t_string_memory_ptr_fromStack(pos) -> end {\n        pos := array_storeLengthForEncoding_t_string_memory_ptr_fromStack(pos, 13)\n        store_literal_in_memory_b6c951c92f5855a5a37904c1f010b28a8dd8e076610a335acf6d9e0433540351(pos)\n        end := add(pos, 32)\n    }\n\n    function abi_encode_tuple_t_stringliteral_b6c951c92f5855a5a37904c1f010b28a8dd8e076610a335acf6d9e0433540351__to_t_string_memory_ptr__fromStack_reversed(headStart ) -> tail {\n        tail := add(headStart, 32)\n\n        mstore(add(headStart, 0), sub(tail, headStart))\n        tail := abi_encode_t_stringliteral_b6c951c92f5855a5a37904c1f010b28a8dd8e076610a335acf6d9e0433540351_to_t_string_memory_ptr_fromStack( tail)\n\n    }\n\n}\n",
+      "id": 21,
+      "language": "Yul",
+      "name": "#utility.yul"
+    }
+  ],
+  "sourceMap": "127:841:3:-:0;;;;;;;;;;;;;;;;;;;",
+  "deployedSourceMap": "127:841:3:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;440:291;;;:::i;:::-;;767:199;;;;;;;;;;;;;:::i;:::-;;;;;;;:::i;:::-;;;;;;;;440:291;221:35;259:26;:24;:26::i;:::-;221:64;;317:2;:11;;329:1;317:14;;;;;;;:::i;:::-;;;;;;;;;;;;;303:28;;:10;:28;;;:60;;;;349:2;:11;;361:1;349:14;;;;;;;:::i;:::-;;;;;;;;;;;;;335:28;;:10;:28;;;303:60;295:86;;;;;;;;;;;;:::i;:::-;;;;;;;;;508:35:::1;546:26;:24;:26::i;:::-;508:64;;582:15;600:2;:18;;:30;619:10;600:30;;;;;;;;;;;;;;;;582:48;;673:1;640:2;:18;;:30;659:10;640:30;;;;;;;;;;;;;;;:34;;;;692:10;684:28;;:40;713:10;684:40;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;::::0;::::1;;;;;;498:233;;211:188:::0;440:291::o;767:199::-;832:4;221:35;259:26;:24;:26::i;:::-;221:64;;317:2;:11;;329:1;317:14;;;;;;;:::i;:::-;;;;;;;;;;;;;303:28;;:10;:28;;;:60;;;;349:2;:11;;361:1;349:14;;;;;;;:::i;:::-;;;;;;;;;;;;;335:28;;:10;:28;;;303:60;295:86;;;;;;;;;;;;:::i;:::-;;;;;;;;;848:35:::1;886:26;:24;:26::i;:::-;848:64;;929:2;:18;;:30;948:10;929:30;;;;;;;;;;;;;;;;922:37;;;211:188:::0;767:199;:::o;3110:185:16:-;3160:26;3197:12;874:28;3197:34;;3275:4;3264:15;;3250:39;3110:185;:::o;7:77:21:-;44:7;73:5;62:16;;7:77;;;:::o;90:118::-;177:24;195:5;177:24;:::i;:::-;172:3;165:37;90:118;;:::o;214:222::-;307:4;345:2;334:9;330:18;322:26;;358:71;426:1;415:9;411:17;402:6;358:71;:::i;:::-;214:222;;;;:::o;442:180::-;490:77;487:1;480:88;587:4;584:1;577:15;611:4;608:1;601:15;628:169;712:11;746:6;741:3;734:19;786:4;781:3;777:14;762:29;;628:169;;;;:::o;803:163::-;943:15;939:1;931:6;927:14;920:39;803:163;:::o;972:366::-;1114:3;1135:67;1199:2;1194:3;1135:67;:::i;:::-;1128:74;;1211:93;1300:3;1211:93;:::i;:::-;1329:2;1324:3;1320:12;1313:19;;972:366;;;:::o;1344:419::-;1510:4;1548:2;1537:9;1533:18;1525:26;;1597:9;1591:4;1587:20;1583:1;1572:9;1568:17;1561:47;1625:131;1751:4;1625:131;:::i;:::-;1617:139;;1344:419;;;:::o",
+  "source": "//SPDX-License-Identifier: MIT\n\npragma solidity 0.8.11;\n\nimport {\n    Dixel,\n    LibDixel\n} from \"../libraries/LibDixel.sol\";\n\ncontract CreatorsFacet {\n\n        /**\n    * @notice\n    */\n    modifier isCreator() {\n        LibDixel.CreatorsStorage storage cs = LibDixel.creatorsStorage();\n        require(msg.sender == cs.creators[0] || msg.sender == cs.creators[1], \"only creators\");\n        _;\n    }\n\n\n        /**\n     *@notice\n     */\n    function creatorWithdrawal() external payable isCreator() {\n        LibDixel.CreatorsStorage storage cs = LibDixel.creatorsStorage();\n        uint withdrawal = cs.creatorsBalance[msg.sender];\n        cs.creatorsBalance[msg.sender] = 0;\n        payable(msg.sender).transfer(withdrawal);\n    }\n\n    /**\n     *@notice\n     */\n    function checkCreatorBalance() external view isCreator() returns(uint) {\n        LibDixel.CreatorsStorage storage cs = LibDixel.creatorsStorage();\n        return cs.creatorsBalance[msg.sender];\n    }\n}",
+  "sourcePath": "/home/torof/Desktop/Dixel-folder/dixel-22/contracts/facets/CreatorsFacet.sol",
+  "ast": {
+    "absolutePath": "project:/contracts/facets/CreatorsFacet.sol",
+    "exportedSymbols": {
+      "CreatorsFacet": [
+        1331
+      ],
+      "Dixel": [
+        4200
+      ],
+      "LibDixel": [
+        4667
+      ]
+    },
+    "id": 1332,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1228,
+        "literals": [
+          "solidity",
+          "0.8",
+          ".11"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "32:23:3"
+      },
+      {
+        "absolutePath": "project:/contracts/libraries/LibDixel.sol",
+        "file": "../libraries/LibDixel.sol",
+        "id": 1231,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 1332,
+        "sourceUnit": 4668,
+        "src": "57:68:3",
+        "symbolAliases": [
+          {
+            "foreign": {
+              "id": 1229,
+              "name": "Dixel",
+              "nodeType": "Identifier",
+              "overloadedDeclarations": [],
+              "src": "70:5:3",
+              "typeDescriptions": {}
+            },
+            "nameLocation": "-1:-1:-1"
+          },
+          {
+            "foreign": {
+              "id": 1230,
+              "name": "LibDixel",
+              "nodeType": "Identifier",
+              "overloadedDeclarations": [],
+              "src": "81:8:3",
+              "typeDescriptions": {}
+            },
+            "nameLocation": "-1:-1:-1"
+          }
+        ],
+        "unitAlias": ""
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "canonicalName": "CreatorsFacet",
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "fullyImplemented": true,
+        "id": 1331,
+        "linearizedBaseContracts": [
+          1331
+        ],
+        "name": "CreatorsFacet",
+        "nameLocation": "136:13:3",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 1263,
+              "nodeType": "Block",
+              "src": "211:188:3",
+              "statements": [
+                {
+                  "assignments": [
+                    1238
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 1238,
+                      "mutability": "mutable",
+                      "name": "cs",
+                      "nameLocation": "254:2:3",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 1263,
+                      "src": "221:35:3",
+                      "stateVariable": false,
+                      "storageLocation": "storage",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_CreatorsStorage_$4282_storage_ptr",
+                        "typeString": "struct LibDixel.CreatorsStorage"
+                      },
+                      "typeName": {
+                        "id": 1237,
+                        "nodeType": "UserDefinedTypeName",
+                        "pathNode": {
+                          "id": 1236,
+                          "name": "LibDixel.CreatorsStorage",
+                          "nodeType": "IdentifierPath",
+                          "referencedDeclaration": 4282,
+                          "src": "221:24:3"
+                        },
+                        "referencedDeclaration": 4282,
+                        "src": "221:24:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_CreatorsStorage_$4282_storage_ptr",
+                          "typeString": "struct LibDixel.CreatorsStorage"
+                        }
+                      },
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 1242,
+                  "initialValue": {
+                    "arguments": [],
+                    "expression": {
+                      "argumentTypes": [],
+                      "expression": {
+                        "id": 1239,
+                        "name": "LibDixel",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 4667,
+                        "src": "259:8:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_contract$_LibDixel_$4667_$",
+                          "typeString": "type(library LibDixel)"
+                        }
+                      },
+                      "id": 1240,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "creatorsStorage",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 4365,
+                      "src": "259:24:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_pure$__$returns$_t_struct$_CreatorsStorage_$4282_storage_ptr_$",
+                        "typeString": "function () pure returns (struct LibDixel.CreatorsStorage storage pointer)"
+                      }
+                    },
+                    "id": 1241,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "259:26:3",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_CreatorsStorage_$4282_storage_ptr",
+                      "typeString": "struct LibDixel.CreatorsStorage storage pointer"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "221:64:3"
+                },
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "commonType": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        "id": 1258,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "commonType": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          },
+                          "id": 1250,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "leftExpression": {
+                            "expression": {
+                              "id": 1244,
+                              "name": "msg",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 4294967281,
+                              "src": "303:3:3",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_magic_message",
+                                "typeString": "msg"
+                              }
+                            },
+                            "id": 1245,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberName": "sender",
+                            "nodeType": "MemberAccess",
+                            "src": "303:10:3",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          },
+                          "nodeType": "BinaryOperation",
+                          "operator": "==",
+                          "rightExpression": {
+                            "baseExpression": {
+                              "expression": {
+                                "id": 1246,
+                                "name": "cs",
+                                "nodeType": "Identifier",
+                                "overloadedDeclarations": [],
+                                "referencedDeclaration": 1238,
+                                "src": "317:2:3",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_struct$_CreatorsStorage_$4282_storage_ptr",
+                                  "typeString": "struct LibDixel.CreatorsStorage storage pointer"
+                                }
+                              },
+                              "id": 1247,
+                              "isConstant": false,
+                              "isLValue": true,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "memberName": "creators",
+                              "nodeType": "MemberAccess",
+                              "referencedDeclaration": 4281,
+                              "src": "317:11:3",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_array$_t_address_$2_storage",
+                                "typeString": "address[2] storage ref"
+                              }
+                            },
+                            "id": 1249,
+                            "indexExpression": {
+                              "hexValue": "30",
+                              "id": 1248,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "kind": "number",
+                              "lValueRequested": false,
+                              "nodeType": "Literal",
+                              "src": "329:1:3",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_rational_0_by_1",
+                                "typeString": "int_const 0"
+                              },
+                              "value": "0"
+                            },
+                            "isConstant": false,
+                            "isLValue": true,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "nodeType": "IndexAccess",
+                            "src": "317:14:3",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          },
+                          "src": "303:28:3",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bool",
+                            "typeString": "bool"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": "||",
+                        "rightExpression": {
+                          "commonType": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          },
+                          "id": 1257,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "leftExpression": {
+                            "expression": {
+                              "id": 1251,
+                              "name": "msg",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 4294967281,
+                              "src": "335:3:3",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_magic_message",
+                                "typeString": "msg"
+                              }
+                            },
+                            "id": 1252,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberName": "sender",
+                            "nodeType": "MemberAccess",
+                            "src": "335:10:3",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          },
+                          "nodeType": "BinaryOperation",
+                          "operator": "==",
+                          "rightExpression": {
+                            "baseExpression": {
+                              "expression": {
+                                "id": 1253,
+                                "name": "cs",
+                                "nodeType": "Identifier",
+                                "overloadedDeclarations": [],
+                                "referencedDeclaration": 1238,
+                                "src": "349:2:3",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_struct$_CreatorsStorage_$4282_storage_ptr",
+                                  "typeString": "struct LibDixel.CreatorsStorage storage pointer"
+                                }
+                              },
+                              "id": 1254,
+                              "isConstant": false,
+                              "isLValue": true,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "memberName": "creators",
+                              "nodeType": "MemberAccess",
+                              "referencedDeclaration": 4281,
+                              "src": "349:11:3",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_array$_t_address_$2_storage",
+                                "typeString": "address[2] storage ref"
+                              }
+                            },
+                            "id": 1256,
+                            "indexExpression": {
+                              "hexValue": "31",
+                              "id": 1255,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "kind": "number",
+                              "lValueRequested": false,
+                              "nodeType": "Literal",
+                              "src": "361:1:3",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_rational_1_by_1",
+                                "typeString": "int_const 1"
+                              },
+                              "value": "1"
+                            },
+                            "isConstant": false,
+                            "isLValue": true,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "nodeType": "IndexAccess",
+                            "src": "349:14:3",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          },
+                          "src": "335:28:3",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bool",
+                            "typeString": "bool"
+                          }
+                        },
+                        "src": "303:60:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "hexValue": "6f6e6c792063726561746f7273",
+                        "id": 1259,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "365:15:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_b6c951c92f5855a5a37904c1f010b28a8dd8e076610a335acf6d9e0433540351",
+                          "typeString": "literal_string \"only creators\""
+                        },
+                        "value": "only creators"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_b6c951c92f5855a5a37904c1f010b28a8dd8e076610a335acf6d9e0433540351",
+                          "typeString": "literal_string \"only creators\""
+                        }
+                      ],
+                      "id": 1243,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        4294967278,
+                        4294967278
+                      ],
+                      "referencedDeclaration": 4294967278,
+                      "src": "295:7:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 1260,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "295:86:3",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 1261,
+                  "nodeType": "ExpressionStatement",
+                  "src": "295:86:3"
+                },
+                {
+                  "id": 1262,
+                  "nodeType": "PlaceholderStatement",
+                  "src": "391:1:3"
+                }
+              ]
+            },
+            "documentation": {
+              "id": 1232,
+              "nodeType": "StructuredDocumentation",
+              "src": "161:24:3",
+              "text": " @notice"
+            },
+            "id": 1264,
+            "name": "isCreator",
+            "nameLocation": "199:9:3",
+            "nodeType": "ModifierDefinition",
+            "parameters": {
+              "id": 1233,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "208:2:3"
+            },
+            "src": "190:209:3",
+            "virtual": false,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 1305,
+              "nodeType": "Block",
+              "src": "498:233:3",
+              "statements": [
+                {
+                  "assignments": [
+                    1274
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 1274,
+                      "mutability": "mutable",
+                      "name": "cs",
+                      "nameLocation": "541:2:3",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 1305,
+                      "src": "508:35:3",
+                      "stateVariable": false,
+                      "storageLocation": "storage",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_CreatorsStorage_$4282_storage_ptr",
+                        "typeString": "struct LibDixel.CreatorsStorage"
+                      },
+                      "typeName": {
+                        "id": 1273,
+                        "nodeType": "UserDefinedTypeName",
+                        "pathNode": {
+                          "id": 1272,
+                          "name": "LibDixel.CreatorsStorage",
+                          "nodeType": "IdentifierPath",
+                          "referencedDeclaration": 4282,
+                          "src": "508:24:3"
+                        },
+                        "referencedDeclaration": 4282,
+                        "src": "508:24:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_CreatorsStorage_$4282_storage_ptr",
+                          "typeString": "struct LibDixel.CreatorsStorage"
+                        }
+                      },
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 1278,
+                  "initialValue": {
+                    "arguments": [],
+                    "expression": {
+                      "argumentTypes": [],
+                      "expression": {
+                        "id": 1275,
+                        "name": "LibDixel",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 4667,
+                        "src": "546:8:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_contract$_LibDixel_$4667_$",
+                          "typeString": "type(library LibDixel)"
+                        }
+                      },
+                      "id": 1276,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "creatorsStorage",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 4365,
+                      "src": "546:24:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_pure$__$returns$_t_struct$_CreatorsStorage_$4282_storage_ptr_$",
+                        "typeString": "function () pure returns (struct LibDixel.CreatorsStorage storage pointer)"
+                      }
+                    },
+                    "id": 1277,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "546:26:3",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_CreatorsStorage_$4282_storage_ptr",
+                      "typeString": "struct LibDixel.CreatorsStorage storage pointer"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "508:64:3"
+                },
+                {
+                  "assignments": [
+                    1280
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 1280,
+                      "mutability": "mutable",
+                      "name": "withdrawal",
+                      "nameLocation": "587:10:3",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 1305,
+                      "src": "582:15:3",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      },
+                      "typeName": {
+                        "id": 1279,
+                        "name": "uint",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "582:4:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 1286,
+                  "initialValue": {
+                    "baseExpression": {
+                      "expression": {
+                        "id": 1281,
+                        "name": "cs",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 1274,
+                        "src": "600:2:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_CreatorsStorage_$4282_storage_ptr",
+                          "typeString": "struct LibDixel.CreatorsStorage storage pointer"
+                        }
+                      },
+                      "id": 1282,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "creatorsBalance",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 4277,
+                      "src": "600:18:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_mapping$_t_address_$_t_uint256_$",
+                        "typeString": "mapping(address => uint256)"
+                      }
+                    },
+                    "id": 1285,
+                    "indexExpression": {
+                      "expression": {
+                        "id": 1283,
+                        "name": "msg",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 4294967281,
+                        "src": "619:3:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_magic_message",
+                          "typeString": "msg"
+                        }
+                      },
+                      "id": 1284,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "sender",
+                      "nodeType": "MemberAccess",
+                      "src": "619:10:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "isConstant": false,
+                    "isLValue": true,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "IndexAccess",
+                    "src": "600:30:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "582:48:3"
+                },
+                {
+                  "expression": {
+                    "id": 1294,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "baseExpression": {
+                        "expression": {
+                          "id": 1287,
+                          "name": "cs",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 1274,
+                          "src": "640:2:3",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_CreatorsStorage_$4282_storage_ptr",
+                            "typeString": "struct LibDixel.CreatorsStorage storage pointer"
+                          }
+                        },
+                        "id": 1291,
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "creatorsBalance",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 4277,
+                        "src": "640:18:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_address_$_t_uint256_$",
+                          "typeString": "mapping(address => uint256)"
+                        }
+                      },
+                      "id": 1292,
+                      "indexExpression": {
+                        "expression": {
+                          "id": 1289,
+                          "name": "msg",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 4294967281,
+                          "src": "659:3:3",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_magic_message",
+                            "typeString": "msg"
+                          }
+                        },
+                        "id": 1290,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "sender",
+                        "nodeType": "MemberAccess",
+                        "src": "659:10:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "640:30:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "hexValue": "30",
+                      "id": 1293,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "number",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "673:1:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_rational_0_by_1",
+                        "typeString": "int_const 0"
+                      },
+                      "value": "0"
+                    },
+                    "src": "640:34:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 1295,
+                  "nodeType": "ExpressionStatement",
+                  "src": "640:34:3"
+                },
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "id": 1302,
+                        "name": "withdrawal",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 1280,
+                        "src": "713:10:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "expression": {
+                        "arguments": [
+                          {
+                            "expression": {
+                              "id": 1298,
+                              "name": "msg",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 4294967281,
+                              "src": "692:3:3",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_magic_message",
+                                "typeString": "msg"
+                              }
+                            },
+                            "id": 1299,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberName": "sender",
+                            "nodeType": "MemberAccess",
+                            "src": "692:10:3",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          ],
+                          "id": 1297,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "lValueRequested": false,
+                          "nodeType": "ElementaryTypeNameExpression",
+                          "src": "684:8:3",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_type$_t_address_payable_$",
+                            "typeString": "type(address payable)"
+                          },
+                          "typeName": {
+                            "id": 1296,
+                            "name": "address",
+                            "nodeType": "ElementaryTypeName",
+                            "src": "684:8:3",
+                            "stateMutability": "payable",
+                            "typeDescriptions": {}
+                          }
+                        },
+                        "id": 1300,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "typeConversion",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "684:19:3",
+                        "tryCall": false,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      },
+                      "id": 1301,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "transfer",
+                      "nodeType": "MemberAccess",
+                      "src": "684:28:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_transfer_nonpayable$_t_uint256_$returns$__$",
+                        "typeString": "function (uint256)"
+                      }
+                    },
+                    "id": 1303,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "684:40:3",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 1304,
+                  "nodeType": "ExpressionStatement",
+                  "src": "684:40:3"
+                }
+              ]
+            },
+            "documentation": {
+              "id": 1265,
+              "nodeType": "StructuredDocumentation",
+              "src": "410:25:3",
+              "text": "@notice"
+            },
+            "functionSelector": "52cc97fc",
+            "id": 1306,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [
+              {
+                "arguments": [],
+                "id": 1268,
+                "kind": "modifierInvocation",
+                "modifierName": {
+                  "id": 1267,
+                  "name": "isCreator",
+                  "nodeType": "IdentifierPath",
+                  "referencedDeclaration": 1264,
+                  "src": "486:9:3"
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "486:11:3"
+              }
+            ],
+            "name": "creatorWithdrawal",
+            "nameLocation": "449:17:3",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1266,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "466:2:3"
+            },
+            "returnParameters": {
+              "id": 1269,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "498:0:3"
+            },
+            "scope": 1331,
+            "src": "440:291:3",
+            "stateMutability": "payable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 1329,
+              "nodeType": "Block",
+              "src": "838:128:3",
+              "statements": [
+                {
+                  "assignments": [
+                    1318
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 1318,
+                      "mutability": "mutable",
+                      "name": "cs",
+                      "nameLocation": "881:2:3",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 1329,
+                      "src": "848:35:3",
+                      "stateVariable": false,
+                      "storageLocation": "storage",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_CreatorsStorage_$4282_storage_ptr",
+                        "typeString": "struct LibDixel.CreatorsStorage"
+                      },
+                      "typeName": {
+                        "id": 1317,
+                        "nodeType": "UserDefinedTypeName",
+                        "pathNode": {
+                          "id": 1316,
+                          "name": "LibDixel.CreatorsStorage",
+                          "nodeType": "IdentifierPath",
+                          "referencedDeclaration": 4282,
+                          "src": "848:24:3"
+                        },
+                        "referencedDeclaration": 4282,
+                        "src": "848:24:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_CreatorsStorage_$4282_storage_ptr",
+                          "typeString": "struct LibDixel.CreatorsStorage"
+                        }
+                      },
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 1322,
+                  "initialValue": {
+                    "arguments": [],
+                    "expression": {
+                      "argumentTypes": [],
+                      "expression": {
+                        "id": 1319,
+                        "name": "LibDixel",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 4667,
+                        "src": "886:8:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_contract$_LibDixel_$4667_$",
+                          "typeString": "type(library LibDixel)"
+                        }
+                      },
+                      "id": 1320,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "creatorsStorage",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 4365,
+                      "src": "886:24:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_pure$__$returns$_t_struct$_CreatorsStorage_$4282_storage_ptr_$",
+                        "typeString": "function () pure returns (struct LibDixel.CreatorsStorage storage pointer)"
+                      }
+                    },
+                    "id": 1321,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "886:26:3",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_CreatorsStorage_$4282_storage_ptr",
+                      "typeString": "struct LibDixel.CreatorsStorage storage pointer"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "848:64:3"
+                },
+                {
+                  "expression": {
+                    "baseExpression": {
+                      "expression": {
+                        "id": 1323,
+                        "name": "cs",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 1318,
+                        "src": "929:2:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_CreatorsStorage_$4282_storage_ptr",
+                          "typeString": "struct LibDixel.CreatorsStorage storage pointer"
+                        }
+                      },
+                      "id": 1324,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "creatorsBalance",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 4277,
+                      "src": "929:18:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_mapping$_t_address_$_t_uint256_$",
+                        "typeString": "mapping(address => uint256)"
+                      }
+                    },
+                    "id": 1327,
+                    "indexExpression": {
+                      "expression": {
+                        "id": 1325,
+                        "name": "msg",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 4294967281,
+                        "src": "948:3:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_magic_message",
+                          "typeString": "msg"
+                        }
+                      },
+                      "id": 1326,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "sender",
+                      "nodeType": "MemberAccess",
+                      "src": "948:10:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "isConstant": false,
+                    "isLValue": true,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "IndexAccess",
+                    "src": "929:30:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "functionReturnParameters": 1313,
+                  "id": 1328,
+                  "nodeType": "Return",
+                  "src": "922:37:3"
+                }
+              ]
+            },
+            "documentation": {
+              "id": 1307,
+              "nodeType": "StructuredDocumentation",
+              "src": "737:25:3",
+              "text": "@notice"
+            },
+            "functionSelector": "bd8921e6",
+            "id": 1330,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [
+              {
+                "arguments": [],
+                "id": 1310,
+                "kind": "modifierInvocation",
+                "modifierName": {
+                  "id": 1309,
+                  "name": "isCreator",
+                  "nodeType": "IdentifierPath",
+                  "referencedDeclaration": 1264,
+                  "src": "812:9:3"
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "812:11:3"
+              }
+            ],
+            "name": "checkCreatorBalance",
+            "nameLocation": "776:19:3",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1308,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "795:2:3"
+            },
+            "returnParameters": {
+              "id": 1313,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1312,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1330,
+                  "src": "832:4:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 1311,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "832:4:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "831:6:3"
+            },
+            "scope": 1331,
+            "src": "767:199:3",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 1332,
+        "src": "127:841:3",
+        "usedErrors": []
+      }
+    ],
+    "src": "32:936:3"
+  },
+  "legacyAST": {
+    "absolutePath": "project:/contracts/facets/CreatorsFacet.sol",
+    "exportedSymbols": {
+      "CreatorsFacet": [
+        1331
+      ],
+      "Dixel": [
+        4200
+      ],
+      "LibDixel": [
+        4667
+      ]
+    },
+    "id": 1332,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1228,
+        "literals": [
+          "solidity",
+          "0.8",
+          ".11"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "32:23:3"
+      },
+      {
+        "absolutePath": "project:/contracts/libraries/LibDixel.sol",
+        "file": "../libraries/LibDixel.sol",
+        "id": 1231,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 1332,
+        "sourceUnit": 4668,
+        "src": "57:68:3",
+        "symbolAliases": [
+          {
+            "foreign": {
+              "id": 1229,
+              "name": "Dixel",
+              "nodeType": "Identifier",
+              "overloadedDeclarations": [],
+              "src": "70:5:3",
+              "typeDescriptions": {}
+            },
+            "nameLocation": "-1:-1:-1"
+          },
+          {
+            "foreign": {
+              "id": 1230,
+              "name": "LibDixel",
+              "nodeType": "Identifier",
+              "overloadedDeclarations": [],
+              "src": "81:8:3",
+              "typeDescriptions": {}
+            },
+            "nameLocation": "-1:-1:-1"
+          }
+        ],
+        "unitAlias": ""
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "canonicalName": "CreatorsFacet",
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "fullyImplemented": true,
+        "id": 1331,
+        "linearizedBaseContracts": [
+          1331
+        ],
+        "name": "CreatorsFacet",
+        "nameLocation": "136:13:3",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 1263,
+              "nodeType": "Block",
+              "src": "211:188:3",
+              "statements": [
+                {
+                  "assignments": [
+                    1238
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 1238,
+                      "mutability": "mutable",
+                      "name": "cs",
+                      "nameLocation": "254:2:3",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 1263,
+                      "src": "221:35:3",
+                      "stateVariable": false,
+                      "storageLocation": "storage",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_CreatorsStorage_$4282_storage_ptr",
+                        "typeString": "struct LibDixel.CreatorsStorage"
+                      },
+                      "typeName": {
+                        "id": 1237,
+                        "nodeType": "UserDefinedTypeName",
+                        "pathNode": {
+                          "id": 1236,
+                          "name": "LibDixel.CreatorsStorage",
+                          "nodeType": "IdentifierPath",
+                          "referencedDeclaration": 4282,
+                          "src": "221:24:3"
+                        },
+                        "referencedDeclaration": 4282,
+                        "src": "221:24:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_CreatorsStorage_$4282_storage_ptr",
+                          "typeString": "struct LibDixel.CreatorsStorage"
+                        }
+                      },
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 1242,
+                  "initialValue": {
+                    "arguments": [],
+                    "expression": {
+                      "argumentTypes": [],
+                      "expression": {
+                        "id": 1239,
+                        "name": "LibDixel",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 4667,
+                        "src": "259:8:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_contract$_LibDixel_$4667_$",
+                          "typeString": "type(library LibDixel)"
+                        }
+                      },
+                      "id": 1240,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "creatorsStorage",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 4365,
+                      "src": "259:24:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_pure$__$returns$_t_struct$_CreatorsStorage_$4282_storage_ptr_$",
+                        "typeString": "function () pure returns (struct LibDixel.CreatorsStorage storage pointer)"
+                      }
+                    },
+                    "id": 1241,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "259:26:3",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_CreatorsStorage_$4282_storage_ptr",
+                      "typeString": "struct LibDixel.CreatorsStorage storage pointer"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "221:64:3"
+                },
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "commonType": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        "id": 1258,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "commonType": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          },
+                          "id": 1250,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "leftExpression": {
+                            "expression": {
+                              "id": 1244,
+                              "name": "msg",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 4294967281,
+                              "src": "303:3:3",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_magic_message",
+                                "typeString": "msg"
+                              }
+                            },
+                            "id": 1245,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberName": "sender",
+                            "nodeType": "MemberAccess",
+                            "src": "303:10:3",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          },
+                          "nodeType": "BinaryOperation",
+                          "operator": "==",
+                          "rightExpression": {
+                            "baseExpression": {
+                              "expression": {
+                                "id": 1246,
+                                "name": "cs",
+                                "nodeType": "Identifier",
+                                "overloadedDeclarations": [],
+                                "referencedDeclaration": 1238,
+                                "src": "317:2:3",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_struct$_CreatorsStorage_$4282_storage_ptr",
+                                  "typeString": "struct LibDixel.CreatorsStorage storage pointer"
+                                }
+                              },
+                              "id": 1247,
+                              "isConstant": false,
+                              "isLValue": true,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "memberName": "creators",
+                              "nodeType": "MemberAccess",
+                              "referencedDeclaration": 4281,
+                              "src": "317:11:3",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_array$_t_address_$2_storage",
+                                "typeString": "address[2] storage ref"
+                              }
+                            },
+                            "id": 1249,
+                            "indexExpression": {
+                              "hexValue": "30",
+                              "id": 1248,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "kind": "number",
+                              "lValueRequested": false,
+                              "nodeType": "Literal",
+                              "src": "329:1:3",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_rational_0_by_1",
+                                "typeString": "int_const 0"
+                              },
+                              "value": "0"
+                            },
+                            "isConstant": false,
+                            "isLValue": true,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "nodeType": "IndexAccess",
+                            "src": "317:14:3",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          },
+                          "src": "303:28:3",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bool",
+                            "typeString": "bool"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": "||",
+                        "rightExpression": {
+                          "commonType": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          },
+                          "id": 1257,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "leftExpression": {
+                            "expression": {
+                              "id": 1251,
+                              "name": "msg",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 4294967281,
+                              "src": "335:3:3",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_magic_message",
+                                "typeString": "msg"
+                              }
+                            },
+                            "id": 1252,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberName": "sender",
+                            "nodeType": "MemberAccess",
+                            "src": "335:10:3",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          },
+                          "nodeType": "BinaryOperation",
+                          "operator": "==",
+                          "rightExpression": {
+                            "baseExpression": {
+                              "expression": {
+                                "id": 1253,
+                                "name": "cs",
+                                "nodeType": "Identifier",
+                                "overloadedDeclarations": [],
+                                "referencedDeclaration": 1238,
+                                "src": "349:2:3",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_struct$_CreatorsStorage_$4282_storage_ptr",
+                                  "typeString": "struct LibDixel.CreatorsStorage storage pointer"
+                                }
+                              },
+                              "id": 1254,
+                              "isConstant": false,
+                              "isLValue": true,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "memberName": "creators",
+                              "nodeType": "MemberAccess",
+                              "referencedDeclaration": 4281,
+                              "src": "349:11:3",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_array$_t_address_$2_storage",
+                                "typeString": "address[2] storage ref"
+                              }
+                            },
+                            "id": 1256,
+                            "indexExpression": {
+                              "hexValue": "31",
+                              "id": 1255,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "kind": "number",
+                              "lValueRequested": false,
+                              "nodeType": "Literal",
+                              "src": "361:1:3",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_rational_1_by_1",
+                                "typeString": "int_const 1"
+                              },
+                              "value": "1"
+                            },
+                            "isConstant": false,
+                            "isLValue": true,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "nodeType": "IndexAccess",
+                            "src": "349:14:3",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          },
+                          "src": "335:28:3",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bool",
+                            "typeString": "bool"
+                          }
+                        },
+                        "src": "303:60:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "hexValue": "6f6e6c792063726561746f7273",
+                        "id": 1259,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "365:15:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_b6c951c92f5855a5a37904c1f010b28a8dd8e076610a335acf6d9e0433540351",
+                          "typeString": "literal_string \"only creators\""
+                        },
+                        "value": "only creators"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_b6c951c92f5855a5a37904c1f010b28a8dd8e076610a335acf6d9e0433540351",
+                          "typeString": "literal_string \"only creators\""
+                        }
+                      ],
+                      "id": 1243,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        4294967278,
+                        4294967278
+                      ],
+                      "referencedDeclaration": 4294967278,
+                      "src": "295:7:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 1260,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "295:86:3",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 1261,
+                  "nodeType": "ExpressionStatement",
+                  "src": "295:86:3"
+                },
+                {
+                  "id": 1262,
+                  "nodeType": "PlaceholderStatement",
+                  "src": "391:1:3"
+                }
+              ]
+            },
+            "documentation": {
+              "id": 1232,
+              "nodeType": "StructuredDocumentation",
+              "src": "161:24:3",
+              "text": " @notice"
+            },
+            "id": 1264,
+            "name": "isCreator",
+            "nameLocation": "199:9:3",
+            "nodeType": "ModifierDefinition",
+            "parameters": {
+              "id": 1233,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "208:2:3"
+            },
+            "src": "190:209:3",
+            "virtual": false,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 1305,
+              "nodeType": "Block",
+              "src": "498:233:3",
+              "statements": [
+                {
+                  "assignments": [
+                    1274
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 1274,
+                      "mutability": "mutable",
+                      "name": "cs",
+                      "nameLocation": "541:2:3",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 1305,
+                      "src": "508:35:3",
+                      "stateVariable": false,
+                      "storageLocation": "storage",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_CreatorsStorage_$4282_storage_ptr",
+                        "typeString": "struct LibDixel.CreatorsStorage"
+                      },
+                      "typeName": {
+                        "id": 1273,
+                        "nodeType": "UserDefinedTypeName",
+                        "pathNode": {
+                          "id": 1272,
+                          "name": "LibDixel.CreatorsStorage",
+                          "nodeType": "IdentifierPath",
+                          "referencedDeclaration": 4282,
+                          "src": "508:24:3"
+                        },
+                        "referencedDeclaration": 4282,
+                        "src": "508:24:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_CreatorsStorage_$4282_storage_ptr",
+                          "typeString": "struct LibDixel.CreatorsStorage"
+                        }
+                      },
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 1278,
+                  "initialValue": {
+                    "arguments": [],
+                    "expression": {
+                      "argumentTypes": [],
+                      "expression": {
+                        "id": 1275,
+                        "name": "LibDixel",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 4667,
+                        "src": "546:8:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_contract$_LibDixel_$4667_$",
+                          "typeString": "type(library LibDixel)"
+                        }
+                      },
+                      "id": 1276,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "creatorsStorage",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 4365,
+                      "src": "546:24:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_pure$__$returns$_t_struct$_CreatorsStorage_$4282_storage_ptr_$",
+                        "typeString": "function () pure returns (struct LibDixel.CreatorsStorage storage pointer)"
+                      }
+                    },
+                    "id": 1277,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "546:26:3",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_CreatorsStorage_$4282_storage_ptr",
+                      "typeString": "struct LibDixel.CreatorsStorage storage pointer"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "508:64:3"
+                },
+                {
+                  "assignments": [
+                    1280
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 1280,
+                      "mutability": "mutable",
+                      "name": "withdrawal",
+                      "nameLocation": "587:10:3",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 1305,
+                      "src": "582:15:3",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      },
+                      "typeName": {
+                        "id": 1279,
+                        "name": "uint",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "582:4:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 1286,
+                  "initialValue": {
+                    "baseExpression": {
+                      "expression": {
+                        "id": 1281,
+                        "name": "cs",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 1274,
+                        "src": "600:2:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_CreatorsStorage_$4282_storage_ptr",
+                          "typeString": "struct LibDixel.CreatorsStorage storage pointer"
+                        }
+                      },
+                      "id": 1282,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "creatorsBalance",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 4277,
+                      "src": "600:18:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_mapping$_t_address_$_t_uint256_$",
+                        "typeString": "mapping(address => uint256)"
+                      }
+                    },
+                    "id": 1285,
+                    "indexExpression": {
+                      "expression": {
+                        "id": 1283,
+                        "name": "msg",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 4294967281,
+                        "src": "619:3:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_magic_message",
+                          "typeString": "msg"
+                        }
+                      },
+                      "id": 1284,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "sender",
+                      "nodeType": "MemberAccess",
+                      "src": "619:10:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "isConstant": false,
+                    "isLValue": true,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "IndexAccess",
+                    "src": "600:30:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "582:48:3"
+                },
+                {
+                  "expression": {
+                    "id": 1294,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "baseExpression": {
+                        "expression": {
+                          "id": 1287,
+                          "name": "cs",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 1274,
+                          "src": "640:2:3",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_CreatorsStorage_$4282_storage_ptr",
+                            "typeString": "struct LibDixel.CreatorsStorage storage pointer"
+                          }
+                        },
+                        "id": 1291,
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "creatorsBalance",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 4277,
+                        "src": "640:18:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_address_$_t_uint256_$",
+                          "typeString": "mapping(address => uint256)"
+                        }
+                      },
+                      "id": 1292,
+                      "indexExpression": {
+                        "expression": {
+                          "id": 1289,
+                          "name": "msg",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 4294967281,
+                          "src": "659:3:3",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_magic_message",
+                            "typeString": "msg"
+                          }
+                        },
+                        "id": 1290,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "sender",
+                        "nodeType": "MemberAccess",
+                        "src": "659:10:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "640:30:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "hexValue": "30",
+                      "id": 1293,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "number",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "673:1:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_rational_0_by_1",
+                        "typeString": "int_const 0"
+                      },
+                      "value": "0"
+                    },
+                    "src": "640:34:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 1295,
+                  "nodeType": "ExpressionStatement",
+                  "src": "640:34:3"
+                },
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "id": 1302,
+                        "name": "withdrawal",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 1280,
+                        "src": "713:10:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "expression": {
+                        "arguments": [
+                          {
+                            "expression": {
+                              "id": 1298,
+                              "name": "msg",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 4294967281,
+                              "src": "692:3:3",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_magic_message",
+                                "typeString": "msg"
+                              }
+                            },
+                            "id": 1299,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberName": "sender",
+                            "nodeType": "MemberAccess",
+                            "src": "692:10:3",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          ],
+                          "id": 1297,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "lValueRequested": false,
+                          "nodeType": "ElementaryTypeNameExpression",
+                          "src": "684:8:3",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_type$_t_address_payable_$",
+                            "typeString": "type(address payable)"
+                          },
+                          "typeName": {
+                            "id": 1296,
+                            "name": "address",
+                            "nodeType": "ElementaryTypeName",
+                            "src": "684:8:3",
+                            "stateMutability": "payable",
+                            "typeDescriptions": {}
+                          }
+                        },
+                        "id": 1300,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "typeConversion",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "684:19:3",
+                        "tryCall": false,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      },
+                      "id": 1301,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "transfer",
+                      "nodeType": "MemberAccess",
+                      "src": "684:28:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_transfer_nonpayable$_t_uint256_$returns$__$",
+                        "typeString": "function (uint256)"
+                      }
+                    },
+                    "id": 1303,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "684:40:3",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 1304,
+                  "nodeType": "ExpressionStatement",
+                  "src": "684:40:3"
+                }
+              ]
+            },
+            "documentation": {
+              "id": 1265,
+              "nodeType": "StructuredDocumentation",
+              "src": "410:25:3",
+              "text": "@notice"
+            },
+            "functionSelector": "52cc97fc",
+            "id": 1306,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [
+              {
+                "arguments": [],
+                "id": 1268,
+                "kind": "modifierInvocation",
+                "modifierName": {
+                  "id": 1267,
+                  "name": "isCreator",
+                  "nodeType": "IdentifierPath",
+                  "referencedDeclaration": 1264,
+                  "src": "486:9:3"
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "486:11:3"
+              }
+            ],
+            "name": "creatorWithdrawal",
+            "nameLocation": "449:17:3",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1266,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "466:2:3"
+            },
+            "returnParameters": {
+              "id": 1269,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "498:0:3"
+            },
+            "scope": 1331,
+            "src": "440:291:3",
+            "stateMutability": "payable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 1329,
+              "nodeType": "Block",
+              "src": "838:128:3",
+              "statements": [
+                {
+                  "assignments": [
+                    1318
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 1318,
+                      "mutability": "mutable",
+                      "name": "cs",
+                      "nameLocation": "881:2:3",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 1329,
+                      "src": "848:35:3",
+                      "stateVariable": false,
+                      "storageLocation": "storage",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_CreatorsStorage_$4282_storage_ptr",
+                        "typeString": "struct LibDixel.CreatorsStorage"
+                      },
+                      "typeName": {
+                        "id": 1317,
+                        "nodeType": "UserDefinedTypeName",
+                        "pathNode": {
+                          "id": 1316,
+                          "name": "LibDixel.CreatorsStorage",
+                          "nodeType": "IdentifierPath",
+                          "referencedDeclaration": 4282,
+                          "src": "848:24:3"
+                        },
+                        "referencedDeclaration": 4282,
+                        "src": "848:24:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_CreatorsStorage_$4282_storage_ptr",
+                          "typeString": "struct LibDixel.CreatorsStorage"
+                        }
+                      },
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 1322,
+                  "initialValue": {
+                    "arguments": [],
+                    "expression": {
+                      "argumentTypes": [],
+                      "expression": {
+                        "id": 1319,
+                        "name": "LibDixel",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 4667,
+                        "src": "886:8:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_contract$_LibDixel_$4667_$",
+                          "typeString": "type(library LibDixel)"
+                        }
+                      },
+                      "id": 1320,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "creatorsStorage",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 4365,
+                      "src": "886:24:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_pure$__$returns$_t_struct$_CreatorsStorage_$4282_storage_ptr_$",
+                        "typeString": "function () pure returns (struct LibDixel.CreatorsStorage storage pointer)"
+                      }
+                    },
+                    "id": 1321,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "886:26:3",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_CreatorsStorage_$4282_storage_ptr",
+                      "typeString": "struct LibDixel.CreatorsStorage storage pointer"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "848:64:3"
+                },
+                {
+                  "expression": {
+                    "baseExpression": {
+                      "expression": {
+                        "id": 1323,
+                        "name": "cs",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 1318,
+                        "src": "929:2:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_CreatorsStorage_$4282_storage_ptr",
+                          "typeString": "struct LibDixel.CreatorsStorage storage pointer"
+                        }
+                      },
+                      "id": 1324,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "creatorsBalance",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 4277,
+                      "src": "929:18:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_mapping$_t_address_$_t_uint256_$",
+                        "typeString": "mapping(address => uint256)"
+                      }
+                    },
+                    "id": 1327,
+                    "indexExpression": {
+                      "expression": {
+                        "id": 1325,
+                        "name": "msg",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 4294967281,
+                        "src": "948:3:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_magic_message",
+                          "typeString": "msg"
+                        }
+                      },
+                      "id": 1326,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "sender",
+                      "nodeType": "MemberAccess",
+                      "src": "948:10:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "isConstant": false,
+                    "isLValue": true,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "IndexAccess",
+                    "src": "929:30:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "functionReturnParameters": 1313,
+                  "id": 1328,
+                  "nodeType": "Return",
+                  "src": "922:37:3"
+                }
+              ]
+            },
+            "documentation": {
+              "id": 1307,
+              "nodeType": "StructuredDocumentation",
+              "src": "737:25:3",
+              "text": "@notice"
+            },
+            "functionSelector": "bd8921e6",
+            "id": 1330,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [
+              {
+                "arguments": [],
+                "id": 1310,
+                "kind": "modifierInvocation",
+                "modifierName": {
+                  "id": 1309,
+                  "name": "isCreator",
+                  "nodeType": "IdentifierPath",
+                  "referencedDeclaration": 1264,
+                  "src": "812:9:3"
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "812:11:3"
+              }
+            ],
+            "name": "checkCreatorBalance",
+            "nameLocation": "776:19:3",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1308,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "795:2:3"
+            },
+            "returnParameters": {
+              "id": 1313,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1312,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1330,
+                  "src": "832:4:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 1311,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "832:4:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "831:6:3"
+            },
+            "scope": 1331,
+            "src": "767:199:3",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 1332,
+        "src": "127:841:3",
+        "usedErrors": []
+      }
+    ],
+    "src": "32:936:3"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.8.11+commit.d7f03943.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.4",
+  "updatedAt": "2022-01-24T15:16:40.680Z",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  }
+}
