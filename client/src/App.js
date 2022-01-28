@@ -3,7 +3,7 @@ import getWeb3 from "./getWeb3";
 import DiamondContract from "./contracts/Diamond.json";
 import DixelFacet from "./contracts/DixelFacet.json";
 import LotteryFacet from "./contracts/LotteryFacet.json";
-import GetterFacet from "./contracts/GettersFacet.json";
+import GetterFacet from "./contracts/GetterFacet.json";
 
 import Home from "./components/pages/Home";
 import MintPage from "./components/pages/Mint";
