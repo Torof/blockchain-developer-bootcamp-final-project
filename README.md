@@ -1,6 +1,6 @@
 github repository: https://github.com/torof/blockchain-developer-bootcamp-final-project
 
-Deployed Dapp :  https://dixel.netlify.app
+Deployed Dapp :  https://dixeland.eth.link
 
 DIXEL NFT 
 
