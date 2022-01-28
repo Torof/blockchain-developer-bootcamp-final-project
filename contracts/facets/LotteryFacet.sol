@@ -131,43 +131,4 @@ contract LotteryFacet {
         ls.lastLaunchTime = block.timestamp;
     }
 
-    // /**
-    //  * @notice
-    //  */
-    // function returnLotteryTickets() external view returns(uint) {
-    //     LibLottery.LotteryStorage storage ls = LibLottery.lotteryStorage();
-    //     return ls.lotteryTickets[msg.sender];
-    // }
-
-    // /**
-    //  * @notice
-    //  */
-    // function returnFreeMintTickets() external view returns(uint) {
-    // LibLottery.LotteryStorage storage ls = LibLottery.lotteryStorage();
-    //     return ls.freeMintTickets[msg.sender];
-    // }
-
-    // /**
-    //  * @notice
-    //  */
-    // function returnRegisteredTickets() external view returns(uint) {
-    //     LibLottery.LotteryStorage storage ls = LibLottery.lotteryStorage();
-    //     return ls.registeredTickets[msg.sender];
-    // }
-
-    // /**
-    //  * @notice
-    //  */
-    // function returnStarmWon() external view returns(uint) {
-    //     LibStarm.StarmStorage storage starm = LibStarm.starmStorage();
-    //     return starm.starmToWithdraw[msg.sender];
-    // }
-
-    // /**
-    //  * @notice
-    //  */
-    // function returnLotteryWinners() external view returns(Winners[] memory) {
-    //     return LibLottery.lotteryStorage().allWinners;
-    // }
-
 }

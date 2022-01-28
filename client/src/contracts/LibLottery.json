@@ -1,53 +1,53 @@
 {
   "contractName": "LibLottery",
   "abi": [],
-  "metadata": "{\"compiler\":{\"version\":\"0.8.11+commit.d7f03943\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/libraries/LibLottery.sol\":\"LibLottery\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/libraries/LibLottery.sol\":{\"keccak256\":\"0x6de1ae2037ee3a7409503855c0c9cb7ea5ac057616a5dd9d92afcc5fbd18874a\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://8c5fcfd5ad776651d90bba822b3fe71e022ef492e40a1a3dd21d349faf02639a\",\"dweb:/ipfs/Qma8yLV59fMg8xvhU2s5GvbzjBPXAFKS4U3sfeTytdMQFg\"]}},\"version\":1}",
-  "bytecode": "0x60566050600b82828239805160001a6073146043577f4e487b7100000000000000000000000000000000000000000000000000000000600052600060045260246000fd5b30600052607381538281f3fe73000000000000000000000000000000000000000030146080604052600080fdfea264697066735822122050560ba8a431460fd9718ec04dfcf3863465f1897223d15f51d5b9653f3c27b664736f6c634300080b0033",
-  "deployedBytecode": "0x73000000000000000000000000000000000000000030146080604052600080fdfea264697066735822122050560ba8a431460fd9718ec04dfcf3863465f1897223d15f51d5b9653f3c27b664736f6c634300080b0033",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.11+commit.d7f03943\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/libraries/LibLottery.sol\":\"LibLottery\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/libraries/LibLottery.sol\":{\"keccak256\":\"0xa03f4c6de8b859f22182ba5270d14d11419afcec8788da78961de631673fcca9\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://137e3c74187ea960e5634e18f60d2caa790cea157635ca50a509f4c695b19620\",\"dweb:/ipfs/Qme9eJr3Fv2D4ZyrF9iQ9STBemKHUcUNvTRpr8d1FsvYwK\"]}},\"version\":1}",
+  "bytecode": "0x60566050600b82828239805160001a6073146043577f4e487b7100000000000000000000000000000000000000000000000000000000600052600060045260246000fd5b30600052607381538281f3fe73000000000000000000000000000000000000000030146080604052600080fdfea26469706673582212206bbfdd111b0d314b37d000afdeb0683f1fbb23e5fa26b75f69fe7f4886f7981a64736f6c634300080b0033",
+  "deployedBytecode": "0x73000000000000000000000000000000000000000030146080604052600080fdfea26469706673582212206bbfdd111b0d314b37d000afdeb0683f1fbb23e5fa26b75f69fe7f4886f7981a64736f6c634300080b0033",
   "immutableReferences": {},
   "generatedSources": [],
   "deployedGeneratedSources": [],
-  "sourceMap": "152:972:17:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;",
-  "deployedSourceMap": "152:972:17:-:0;;;;;;;;",
-  "source": "//SPDX-License-Identifier: MIT\npragma solidity 0.8.11;\n\n\nstruct Winners {\n    uint timestamp;\n    address dixelMintWinner;\n    address starmWinner;\n}\n\n\nlibrary LibLottery {\n    bytes32 constant ticketsStorageSlot = keccak256(\"ticketsStorage\");\n    bytes32 constant lotteryStorageSlot = keccak256(\"lotteryStorage\");\n\n    uint constant oneDayCoolDown = 86400;\n    uint constant oneWeekCoolDown = 604800;\n    uint constant oneMonthCoolDown = 2629743;\n    uint constant ticketPrice = 500;\n\n    /**\n    * @notice\n    * @param\n    * @param\n    * @param\n    * @param\n    * @param\n    * @param\n    */\n    struct LotteryStorage { \n    uint lastLaunchTime;\n    address[] players;\n    Winners[] allWinners;\n    mapping(address => uint) lotteryTickets;\n    mapping(address => uint) registeredTickets;\n    mapping(address => uint) freeMintTickets;\n    }\n\n\n    /**\n    * @notice fetch the LotteryStorage struct saved at a precise memory slot\n    */\n    function  lotteryStorage() internal pure returns (LotteryStorage storage ls){\n        bytes32 slot = lotteryStorageSlot;\n        assembly {\n            ls.slot := slot\n        }\n    }\n}\n\n",
-  "sourcePath": "/home/torof/Desktop/Dixel-folder/dixel-22/contracts/libraries/LibLottery.sol",
+  "sourceMap": "152:1008:18:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;",
+  "deployedSourceMap": "152:1008:18:-:0;;;;;;;;",
+  "source": "//SPDX-License-Identifier: MIT\npragma solidity 0.8.11;\n\n\nstruct Winners {\n    uint timestamp;\n    address dixelMintWinner;\n    address starmWinner;\n}\n\n\nlibrary LibLottery {\n    bytes32 constant ticketsStorageSlot = keccak256(\"ticketsStorage\");\n    bytes32 constant lotteryStorageSlot = keccak256(\"lotteryStorage\");\n\n    uint constant oneDayCoolDown = 86400;\n    uint constant oneWeekCoolDown = 604800;\n    uint constant oneMonthCoolDown = 2629743;\n    uint constant ticketPrice = 500;\n\n    /**\n    * @notice all the variables about the lottery\n    * @param\n    * @param\n    * @param\n    * @param\n    * @param\n    * @param\n    */\n    struct LotteryStorage { \n    uint lastLaunchTime;\n    address[] players;\n    Winners[] allWinners;\n    mapping(address => uint) lotteryTickets;\n    mapping(address => uint) registeredTickets;\n    mapping(address => uint) freeMintTickets;\n    }\n\n\n    /**\n    * @notice fetch the LotteryStorage struct saved at a precise memory slot\n    */\n    function  lotteryStorage() internal pure returns (LotteryStorage storage ls){\n        bytes32 slot = lotteryStorageSlot;\n        assembly {\n            ls.slot := slot\n        }\n    }\n}\n\n",
+  "sourcePath": "/home/torof/blockchain-developer-bootcamp-final-project/contracts/libraries/LibLottery.sol",
   "ast": {
     "absolutePath": "project:/contracts/libraries/LibLottery.sol",
     "exportedSymbols": {
       "LibLottery": [
-        4734
+        4756
       ],
       "Winners": [
-        4676
+        4698
       ]
     },
-    "id": 4735,
+    "id": 4757,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 4669,
+        "id": 4691,
         "literals": [
           "solidity",
           "0.8",
           ".11"
         ],
         "nodeType": "PragmaDirective",
-        "src": "31:23:17"
+        "src": "31:23:18"
       },
       {
         "canonicalName": "Winners",
-        "id": 4676,
+        "id": 4698,
         "members": [
           {
             "constant": false,
-            "id": 4671,
+            "id": 4693,
             "mutability": "mutable",
             "name": "timestamp",
-            "nameLocation": "83:9:17",
+            "nameLocation": "83:9:18",
             "nodeType": "VariableDeclaration",
-            "scope": 4676,
-            "src": "78:14:17",
+            "scope": 4698,
+            "src": "78:14:18",
             "stateVariable": false,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -55,10 +55,10 @@
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 4670,
+              "id": 4692,
               "name": "uint",
               "nodeType": "ElementaryTypeName",
-              "src": "78:4:17",
+              "src": "78:4:18",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -68,13 +68,13 @@
           },
           {
             "constant": false,
-            "id": 4673,
+            "id": 4695,
             "mutability": "mutable",
             "name": "dixelMintWinner",
-            "nameLocation": "106:15:17",
+            "nameLocation": "106:15:18",
             "nodeType": "VariableDeclaration",
-            "scope": 4676,
-            "src": "98:23:17",
+            "scope": 4698,
+            "src": "98:23:18",
             "stateVariable": false,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -82,10 +82,10 @@
               "typeString": "address"
             },
             "typeName": {
-              "id": 4672,
+              "id": 4694,
               "name": "address",
               "nodeType": "ElementaryTypeName",
-              "src": "98:7:17",
+              "src": "98:7:18",
               "stateMutability": "nonpayable",
               "typeDescriptions": {
                 "typeIdentifier": "t_address",
@@ -96,13 +96,13 @@
           },
           {
             "constant": false,
-            "id": 4675,
+            "id": 4697,
             "mutability": "mutable",
             "name": "starmWinner",
-            "nameLocation": "135:11:17",
+            "nameLocation": "135:11:18",
             "nodeType": "VariableDeclaration",
-            "scope": 4676,
-            "src": "127:19:17",
+            "scope": 4698,
+            "src": "127:19:18",
             "stateVariable": false,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -110,10 +110,10 @@
               "typeString": "address"
             },
             "typeName": {
-              "id": 4674,
+              "id": 4696,
               "name": "address",
               "nodeType": "ElementaryTypeName",
-              "src": "127:7:17",
+              "src": "127:7:18",
               "stateMutability": "nonpayable",
               "typeDescriptions": {
                 "typeIdentifier": "t_address",
@@ -124,10 +124,10 @@
           }
         ],
         "name": "Winners",
-        "nameLocation": "64:7:17",
+        "nameLocation": "64:7:18",
         "nodeType": "StructDefinition",
-        "scope": 4735,
-        "src": "57:92:17",
+        "scope": 4757,
+        "src": "57:92:18",
         "visibility": "public"
       },
       {
@@ -137,23 +137,23 @@
         "contractDependencies": [],
         "contractKind": "library",
         "fullyImplemented": true,
-        "id": 4734,
+        "id": 4756,
         "linearizedBaseContracts": [
-          4734
+          4756
         ],
         "name": "LibLottery",
-        "nameLocation": "160:10:17",
+        "nameLocation": "160:10:18",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "constant": true,
-            "id": 4681,
+            "id": 4703,
             "mutability": "constant",
             "name": "ticketsStorageSlot",
-            "nameLocation": "194:18:17",
+            "nameLocation": "194:18:18",
             "nodeType": "VariableDeclaration",
-            "scope": 4734,
-            "src": "177:65:17",
+            "scope": 4756,
+            "src": "177:65:18",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -161,10 +161,10 @@
               "typeString": "bytes32"
             },
             "typeName": {
-              "id": 4677,
+              "id": 4699,
               "name": "bytes32",
               "nodeType": "ElementaryTypeName",
-              "src": "177:7:17",
+              "src": "177:7:18",
               "typeDescriptions": {
                 "typeIdentifier": "t_bytes32",
                 "typeString": "bytes32"
@@ -174,14 +174,14 @@
               "arguments": [
                 {
                   "hexValue": "7469636b65747353746f72616765",
-                  "id": 4679,
+                  "id": 4701,
                   "isConstant": false,
                   "isLValue": false,
                   "isPure": true,
                   "kind": "string",
                   "lValueRequested": false,
                   "nodeType": "Literal",
-                  "src": "225:16:17",
+                  "src": "225:16:18",
                   "typeDescriptions": {
                     "typeIdentifier": "t_stringliteral_eff3f5ad71d8a725e3467871234a19ff8c04678fcecdd5d2562680ad431be917",
                     "typeString": "literal_string \"ticketsStorage\""
@@ -196,18 +196,18 @@
                     "typeString": "literal_string \"ticketsStorage\""
                   }
                 ],
-                "id": 4678,
+                "id": 4700,
                 "name": "keccak256",
                 "nodeType": "Identifier",
                 "overloadedDeclarations": [],
                 "referencedDeclaration": 4294967288,
-                "src": "215:9:17",
+                "src": "215:9:18",
                 "typeDescriptions": {
                   "typeIdentifier": "t_function_keccak256_pure$_t_bytes_memory_ptr_$returns$_t_bytes32_$",
                   "typeString": "function (bytes memory) pure returns (bytes32)"
                 }
               },
-              "id": 4680,
+              "id": 4702,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
@@ -215,7 +215,7 @@
               "lValueRequested": false,
               "names": [],
               "nodeType": "FunctionCall",
-              "src": "215:27:17",
+              "src": "215:27:18",
               "tryCall": false,
               "typeDescriptions": {
                 "typeIdentifier": "t_bytes32",
@@ -226,13 +226,13 @@
           },
           {
             "constant": true,
-            "id": 4686,
+            "id": 4708,
             "mutability": "constant",
             "name": "lotteryStorageSlot",
-            "nameLocation": "265:18:17",
+            "nameLocation": "265:18:18",
             "nodeType": "VariableDeclaration",
-            "scope": 4734,
-            "src": "248:65:17",
+            "scope": 4756,
+            "src": "248:65:18",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -240,10 +240,10 @@
               "typeString": "bytes32"
             },
             "typeName": {
-              "id": 4682,
+              "id": 4704,
               "name": "bytes32",
               "nodeType": "ElementaryTypeName",
-              "src": "248:7:17",
+              "src": "248:7:18",
               "typeDescriptions": {
                 "typeIdentifier": "t_bytes32",
                 "typeString": "bytes32"
@@ -253,14 +253,14 @@
               "arguments": [
                 {
                   "hexValue": "6c6f747465727953746f72616765",
-                  "id": 4684,
+                  "id": 4706,
                   "isConstant": false,
                   "isLValue": false,
                   "isPure": true,
                   "kind": "string",
                   "lValueRequested": false,
                   "nodeType": "Literal",
-                  "src": "296:16:17",
+                  "src": "296:16:18",
                   "typeDescriptions": {
                     "typeIdentifier": "t_stringliteral_6bc844e8f78d8de9f3b120d94fd2efae4c9d3b45b2ddde509e79ee4515f298cc",
                     "typeString": "literal_string \"lotteryStorage\""
@@ -275,18 +275,18 @@
                     "typeString": "literal_string \"lotteryStorage\""
                   }
                 ],
-                "id": 4683,
+                "id": 4705,
                 "name": "keccak256",
                 "nodeType": "Identifier",
                 "overloadedDeclarations": [],
                 "referencedDeclaration": 4294967288,
-                "src": "286:9:17",
+                "src": "286:9:18",
                 "typeDescriptions": {
                   "typeIdentifier": "t_function_keccak256_pure$_t_bytes_memory_ptr_$returns$_t_bytes32_$",
                   "typeString": "function (bytes memory) pure returns (bytes32)"
                 }
               },
-              "id": 4685,
+              "id": 4707,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
@@ -294,7 +294,7 @@
               "lValueRequested": false,
               "names": [],
               "nodeType": "FunctionCall",
-              "src": "286:27:17",
+              "src": "286:27:18",
               "tryCall": false,
               "typeDescriptions": {
                 "typeIdentifier": "t_bytes32",
@@ -305,13 +305,13 @@
           },
           {
             "constant": true,
-            "id": 4689,
+            "id": 4711,
             "mutability": "constant",
             "name": "oneDayCoolDown",
-            "nameLocation": "334:14:17",
+            "nameLocation": "334:14:18",
             "nodeType": "VariableDeclaration",
-            "scope": 4734,
-            "src": "320:36:17",
+            "scope": 4756,
+            "src": "320:36:18",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -319,10 +319,10 @@
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 4687,
+              "id": 4709,
               "name": "uint",
               "nodeType": "ElementaryTypeName",
-              "src": "320:4:17",
+              "src": "320:4:18",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -330,14 +330,14 @@
             },
             "value": {
               "hexValue": "3836343030",
-              "id": 4688,
+              "id": 4710,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "351:5:17",
+              "src": "351:5:18",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_86400_by_1",
                 "typeString": "int_const 86400"
@@ -348,13 +348,13 @@
           },
           {
             "constant": true,
-            "id": 4692,
+            "id": 4714,
             "mutability": "constant",
             "name": "oneWeekCoolDown",
-            "nameLocation": "376:15:17",
+            "nameLocation": "376:15:18",
             "nodeType": "VariableDeclaration",
-            "scope": 4734,
-            "src": "362:38:17",
+            "scope": 4756,
+            "src": "362:38:18",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -362,10 +362,10 @@
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 4690,
+              "id": 4712,
               "name": "uint",
               "nodeType": "ElementaryTypeName",
-              "src": "362:4:17",
+              "src": "362:4:18",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -373,14 +373,14 @@
             },
             "value": {
               "hexValue": "363034383030",
-              "id": 4691,
+              "id": 4713,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "394:6:17",
+              "src": "394:6:18",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_604800_by_1",
                 "typeString": "int_const 604800"
@@ -391,13 +391,13 @@
           },
           {
             "constant": true,
-            "id": 4695,
+            "id": 4717,
             "mutability": "constant",
             "name": "oneMonthCoolDown",
-            "nameLocation": "420:16:17",
+            "nameLocation": "420:16:18",
             "nodeType": "VariableDeclaration",
-            "scope": 4734,
-            "src": "406:40:17",
+            "scope": 4756,
+            "src": "406:40:18",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -405,10 +405,10 @@
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 4693,
+              "id": 4715,
               "name": "uint",
               "nodeType": "ElementaryTypeName",
-              "src": "406:4:17",
+              "src": "406:4:18",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -416,14 +416,14 @@
             },
             "value": {
               "hexValue": "32363239373433",
-              "id": 4694,
+              "id": 4716,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "439:7:17",
+              "src": "439:7:18",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_2629743_by_1",
                 "typeString": "int_const 2629743"
@@ -434,13 +434,13 @@
           },
           {
             "constant": true,
-            "id": 4698,
+            "id": 4720,
             "mutability": "constant",
             "name": "ticketPrice",
-            "nameLocation": "466:11:17",
+            "nameLocation": "466:11:18",
             "nodeType": "VariableDeclaration",
-            "scope": 4734,
-            "src": "452:31:17",
+            "scope": 4756,
+            "src": "452:31:18",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -448,10 +448,10 @@
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 4696,
+              "id": 4718,
               "name": "uint",
               "nodeType": "ElementaryTypeName",
-              "src": "452:4:17",
+              "src": "452:4:18",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -459,14 +459,14 @@
             },
             "value": {
               "hexValue": "353030",
-              "id": 4697,
+              "id": 4719,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "480:3:17",
+              "src": "480:3:18",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_500_by_1",
                 "typeString": "int_const 500"
@@ -477,17 +477,17 @@
           },
           {
             "canonicalName": "LibLottery.LotteryStorage",
-            "id": 4720,
+            "id": 4742,
             "members": [
               {
                 "constant": false,
-                "id": 4700,
+                "id": 4722,
                 "mutability": "mutable",
                 "name": "lastLaunchTime",
-                "nameLocation": "631:14:17",
+                "nameLocation": "667:14:18",
                 "nodeType": "VariableDeclaration",
-                "scope": 4720,
-                "src": "626:19:17",
+                "scope": 4742,
+                "src": "662:19:18",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -495,10 +495,10 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 4699,
+                  "id": 4721,
                   "name": "uint",
                   "nodeType": "ElementaryTypeName",
-                  "src": "626:4:17",
+                  "src": "662:4:18",
                   "typeDescriptions": {
                     "typeIdentifier": "t_uint256",
                     "typeString": "uint256"
@@ -508,13 +508,13 @@
               },
               {
                 "constant": false,
-                "id": 4703,
+                "id": 4725,
                 "mutability": "mutable",
                 "name": "players",
-                "nameLocation": "661:7:17",
+                "nameLocation": "697:7:18",
                 "nodeType": "VariableDeclaration",
-                "scope": 4720,
-                "src": "651:17:17",
+                "scope": 4742,
+                "src": "687:17:18",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -523,19 +523,19 @@
                 },
                 "typeName": {
                   "baseType": {
-                    "id": 4701,
+                    "id": 4723,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "651:7:17",
+                    "src": "687:7:18",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
                     }
                   },
-                  "id": 4702,
+                  "id": 4724,
                   "nodeType": "ArrayTypeName",
-                  "src": "651:9:17",
+                  "src": "687:9:18",
                   "typeDescriptions": {
                     "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
                     "typeString": "address[]"
@@ -545,42 +545,42 @@
               },
               {
                 "constant": false,
-                "id": 4707,
+                "id": 4729,
                 "mutability": "mutable",
                 "name": "allWinners",
-                "nameLocation": "684:10:17",
+                "nameLocation": "720:10:18",
                 "nodeType": "VariableDeclaration",
-                "scope": 4720,
-                "src": "674:20:17",
+                "scope": 4742,
+                "src": "710:20:18",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
-                  "typeIdentifier": "t_array$_t_struct$_Winners_$4676_storage_$dyn_storage_ptr",
+                  "typeIdentifier": "t_array$_t_struct$_Winners_$4698_storage_$dyn_storage_ptr",
                   "typeString": "struct Winners[]"
                 },
                 "typeName": {
                   "baseType": {
-                    "id": 4705,
+                    "id": 4727,
                     "nodeType": "UserDefinedTypeName",
                     "pathNode": {
-                      "id": 4704,
+                      "id": 4726,
                       "name": "Winners",
                       "nodeType": "IdentifierPath",
-                      "referencedDeclaration": 4676,
-                      "src": "674:7:17"
+                      "referencedDeclaration": 4698,
+                      "src": "710:7:18"
                     },
-                    "referencedDeclaration": 4676,
-                    "src": "674:7:17",
+                    "referencedDeclaration": 4698,
+                    "src": "710:7:18",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_Winners_$4676_storage_ptr",
+                      "typeIdentifier": "t_struct$_Winners_$4698_storage_ptr",
                       "typeString": "struct Winners"
                     }
                   },
-                  "id": 4706,
+                  "id": 4728,
                   "nodeType": "ArrayTypeName",
-                  "src": "674:9:17",
+                  "src": "710:9:18",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_array$_t_struct$_Winners_$4676_storage_$dyn_storage_ptr",
+                    "typeIdentifier": "t_array$_t_struct$_Winners_$4698_storage_$dyn_storage_ptr",
                     "typeString": "struct Winners[]"
                   }
                 },
@@ -588,13 +588,13 @@
               },
               {
                 "constant": false,
-                "id": 4711,
+                "id": 4733,
                 "mutability": "mutable",
                 "name": "lotteryTickets",
-                "nameLocation": "725:14:17",
+                "nameLocation": "761:14:18",
                 "nodeType": "VariableDeclaration",
-                "scope": 4720,
-                "src": "700:39:17",
+                "scope": 4742,
+                "src": "736:39:18",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -602,28 +602,28 @@
                   "typeString": "mapping(address => uint256)"
                 },
                 "typeName": {
-                  "id": 4710,
+                  "id": 4732,
                   "keyType": {
-                    "id": 4708,
+                    "id": 4730,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "708:7:17",
+                    "src": "744:7:18",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
                     }
                   },
                   "nodeType": "Mapping",
-                  "src": "700:24:17",
+                  "src": "736:24:18",
                   "typeDescriptions": {
                     "typeIdentifier": "t_mapping$_t_address_$_t_uint256_$",
                     "typeString": "mapping(address => uint256)"
                   },
                   "valueType": {
-                    "id": 4709,
+                    "id": 4731,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "719:4:17",
+                    "src": "755:4:18",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -634,13 +634,13 @@
               },
               {
                 "constant": false,
-                "id": 4715,
+                "id": 4737,
                 "mutability": "mutable",
                 "name": "registeredTickets",
-                "nameLocation": "770:17:17",
+                "nameLocation": "806:17:18",
                 "nodeType": "VariableDeclaration",
-                "scope": 4720,
-                "src": "745:42:17",
+                "scope": 4742,
+                "src": "781:42:18",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -648,28 +648,28 @@
                   "typeString": "mapping(address => uint256)"
                 },
                 "typeName": {
-                  "id": 4714,
+                  "id": 4736,
                   "keyType": {
-                    "id": 4712,
+                    "id": 4734,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "753:7:17",
+                    "src": "789:7:18",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
                     }
                   },
                   "nodeType": "Mapping",
-                  "src": "745:24:17",
+                  "src": "781:24:18",
                   "typeDescriptions": {
                     "typeIdentifier": "t_mapping$_t_address_$_t_uint256_$",
                     "typeString": "mapping(address => uint256)"
                   },
                   "valueType": {
-                    "id": 4713,
+                    "id": 4735,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "764:4:17",
+                    "src": "800:4:18",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -680,13 +680,13 @@
               },
               {
                 "constant": false,
-                "id": 4719,
+                "id": 4741,
                 "mutability": "mutable",
                 "name": "freeMintTickets",
-                "nameLocation": "818:15:17",
+                "nameLocation": "854:15:18",
                 "nodeType": "VariableDeclaration",
-                "scope": 4720,
-                "src": "793:40:17",
+                "scope": 4742,
+                "src": "829:40:18",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -694,28 +694,28 @@
                   "typeString": "mapping(address => uint256)"
                 },
                 "typeName": {
-                  "id": 4718,
+                  "id": 4740,
                   "keyType": {
-                    "id": 4716,
+                    "id": 4738,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "801:7:17",
+                    "src": "837:7:18",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
                     }
                   },
                   "nodeType": "Mapping",
-                  "src": "793:24:17",
+                  "src": "829:24:18",
                   "typeDescriptions": {
                     "typeIdentifier": "t_mapping$_t_address_$_t_uint256_$",
                     "typeString": "mapping(address => uint256)"
                   },
                   "valueType": {
-                    "id": 4717,
+                    "id": 4739,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "812:4:17",
+                    "src": "848:4:18",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -726,32 +726,32 @@
               }
             ],
             "name": "LotteryStorage",
-            "nameLocation": "604:14:17",
+            "nameLocation": "640:14:18",
             "nodeType": "StructDefinition",
-            "scope": 4734,
-            "src": "597:243:17",
+            "scope": 4756,
+            "src": "633:243:18",
             "visibility": "public"
           },
           {
             "body": {
-              "id": 4732,
+              "id": 4754,
               "nodeType": "Block",
-              "src": "1015:107:17",
+              "src": "1051:107:18",
               "statements": [
                 {
                   "assignments": [
-                    4728
+                    4750
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 4728,
+                      "id": 4750,
                       "mutability": "mutable",
                       "name": "slot",
-                      "nameLocation": "1033:4:17",
+                      "nameLocation": "1069:4:18",
                       "nodeType": "VariableDeclaration",
-                      "scope": 4732,
-                      "src": "1025:12:17",
+                      "scope": 4754,
+                      "src": "1061:12:18",
                       "stateVariable": false,
                       "storageLocation": "default",
                       "typeDescriptions": {
@@ -759,10 +759,10 @@
                         "typeString": "bytes32"
                       },
                       "typeName": {
-                        "id": 4727,
+                        "id": 4749,
                         "name": "bytes32",
                         "nodeType": "ElementaryTypeName",
-                        "src": "1025:7:17",
+                        "src": "1061:7:18",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bytes32",
                           "typeString": "bytes32"
@@ -771,40 +771,40 @@
                       "visibility": "internal"
                     }
                   ],
-                  "id": 4730,
+                  "id": 4752,
                   "initialValue": {
-                    "id": 4729,
+                    "id": 4751,
                     "name": "lotteryStorageSlot",
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
-                    "referencedDeclaration": 4686,
-                    "src": "1040:18:17",
+                    "referencedDeclaration": 4708,
+                    "src": "1076:18:18",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
                     }
                   },
                   "nodeType": "VariableDeclarationStatement",
-                  "src": "1025:33:17"
+                  "src": "1061:33:18"
                 },
                 {
                   "AST": {
                     "nodeType": "YulBlock",
-                    "src": "1077:39:17",
+                    "src": "1113:39:18",
                     "statements": [
                       {
                         "nodeType": "YulAssignment",
-                        "src": "1091:15:17",
+                        "src": "1127:15:18",
                         "value": {
                           "name": "slot",
                           "nodeType": "YulIdentifier",
-                          "src": "1102:4:17"
+                          "src": "1138:4:18"
                         },
                         "variableNames": [
                           {
                             "name": "ls.slot",
                             "nodeType": "YulIdentifier",
-                            "src": "1091:7:17"
+                            "src": "1127:7:18"
                           }
                         ]
                       }
@@ -813,138 +813,138 @@
                   "evmVersion": "london",
                   "externalReferences": [
                     {
-                      "declaration": 4725,
+                      "declaration": 4747,
                       "isOffset": false,
                       "isSlot": true,
-                      "src": "1091:7:17",
+                      "src": "1127:7:18",
                       "suffix": "slot",
                       "valueSize": 1
                     },
                     {
-                      "declaration": 4728,
+                      "declaration": 4750,
                       "isOffset": false,
                       "isSlot": false,
-                      "src": "1102:4:17",
+                      "src": "1138:4:18",
                       "valueSize": 1
                     }
                   ],
-                  "id": 4731,
+                  "id": 4753,
                   "nodeType": "InlineAssembly",
-                  "src": "1068:48:17"
+                  "src": "1104:48:18"
                 }
               ]
             },
             "documentation": {
-              "id": 4721,
+              "id": 4743,
               "nodeType": "StructuredDocumentation",
-              "src": "847:87:17",
+              "src": "883:87:18",
               "text": " @notice fetch the LotteryStorage struct saved at a precise memory slot"
             },
-            "id": 4733,
+            "id": 4755,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "lotteryStorage",
-            "nameLocation": "949:14:17",
+            "nameLocation": "985:14:18",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 4722,
+              "id": 4744,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "963:2:17"
+              "src": "999:2:18"
             },
             "returnParameters": {
-              "id": 4726,
+              "id": 4748,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 4725,
+                  "id": 4747,
                   "mutability": "mutable",
                   "name": "ls",
-                  "nameLocation": "1012:2:17",
+                  "nameLocation": "1048:2:18",
                   "nodeType": "VariableDeclaration",
-                  "scope": 4733,
-                  "src": "989:25:17",
+                  "scope": 4755,
+                  "src": "1025:25:18",
                   "stateVariable": false,
                   "storageLocation": "storage",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_struct$_LotteryStorage_$4720_storage_ptr",
+                    "typeIdentifier": "t_struct$_LotteryStorage_$4742_storage_ptr",
                     "typeString": "struct LibLottery.LotteryStorage"
                   },
                   "typeName": {
-                    "id": 4724,
+                    "id": 4746,
                     "nodeType": "UserDefinedTypeName",
                     "pathNode": {
-                      "id": 4723,
+                      "id": 4745,
                       "name": "LotteryStorage",
                       "nodeType": "IdentifierPath",
-                      "referencedDeclaration": 4720,
-                      "src": "989:14:17"
+                      "referencedDeclaration": 4742,
+                      "src": "1025:14:18"
                     },
-                    "referencedDeclaration": 4720,
-                    "src": "989:14:17",
+                    "referencedDeclaration": 4742,
+                    "src": "1025:14:18",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_LotteryStorage_$4720_storage_ptr",
+                      "typeIdentifier": "t_struct$_LotteryStorage_$4742_storage_ptr",
                       "typeString": "struct LibLottery.LotteryStorage"
                     }
                   },
                   "visibility": "internal"
                 }
               ],
-              "src": "988:27:17"
+              "src": "1024:27:18"
             },
-            "scope": 4734,
-            "src": "939:183:17",
+            "scope": 4756,
+            "src": "975:183:18",
             "stateMutability": "pure",
             "virtual": false,
             "visibility": "internal"
           }
         ],
-        "scope": 4735,
-        "src": "152:972:17",
+        "scope": 4757,
+        "src": "152:1008:18",
         "usedErrors": []
       }
     ],
-    "src": "31:1095:17"
+    "src": "31:1131:18"
   },
   "legacyAST": {
     "absolutePath": "project:/contracts/libraries/LibLottery.sol",
     "exportedSymbols": {
       "LibLottery": [
-        4734
+        4756
       ],
       "Winners": [
-        4676
+        4698
       ]
     },
-    "id": 4735,
+    "id": 4757,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 4669,
+        "id": 4691,
         "literals": [
           "solidity",
           "0.8",
           ".11"
         ],
         "nodeType": "PragmaDirective",
-        "src": "31:23:17"
+        "src": "31:23:18"
       },
       {
         "canonicalName": "Winners",
-        "id": 4676,
+        "id": 4698,
         "members": [
           {
             "constant": false,
-            "id": 4671,
+            "id": 4693,
             "mutability": "mutable",
             "name": "timestamp",
-            "nameLocation": "83:9:17",
+            "nameLocation": "83:9:18",
             "nodeType": "VariableDeclaration",
-            "scope": 4676,
-            "src": "78:14:17",
+            "scope": 4698,
+            "src": "78:14:18",
             "stateVariable": false,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -952,10 +952,10 @@
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 4670,
+              "id": 4692,
               "name": "uint",
               "nodeType": "ElementaryTypeName",
-              "src": "78:4:17",
+              "src": "78:4:18",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -965,13 +965,13 @@
           },
           {
             "constant": false,
-            "id": 4673,
+            "id": 4695,
             "mutability": "mutable",
             "name": "dixelMintWinner",
-            "nameLocation": "106:15:17",
+            "nameLocation": "106:15:18",
             "nodeType": "VariableDeclaration",
-            "scope": 4676,
-            "src": "98:23:17",
+            "scope": 4698,
+            "src": "98:23:18",
             "stateVariable": false,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -979,10 +979,10 @@
               "typeString": "address"
             },
             "typeName": {
-              "id": 4672,
+              "id": 4694,
               "name": "address",
               "nodeType": "ElementaryTypeName",
-              "src": "98:7:17",
+              "src": "98:7:18",
               "stateMutability": "nonpayable",
               "typeDescriptions": {
                 "typeIdentifier": "t_address",
@@ -993,13 +993,13 @@
           },
           {
             "constant": false,
-            "id": 4675,
+            "id": 4697,
             "mutability": "mutable",
             "name": "starmWinner",
-            "nameLocation": "135:11:17",
+            "nameLocation": "135:11:18",
             "nodeType": "VariableDeclaration",
-            "scope": 4676,
-            "src": "127:19:17",
+            "scope": 4698,
+            "src": "127:19:18",
             "stateVariable": false,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -1007,10 +1007,10 @@
               "typeString": "address"
             },
             "typeName": {
-              "id": 4674,
+              "id": 4696,
               "name": "address",
               "nodeType": "ElementaryTypeName",
-              "src": "127:7:17",
+              "src": "127:7:18",
               "stateMutability": "nonpayable",
               "typeDescriptions": {
                 "typeIdentifier": "t_address",
@@ -1021,10 +1021,10 @@
           }
         ],
         "name": "Winners",
-        "nameLocation": "64:7:17",
+        "nameLocation": "64:7:18",
         "nodeType": "StructDefinition",
-        "scope": 4735,
-        "src": "57:92:17",
+        "scope": 4757,
+        "src": "57:92:18",
         "visibility": "public"
       },
       {
@@ -1034,23 +1034,23 @@
         "contractDependencies": [],
         "contractKind": "library",
         "fullyImplemented": true,
-        "id": 4734,
+        "id": 4756,
         "linearizedBaseContracts": [
-          4734
+          4756
         ],
         "name": "LibLottery",
-        "nameLocation": "160:10:17",
+        "nameLocation": "160:10:18",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "constant": true,
-            "id": 4681,
+            "id": 4703,
             "mutability": "constant",
             "name": "ticketsStorageSlot",
-            "nameLocation": "194:18:17",
+            "nameLocation": "194:18:18",
             "nodeType": "VariableDeclaration",
-            "scope": 4734,
-            "src": "177:65:17",
+            "scope": 4756,
+            "src": "177:65:18",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -1058,10 +1058,10 @@
               "typeString": "bytes32"
             },
             "typeName": {
-              "id": 4677,
+              "id": 4699,
               "name": "bytes32",
               "nodeType": "ElementaryTypeName",
-              "src": "177:7:17",
+              "src": "177:7:18",
               "typeDescriptions": {
                 "typeIdentifier": "t_bytes32",
                 "typeString": "bytes32"
@@ -1071,14 +1071,14 @@
               "arguments": [
                 {
                   "hexValue": "7469636b65747353746f72616765",
-                  "id": 4679,
+                  "id": 4701,
                   "isConstant": false,
                   "isLValue": false,
                   "isPure": true,
                   "kind": "string",
                   "lValueRequested": false,
                   "nodeType": "Literal",
-                  "src": "225:16:17",
+                  "src": "225:16:18",
                   "typeDescriptions": {
                     "typeIdentifier": "t_stringliteral_eff3f5ad71d8a725e3467871234a19ff8c04678fcecdd5d2562680ad431be917",
                     "typeString": "literal_string \"ticketsStorage\""
@@ -1093,18 +1093,18 @@
                     "typeString": "literal_string \"ticketsStorage\""
                   }
                 ],
-                "id": 4678,
+                "id": 4700,
                 "name": "keccak256",
                 "nodeType": "Identifier",
                 "overloadedDeclarations": [],
                 "referencedDeclaration": 4294967288,
-                "src": "215:9:17",
+                "src": "215:9:18",
                 "typeDescriptions": {
                   "typeIdentifier": "t_function_keccak256_pure$_t_bytes_memory_ptr_$returns$_t_bytes32_$",
                   "typeString": "function (bytes memory) pure returns (bytes32)"
                 }
               },
-              "id": 4680,
+              "id": 4702,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
@@ -1112,7 +1112,7 @@
               "lValueRequested": false,
               "names": [],
               "nodeType": "FunctionCall",
-              "src": "215:27:17",
+              "src": "215:27:18",
               "tryCall": false,
               "typeDescriptions": {
                 "typeIdentifier": "t_bytes32",
@@ -1123,13 +1123,13 @@
           },
           {
             "constant": true,
-            "id": 4686,
+            "id": 4708,
             "mutability": "constant",
             "name": "lotteryStorageSlot",
-            "nameLocation": "265:18:17",
+            "nameLocation": "265:18:18",
             "nodeType": "VariableDeclaration",
-            "scope": 4734,
-            "src": "248:65:17",
+            "scope": 4756,
+            "src": "248:65:18",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -1137,10 +1137,10 @@
               "typeString": "bytes32"
             },
             "typeName": {
-              "id": 4682,
+              "id": 4704,
               "name": "bytes32",
               "nodeType": "ElementaryTypeName",
-              "src": "248:7:17",
+              "src": "248:7:18",
               "typeDescriptions": {
                 "typeIdentifier": "t_bytes32",
                 "typeString": "bytes32"
@@ -1150,14 +1150,14 @@
               "arguments": [
                 {
                   "hexValue": "6c6f747465727953746f72616765",
-                  "id": 4684,
+                  "id": 4706,
                   "isConstant": false,
                   "isLValue": false,
                   "isPure": true,
                   "kind": "string",
                   "lValueRequested": false,
                   "nodeType": "Literal",
-                  "src": "296:16:17",
+                  "src": "296:16:18",
                   "typeDescriptions": {
                     "typeIdentifier": "t_stringliteral_6bc844e8f78d8de9f3b120d94fd2efae4c9d3b45b2ddde509e79ee4515f298cc",
                     "typeString": "literal_string \"lotteryStorage\""
@@ -1172,18 +1172,18 @@
                     "typeString": "literal_string \"lotteryStorage\""
                   }
                 ],
-                "id": 4683,
+                "id": 4705,
                 "name": "keccak256",
                 "nodeType": "Identifier",
                 "overloadedDeclarations": [],
                 "referencedDeclaration": 4294967288,
-                "src": "286:9:17",
+                "src": "286:9:18",
                 "typeDescriptions": {
                   "typeIdentifier": "t_function_keccak256_pure$_t_bytes_memory_ptr_$returns$_t_bytes32_$",
                   "typeString": "function (bytes memory) pure returns (bytes32)"
                 }
               },
-              "id": 4685,
+              "id": 4707,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
@@ -1191,7 +1191,7 @@
               "lValueRequested": false,
               "names": [],
               "nodeType": "FunctionCall",
-              "src": "286:27:17",
+              "src": "286:27:18",
               "tryCall": false,
               "typeDescriptions": {
                 "typeIdentifier": "t_bytes32",
@@ -1202,13 +1202,13 @@
           },
           {
             "constant": true,
-            "id": 4689,
+            "id": 4711,
             "mutability": "constant",
             "name": "oneDayCoolDown",
-            "nameLocation": "334:14:17",
+            "nameLocation": "334:14:18",
             "nodeType": "VariableDeclaration",
-            "scope": 4734,
-            "src": "320:36:17",
+            "scope": 4756,
+            "src": "320:36:18",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -1216,10 +1216,10 @@
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 4687,
+              "id": 4709,
               "name": "uint",
               "nodeType": "ElementaryTypeName",
-              "src": "320:4:17",
+              "src": "320:4:18",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -1227,14 +1227,14 @@
             },
             "value": {
               "hexValue": "3836343030",
-              "id": 4688,
+              "id": 4710,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "351:5:17",
+              "src": "351:5:18",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_86400_by_1",
                 "typeString": "int_const 86400"
@@ -1245,13 +1245,13 @@
           },
           {
             "constant": true,
-            "id": 4692,
+            "id": 4714,
             "mutability": "constant",
             "name": "oneWeekCoolDown",
-            "nameLocation": "376:15:17",
+            "nameLocation": "376:15:18",
             "nodeType": "VariableDeclaration",
-            "scope": 4734,
-            "src": "362:38:17",
+            "scope": 4756,
+            "src": "362:38:18",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -1259,10 +1259,10 @@
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 4690,
+              "id": 4712,
               "name": "uint",
               "nodeType": "ElementaryTypeName",
-              "src": "362:4:17",
+              "src": "362:4:18",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -1270,14 +1270,14 @@
             },
             "value": {
               "hexValue": "363034383030",
-              "id": 4691,
+              "id": 4713,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "394:6:17",
+              "src": "394:6:18",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_604800_by_1",
                 "typeString": "int_const 604800"
@@ -1288,13 +1288,13 @@
           },
           {
             "constant": true,
-            "id": 4695,
+            "id": 4717,
             "mutability": "constant",
             "name": "oneMonthCoolDown",
-            "nameLocation": "420:16:17",
+            "nameLocation": "420:16:18",
             "nodeType": "VariableDeclaration",
-            "scope": 4734,
-            "src": "406:40:17",
+            "scope": 4756,
+            "src": "406:40:18",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -1302,10 +1302,10 @@
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 4693,
+              "id": 4715,
               "name": "uint",
               "nodeType": "ElementaryTypeName",
-              "src": "406:4:17",
+              "src": "406:4:18",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -1313,14 +1313,14 @@
             },
             "value": {
               "hexValue": "32363239373433",
-              "id": 4694,
+              "id": 4716,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "439:7:17",
+              "src": "439:7:18",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_2629743_by_1",
                 "typeString": "int_const 2629743"
@@ -1331,13 +1331,13 @@
           },
           {
             "constant": true,
-            "id": 4698,
+            "id": 4720,
             "mutability": "constant",
             "name": "ticketPrice",
-            "nameLocation": "466:11:17",
+            "nameLocation": "466:11:18",
             "nodeType": "VariableDeclaration",
-            "scope": 4734,
-            "src": "452:31:17",
+            "scope": 4756,
+            "src": "452:31:18",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -1345,10 +1345,10 @@
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 4696,
+              "id": 4718,
               "name": "uint",
               "nodeType": "ElementaryTypeName",
-              "src": "452:4:17",
+              "src": "452:4:18",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -1356,14 +1356,14 @@
             },
             "value": {
               "hexValue": "353030",
-              "id": 4697,
+              "id": 4719,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "480:3:17",
+              "src": "480:3:18",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_500_by_1",
                 "typeString": "int_const 500"
@@ -1374,17 +1374,17 @@
           },
           {
             "canonicalName": "LibLottery.LotteryStorage",
-            "id": 4720,
+            "id": 4742,
             "members": [
               {
                 "constant": false,
-                "id": 4700,
+                "id": 4722,
                 "mutability": "mutable",
                 "name": "lastLaunchTime",
-                "nameLocation": "631:14:17",
+                "nameLocation": "667:14:18",
                 "nodeType": "VariableDeclaration",
-                "scope": 4720,
-                "src": "626:19:17",
+                "scope": 4742,
+                "src": "662:19:18",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -1392,10 +1392,10 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 4699,
+                  "id": 4721,
                   "name": "uint",
                   "nodeType": "ElementaryTypeName",
-                  "src": "626:4:17",
+                  "src": "662:4:18",
                   "typeDescriptions": {
                     "typeIdentifier": "t_uint256",
                     "typeString": "uint256"
@@ -1405,13 +1405,13 @@
               },
               {
                 "constant": false,
-                "id": 4703,
+                "id": 4725,
                 "mutability": "mutable",
                 "name": "players",
-                "nameLocation": "661:7:17",
+                "nameLocation": "697:7:18",
                 "nodeType": "VariableDeclaration",
-                "scope": 4720,
-                "src": "651:17:17",
+                "scope": 4742,
+                "src": "687:17:18",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -1420,19 +1420,19 @@
                 },
                 "typeName": {
                   "baseType": {
-                    "id": 4701,
+                    "id": 4723,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "651:7:17",
+                    "src": "687:7:18",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
                     }
                   },
-                  "id": 4702,
+                  "id": 4724,
                   "nodeType": "ArrayTypeName",
-                  "src": "651:9:17",
+                  "src": "687:9:18",
                   "typeDescriptions": {
                     "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
                     "typeString": "address[]"
@@ -1442,42 +1442,42 @@
               },
               {
                 "constant": false,
-                "id": 4707,
+                "id": 4729,
                 "mutability": "mutable",
                 "name": "allWinners",
-                "nameLocation": "684:10:17",
+                "nameLocation": "720:10:18",
                 "nodeType": "VariableDeclaration",
-                "scope": 4720,
-                "src": "674:20:17",
+                "scope": 4742,
+                "src": "710:20:18",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
-                  "typeIdentifier": "t_array$_t_struct$_Winners_$4676_storage_$dyn_storage_ptr",
+                  "typeIdentifier": "t_array$_t_struct$_Winners_$4698_storage_$dyn_storage_ptr",
                   "typeString": "struct Winners[]"
                 },
                 "typeName": {
                   "baseType": {
-                    "id": 4705,
+                    "id": 4727,
                     "nodeType": "UserDefinedTypeName",
                     "pathNode": {
-                      "id": 4704,
+                      "id": 4726,
                       "name": "Winners",
                       "nodeType": "IdentifierPath",
-                      "referencedDeclaration": 4676,
-                      "src": "674:7:17"
+                      "referencedDeclaration": 4698,
+                      "src": "710:7:18"
                     },
-                    "referencedDeclaration": 4676,
-                    "src": "674:7:17",
+                    "referencedDeclaration": 4698,
+                    "src": "710:7:18",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_Winners_$4676_storage_ptr",
+                      "typeIdentifier": "t_struct$_Winners_$4698_storage_ptr",
                       "typeString": "struct Winners"
                     }
                   },
-                  "id": 4706,
+                  "id": 4728,
                   "nodeType": "ArrayTypeName",
-                  "src": "674:9:17",
+                  "src": "710:9:18",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_array$_t_struct$_Winners_$4676_storage_$dyn_storage_ptr",
+                    "typeIdentifier": "t_array$_t_struct$_Winners_$4698_storage_$dyn_storage_ptr",
                     "typeString": "struct Winners[]"
                   }
                 },
@@ -1485,13 +1485,13 @@
               },
               {
                 "constant": false,
-                "id": 4711,
+                "id": 4733,
                 "mutability": "mutable",
                 "name": "lotteryTickets",
-                "nameLocation": "725:14:17",
+                "nameLocation": "761:14:18",
                 "nodeType": "VariableDeclaration",
-                "scope": 4720,
-                "src": "700:39:17",
+                "scope": 4742,
+                "src": "736:39:18",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -1499,28 +1499,28 @@
                   "typeString": "mapping(address => uint256)"
                 },
                 "typeName": {
-                  "id": 4710,
+                  "id": 4732,
                   "keyType": {
-                    "id": 4708,
+                    "id": 4730,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "708:7:17",
+                    "src": "744:7:18",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
                     }
                   },
                   "nodeType": "Mapping",
-                  "src": "700:24:17",
+                  "src": "736:24:18",
                   "typeDescriptions": {
                     "typeIdentifier": "t_mapping$_t_address_$_t_uint256_$",
                     "typeString": "mapping(address => uint256)"
                   },
                   "valueType": {
-                    "id": 4709,
+                    "id": 4731,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "719:4:17",
+                    "src": "755:4:18",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1531,13 +1531,13 @@
               },
               {
                 "constant": false,
-                "id": 4715,
+                "id": 4737,
                 "mutability": "mutable",
                 "name": "registeredTickets",
-                "nameLocation": "770:17:17",
+                "nameLocation": "806:17:18",
                 "nodeType": "VariableDeclaration",
-                "scope": 4720,
-                "src": "745:42:17",
+                "scope": 4742,
+                "src": "781:42:18",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -1545,28 +1545,28 @@
                   "typeString": "mapping(address => uint256)"
                 },
                 "typeName": {
-                  "id": 4714,
+                  "id": 4736,
                   "keyType": {
-                    "id": 4712,
+                    "id": 4734,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "753:7:17",
+                    "src": "789:7:18",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
                     }
                   },
                   "nodeType": "Mapping",
-                  "src": "745:24:17",
+                  "src": "781:24:18",
                   "typeDescriptions": {
                     "typeIdentifier": "t_mapping$_t_address_$_t_uint256_$",
                     "typeString": "mapping(address => uint256)"
                   },
                   "valueType": {
-                    "id": 4713,
+                    "id": 4735,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "764:4:17",
+                    "src": "800:4:18",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1577,13 +1577,13 @@
               },
               {
                 "constant": false,
-                "id": 4719,
+                "id": 4741,
                 "mutability": "mutable",
                 "name": "freeMintTickets",
-                "nameLocation": "818:15:17",
+                "nameLocation": "854:15:18",
                 "nodeType": "VariableDeclaration",
-                "scope": 4720,
-                "src": "793:40:17",
+                "scope": 4742,
+                "src": "829:40:18",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -1591,28 +1591,28 @@
                   "typeString": "mapping(address => uint256)"
                 },
                 "typeName": {
-                  "id": 4718,
+                  "id": 4740,
                   "keyType": {
-                    "id": 4716,
+                    "id": 4738,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "801:7:17",
+                    "src": "837:7:18",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
                     }
                   },
                   "nodeType": "Mapping",
-                  "src": "793:24:17",
+                  "src": "829:24:18",
                   "typeDescriptions": {
                     "typeIdentifier": "t_mapping$_t_address_$_t_uint256_$",
                     "typeString": "mapping(address => uint256)"
                   },
                   "valueType": {
-                    "id": 4717,
+                    "id": 4739,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "812:4:17",
+                    "src": "848:4:18",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1623,32 +1623,32 @@
               }
             ],
             "name": "LotteryStorage",
-            "nameLocation": "604:14:17",
+            "nameLocation": "640:14:18",
             "nodeType": "StructDefinition",
-            "scope": 4734,
-            "src": "597:243:17",
+            "scope": 4756,
+            "src": "633:243:18",
             "visibility": "public"
           },
           {
             "body": {
-              "id": 4732,
+              "id": 4754,
               "nodeType": "Block",
-              "src": "1015:107:17",
+              "src": "1051:107:18",
               "statements": [
                 {
                   "assignments": [
-                    4728
+                    4750
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 4728,
+                      "id": 4750,
                       "mutability": "mutable",
                       "name": "slot",
-                      "nameLocation": "1033:4:17",
+                      "nameLocation": "1069:4:18",
                       "nodeType": "VariableDeclaration",
-                      "scope": 4732,
-                      "src": "1025:12:17",
+                      "scope": 4754,
+                      "src": "1061:12:18",
                       "stateVariable": false,
                       "storageLocation": "default",
                       "typeDescriptions": {
@@ -1656,10 +1656,10 @@
                         "typeString": "bytes32"
                       },
                       "typeName": {
-                        "id": 4727,
+                        "id": 4749,
                         "name": "bytes32",
                         "nodeType": "ElementaryTypeName",
-                        "src": "1025:7:17",
+                        "src": "1061:7:18",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bytes32",
                           "typeString": "bytes32"
@@ -1668,40 +1668,40 @@
                       "visibility": "internal"
                     }
                   ],
-                  "id": 4730,
+                  "id": 4752,
                   "initialValue": {
-                    "id": 4729,
+                    "id": 4751,
                     "name": "lotteryStorageSlot",
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
-                    "referencedDeclaration": 4686,
-                    "src": "1040:18:17",
+                    "referencedDeclaration": 4708,
+                    "src": "1076:18:18",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
                     }
                   },
                   "nodeType": "VariableDeclarationStatement",
-                  "src": "1025:33:17"
+                  "src": "1061:33:18"
                 },
                 {
                   "AST": {
                     "nodeType": "YulBlock",
-                    "src": "1077:39:17",
+                    "src": "1113:39:18",
                     "statements": [
                       {
                         "nodeType": "YulAssignment",
-                        "src": "1091:15:17",
+                        "src": "1127:15:18",
                         "value": {
                           "name": "slot",
                           "nodeType": "YulIdentifier",
-                          "src": "1102:4:17"
+                          "src": "1138:4:18"
                         },
                         "variableNames": [
                           {
                             "name": "ls.slot",
                             "nodeType": "YulIdentifier",
-                            "src": "1091:7:17"
+                            "src": "1127:7:18"
                           }
                         ]
                       }
@@ -1710,100 +1710,100 @@
                   "evmVersion": "london",
                   "externalReferences": [
                     {
-                      "declaration": 4725,
+                      "declaration": 4747,
                       "isOffset": false,
                       "isSlot": true,
-                      "src": "1091:7:17",
+                      "src": "1127:7:18",
                       "suffix": "slot",
                       "valueSize": 1
                     },
                     {
-                      "declaration": 4728,
+                      "declaration": 4750,
                       "isOffset": false,
                       "isSlot": false,
-                      "src": "1102:4:17",
+                      "src": "1138:4:18",
                       "valueSize": 1
                     }
                   ],
-                  "id": 4731,
+                  "id": 4753,
                   "nodeType": "InlineAssembly",
-                  "src": "1068:48:17"
+                  "src": "1104:48:18"
                 }
               ]
             },
             "documentation": {
-              "id": 4721,
+              "id": 4743,
               "nodeType": "StructuredDocumentation",
-              "src": "847:87:17",
+              "src": "883:87:18",
               "text": " @notice fetch the LotteryStorage struct saved at a precise memory slot"
             },
-            "id": 4733,
+            "id": 4755,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "lotteryStorage",
-            "nameLocation": "949:14:17",
+            "nameLocation": "985:14:18",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 4722,
+              "id": 4744,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "963:2:17"
+              "src": "999:2:18"
             },
             "returnParameters": {
-              "id": 4726,
+              "id": 4748,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 4725,
+                  "id": 4747,
                   "mutability": "mutable",
                   "name": "ls",
-                  "nameLocation": "1012:2:17",
+                  "nameLocation": "1048:2:18",
                   "nodeType": "VariableDeclaration",
-                  "scope": 4733,
-                  "src": "989:25:17",
+                  "scope": 4755,
+                  "src": "1025:25:18",
                   "stateVariable": false,
                   "storageLocation": "storage",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_struct$_LotteryStorage_$4720_storage_ptr",
+                    "typeIdentifier": "t_struct$_LotteryStorage_$4742_storage_ptr",
                     "typeString": "struct LibLottery.LotteryStorage"
                   },
                   "typeName": {
-                    "id": 4724,
+                    "id": 4746,
                     "nodeType": "UserDefinedTypeName",
                     "pathNode": {
-                      "id": 4723,
+                      "id": 4745,
                       "name": "LotteryStorage",
                       "nodeType": "IdentifierPath",
-                      "referencedDeclaration": 4720,
-                      "src": "989:14:17"
+                      "referencedDeclaration": 4742,
+                      "src": "1025:14:18"
                     },
-                    "referencedDeclaration": 4720,
-                    "src": "989:14:17",
+                    "referencedDeclaration": 4742,
+                    "src": "1025:14:18",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_LotteryStorage_$4720_storage_ptr",
+                      "typeIdentifier": "t_struct$_LotteryStorage_$4742_storage_ptr",
                       "typeString": "struct LibLottery.LotteryStorage"
                     }
                   },
                   "visibility": "internal"
                 }
               ],
-              "src": "988:27:17"
+              "src": "1024:27:18"
             },
-            "scope": 4734,
-            "src": "939:183:17",
+            "scope": 4756,
+            "src": "975:183:18",
             "stateMutability": "pure",
             "virtual": false,
             "visibility": "internal"
           }
         ],
-        "scope": 4735,
-        "src": "152:972:17",
+        "scope": 4757,
+        "src": "152:1008:18",
         "usedErrors": []
       }
     ],
-    "src": "31:1095:17"
+    "src": "31:1131:18"
   },
   "compiler": {
     "name": "solc",
@@ -1811,7 +1811,7 @@
   },
   "networks": {},
   "schemaVersion": "3.4.4",
-  "updatedAt": "2022-01-24T15:16:40.790Z",
+  "updatedAt": "2022-01-28T19:35:16.052Z",
   "devdoc": {
     "kind": "dev",
     "methods": {},

@@ -8,10 +8,10 @@ export default class Home extends React.Component {
 
     componentDidMount = async () => {
         const {
-            dixelFacet,
+            getterFacet,
             accounts
         } = this.props;
-        let result = await dixelFacet.methods.returnSupplies().call();
+        let result = await getterFacet.methods.returnSupplies().call();
         let supplies = [
             (800 - result[1]),
             (150 - (result[2] - result[1])),
@@ -20,8 +20,6 @@ export default class Home extends React.Component {
             result[7],
         ];
         let account = accounts[0]
-        console.log(result)
-        console.log(supplies)
         this.setState({supplies, account})
     }
 

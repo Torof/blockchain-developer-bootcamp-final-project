@@ -24,11 +24,11 @@ export default class MintPage extends React.Component {
 
         fetchFreeTickets = async () => {
             const {
-                lotteryFacet,
+                getterFacet,
                 accounts
             } = this.props;
 
-            let freeMintTickets = await lotteryFacet.methods.returnFreeMintTickets().call({
+            let freeMintTickets = await getterFacet.methods.returnFreeMintTickets().call({
                 from: accounts[0]
             })
 
@@ -39,13 +39,14 @@ export default class MintPage extends React.Component {
 
         mintDixel = async (choice) => {
             const {
+                getterFacet,
                 dixelFacet,
                 accounts
             } = this.props;
             this.setState({
                 showMint: "loading"
             })
-            let dixels = await dixelFacet.methods.getDixels().call();
+            let dixels = await getterFacet.methods.getDixels().call();
             let addressesArray = []
             let commonAvailable = jsonData.common;
             let uncommonAvailable = jsonData.uncommon;

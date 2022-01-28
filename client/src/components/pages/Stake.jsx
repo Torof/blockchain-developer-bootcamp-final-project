@@ -16,9 +16,9 @@ export default class StakingPage extends React.Component {
         })
     }
     updateAll = async () => {
-        const { lotteryFacet, dixelFacet, accounts } = this.props;
+        const { lotteryFacet, getterFacet, dixelFacet, accounts } = this.props;
         let starmBalance = await lotteryFacet.methods.balanceOfStarm(accounts[0]).call();
-        let dixels = await dixelFacet.methods.getDixels().call();
+        let dixels = await getterFacet.methods.getDixels().call();
         let length = dixels.length;
         let userDixels = [];
         let stakedDixels = []

@@ -3,6 +3,7 @@ import getWeb3 from "./getWeb3";
 import DiamondContract from "./contracts/Diamond.json";
 import DixelFacet from "./contracts/DixelFacet.json";
 import LotteryFacet from "./contracts/LotteryFacet.json";
+import GetterFacet from "./contracts/GettersFacet.json";
 
 import Home from "./components/pages/Home";
 import MintPage from "./components/pages/Mint";
@@ -37,8 +38,18 @@ class App extends Component {
         window.location.reload();
       })
 
+      await window.ethereum.request({
+        method: 'wallet_switchEthereumChain',
+        params: [{ chainId: '0x4' }],
+      }).catch((error) => {
+        console.log(error)
+        alert("You need to connect to Network Rinkeby")
+      })
+
       // Get the diamond contract instance.
       const networkId = await web3.eth.net.getId();
+      console.log("network id: ")
+      console.log(networkId)
       const deployedNetwork = DiamondContract.networks[networkId];
 
       //Dixel facet
@@ -54,8 +65,14 @@ class App extends Component {
         deployedNetwork && deployedNetwork.address,
       );
 
+      //Lottery facet
+      const getterFacetInstance = new web3.eth.Contract(
+        GetterFacet.abi,
+        deployedNetwork && deployedNetwork.address,
+      );
+
       // Set web3, accounts, and contract to the state
-      this.setState({ web3, accounts, dixelFacet: dixelFacetInstance, lotteryFacet: lotteryFacetInstance });
+      this.setState({ web3, accounts, dixelFacet: dixelFacetInstance, lotteryFacet: lotteryFacetInstance, getterFacet: getterFacetInstance });
     } catch (error) {
       // Catch any errors for any of the above operations.
       alert(
@@ -92,11 +109,11 @@ class App extends Component {
             </ul>
           </nav>
           <Switch>
-              <Route exact path="/" component={() => <Home accounts={this.state.accounts} dixelFacet={this.state.dixelFacet}/>}/>
-              <Route path="/mint" component={() => <MintPage accounts={this.state.accounts} dixelFacet={this.state.dixelFacet} lotteryFacet={this.state.lotteryFacet} web3={this.state.web3}/>}/>
-              <Route path="/stake" component ={() => <StakingPage accounts={this.state.accounts} dixelFacet={this.state.dixelFacet} lotteryFacet={this.state.lotteryFacet}/>}/>
-              <Route path="/lottery" component={() => <LotteryPage accounts={this.state.accounts} dixelFacet={this.state.dixelFacet} lotteryFacet={this.state.lotteryFacet}/>}/>
-              <Route path="/inventory" component={() => <InventoryAndLevel accounts={this.state.accounts} dixelFacet={this.state.dixelFacet} lotteryFacet={this.state.lotteryFacet}/>}/>
+              <Route exact path="/" component={() => <Home accounts={this.state.accounts} dixelFacet={this.state.dixelFacet} getterFacet={this.state.getterFacet}/>}/>
+              <Route path="/mint" component={() => <MintPage accounts={this.state.accounts} dixelFacet={this.state.dixelFacet} lotteryFacet={this.state.lotteryFacet} getterFacet={this.state.getterFacet}/>}/>
+              <Route path="/stake" component ={() => <StakingPage accounts={this.state.accounts} dixelFacet={this.state.dixelFacet} lotteryFacet={this.state.lotteryFacet} getterFacet={this.state.getterFacet}/>}/>
+              <Route path="/lottery" component={() => <LotteryPage accounts={this.state.accounts} dixelFacet={this.state.dixelFacet} lotteryFacet={this.state.lotteryFacet} getterFacet={this.state.getterFacet}/>}/>
+              <Route path="/inventory" component={() => <InventoryAndLevel accounts={this.state.accounts} dixelFacet={this.state.dixelFacet} lotteryFacet={this.state.lotteryFacet} getterFacet={this.state.getterFacet}/>}/>
             </Switch>
         </div>
       </div>

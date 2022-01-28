@@ -15,12 +15,13 @@ export default class InventoryAndLevel extends React.Component {
 
         fetchUserDixels = async () => {
             const {
+                getterFacet,
                 dixelFacet,
                 lotteryFacet,
                 accounts
             } = this.props;
 
-            let dixels = await dixelFacet.methods.getDixels().call();
+            let dixels = await getterFacet.methods.getDixels().call();
             let length = dixels.length - 1;
             let starmBalance = await lotteryFacet.methods.balanceOfStarm(accounts[0]).call()
             let userDixels = [];

@@ -18,20 +18,21 @@ export default class LotteryPage extends React.Component {
 
         updateAll = async () => {
             let {
+                getterFacet,
                 lotteryFacet,
                 accounts
             } = this.props
-            let dailyWinners = await lotteryFacet.methods.returnLotteryWinners().call()
-            let lotteryTickets = await lotteryFacet.methods.returnLotteryTickets().call({
+            let dailyWinners = await getterFacet.methods.returnLotteryWinners().call()
+            let lotteryTickets = await getterFacet.methods.returnLotteryTickets().call({
                 from: accounts[0]
             })
-            let dixelTickets = await lotteryFacet.methods.returnFreeMintTickets().call({
+            let dixelTickets = await getterFacet.methods.returnFreeMintTickets().call({
                 from: accounts[0]
             })
-            let registeredTickets = await lotteryFacet.methods.returnRegisteredTickets().call({
+            let registeredTickets = await getterFacet.methods.returnRegisteredTickets().call({
                 from: accounts[0]
             })
-            let starmToWithdraw = await lotteryFacet.methods.returnStarmWon().call({
+            let starmToWithdraw = await getterFacet.methods.returnStarmWon().call({
                 from: accounts[0]
             })
             let starmBalance = await lotteryFacet.methods.balanceOfStarm(accounts[0]).call({

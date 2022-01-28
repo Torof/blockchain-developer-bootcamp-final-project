@@ -6,7 +6,7 @@ import {LibDixel, Dixel} from "../libraries/LibDixel.sol";
 import {LibLottery, Winners} from "../libraries/LibLottery.sol";
 import {LibStarm} from "../libraries/LibStarm.sol";
 
-contract Getters{
+contract GetterFacet{
 
         /**
     * @return returns the array containing all the dixels

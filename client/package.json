@@ -4,7 +4,6 @@
   "private": true,
   "dependencies": {
     "@truffle/hdwallet-provider": "^2.0.1",
-    "dotenv": "^11.0.0",
     "file-saver": "^2.0.5",
     "ipfs-only-hash": "^4.0.0",
     "merge-images": "^2.0.0",
@@ -40,6 +39,7 @@
     ]
   },
   "devDependencies": {
+    "dotenv": "^14.3.2",
     "truffle-contract-size": "^2.0.1"
   }
 }

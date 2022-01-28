@@ -59,13 +59,17 @@ module.exports = {
   },
     Rinkeby:{
       network_id:4,
-      // provider: () =>  new HDWalletProvider(process.env.MNEMONIC, "https://eth-rinkeby.alchemyapi.io/v2/XcES_MFPazGqNqZCn_r5-L5bOVN5xAfZ")
+      skipDryRun: true,
+      timeoutBlocks: 50000,
+      networkCheckTimeout: 1000000,
       provider: function() {
-        return new HDWalletProvider(process.env.MNEMONIC, "https://eth-rinkeby.alchemyapi.io/v2/XcES_MFPazGqNqZCn_r5-L5bOVN5xAfZ")
+        return new HDWalletProvider(process.env.MNEMONIC, process.env.ALCHEMY_RINKEBY_URL)
       }
     },
     matic: {
-      provider: () => new HDWalletProvider(process.env.MNEMONIC, `https://rpc-mumbai.maticvigil.com`),
+      provider: function() {
+        return new HDWalletProvider(process.env.MNEMONIC, process.env.ALCHEMY_MATIC_URL)
+      },
       network_id: 80001,
       confirmations: 2,
       timeoutBlocks: 200,
