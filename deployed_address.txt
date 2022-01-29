@@ -1,3 +1,3 @@
 network: Rinkeby
 
-contract address: 0xe7d4ece2ffde64ed2e01e1cbf3500525976a52ab
+contract address: 0xA6C6519dfA68a01a47A546CfE44237698115e244
