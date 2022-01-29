@@ -12,11 +12,6 @@ contract ERC721 is IERC721 {
     using Address for address;
     using Strings for uint256;
 
-    function _exists(uint256 tokenId) internal view returns (bool){
-        LibDixel.DixelStorage storage ds = LibDixel.dixelStorage();
-        if(ds.owners[tokenId] != address(0)) return true;
-        else return false;
-    }
 
     function name() public view returns(string memory) {
         LibDixel.DixelStorage storage ds = LibDixel.dixelStorage();
@@ -31,6 +26,12 @@ contract ERC721 is IERC721 {
     function totalSupply() public view returns(uint) {
         LibDixel.SupplyStorage storage ss = LibDixel.supplyStorage();
         return ss.totalSupply;
+    }
+
+    function _exists(uint256 tokenId) internal view returns (bool){
+        LibDixel.DixelStorage storage ds = LibDixel.dixelStorage();
+        if(ds.owners[tokenId] != address(0)) return true;
+        else return false;
     }
 
         /**
@@ -139,13 +140,9 @@ contract ERC721 is IERC721 {
         address _to,
         uint256 _tokenId
     ) public override{
-        LibDixel.DixelStorage storage ds = LibDixel.dixelStorage();
-        require(_from != address(0) && _to !=address(0));
-        require(ds.owners[_tokenId] == msg.sender || ds.tokenApprovals[_tokenId] == msg.sender || ds.operatorApprovals[ds.tokenApprovals[_tokenId]][_from] == true);
-        ds.balances[_from] -= 1;
-        ds.balances[_to] +=1;
-        ds.owners[_tokenId] = _to;
-        emit Transfer(_from, _to, _tokenId);
+        require(_isApprovedOrOwner(msg.sender, _tokenId), "ERC721: transfer caller is not owner nor approved");
+
+        _transfer(_from, _to, _tokenId);
     }
 
         /**
