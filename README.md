@@ -1,8 +1,11 @@
 github repository: https://github.com/torof/blockchain-developer-bootcamp-final-project
 
-Deployed Dapp :  https://dixeland.eth.link
+Deployed Dapp :  https://dixeland.eth.link/#/
 
-DIXEL NFT 
+address for NFT certification: 0x3E6a0889614e94892AA517D85Ce8A9AEdA1d1946
+
+
+__DIXEL NFT__ 
 
 This a Dapp that allows you to mint a randomly generated Dixel from 78 unique traits.
 You can stake your NFTs to earn Starm as a reward. The rarity and the level of your Dixel will greatly influence the velocity of starm production.
@@ -12,17 +15,17 @@ Starm can be spent:
 
 //Feature coming up: buy other Dixels for starm on our native Dixel marketplace
  
- THE LOTTERY :
+ _THE LOTTERY_ :
 
  The lottery can be entered by buying lottery tickets,with Starm, and then registering chosen spots in the lottery. The more tickets you buy, the more your odds of wining go up !!
  => Lottery rewards:
    - Earn a ticket to mint a Dixel for free !! (Transactions costs are at the user's expanse)
    - Earn Starm to level up your Dixel or to enter Lottery again and try your luck!
 
-THE MARKETPLACE (upcoming):
+ _THE MARKETPLACE_ (upcoming):
 - Buy and sell Dixels for Starm or ETH ! 
 
-THE DIXELS:
+_THE DIXELS_:
 
    - Uniquely generated from over 78 possible traits.
    - There are 4 levels of rarity from common, uncommon, rare to legendary. Its rarity greatly influences Starm generation.
@@ -33,21 +36,33 @@ THE DIXELS:
 
 ------------------------------------------------------------
 
-DIRECTORY STRUCTURE:
+_DIRECTORY STRUCTURE_:
 
 This projects is built using React.js and Truffle.
 - The front end of the project can be accessed in the folder ./client/src
 - The folder ./client/src/components/pages contains all the pages that constitutes the Dapp.
+- The contracts' ABIs and contracts' deployed addresses can be found in /client/contracts
 - The solidity contracts can be found in ./contracts
 - All network configuration, compiler's version ... can be found in the file truffle-config.js
 - Tests can be found in ./test
 
-TEST INSTRUCTIONS:
+_TEST INSTRUCTIONS_:
 
-./test/.diamondTest.js :
+//  ./test/.diamondTest.js : testing the diamond 
+//   framework before use. Was removed for production. 
+//   All tests passing.
 
-./test/dixelDiamond.js :
+./test/dixelDiamond.js : $ truffle test
+   => Make sure that facets are deployed and added to the diamondCut and that the facet instances are used from the diamond address.
 
-INSTALL: 
+_INSTALL_: 
 
+$ cd client/
+$ npm i
+
+_BUILD_: 
+
+$ npm run build
+
+local testnet is configured on port :8545
 
