@@ -69,8 +69,8 @@ contract LotteryFacet {
         LibStarm.StarmStorage storage starm = LibStarm.starmStorage();
         require(starm._balances[msg.sender] >= LibLottery.ticketPrice * _amount, "not enough starm balance");
         LibLottery.LotteryStorage storage ls = LibLottery.lotteryStorage();
-        LibStarm._burnStarm(msg.sender,(LibLottery.ticketPrice * _amount));
         ls.lotteryTickets[msg.sender] += _amount;
+        LibStarm._burnStarm(msg.sender,(LibLottery.ticketPrice * _amount));
         emit TicketsBought(msg.sender, _amount);
     }
 
@@ -122,11 +122,11 @@ contract LotteryFacet {
         starm.starmToWithdraw[winnerS] += 200;
 
         Winners memory dayWinners = Winners(block.timestamp, winnerD, winnerS);
-        ls.allWinners.push(dayWinners);
 
         for (uint i = 0; i < players.length; i++) {
             ls.registeredTickets[players[i]] = 0;
         }
+        ls.allWinners.push(dayWinners);
         delete ls.players;
         ls.lastLaunchTime = block.timestamp;
     }

@@ -12,7 +12,8 @@
 - Access Control Design Patterns (Restricting access to certain functions using things like Ownable, Role-based Control) Access Control Design Patterns
 
  => Some functions are restricted to only the owner and the creators of the Dapp or to the owners of the NFT to manipulate.
+    =>isOwner(_tokenId), isCreator()
 
 - Oracles (retrieving third-party data) Off-Chain Oracles and Chapter 5: Second-Order Effects — Oracles Revisited
 
- => Oracles are not yet implemented but will be for Random Number Generation. As it is mandatory for mainnet release.
+ => Oracles are not yet implemented but will be for Random Number Generation and external offChain API data fetching. As it is mandatory for mainnet release.

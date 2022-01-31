@@ -15,7 +15,7 @@ random = (modulus) => {
 contract('Diamond', async (accounts) => {
     let diamond
 
-    // const zeroAddress = '0x0000000000000000000000000000000000000000'
+    const zeroAddress = '0x0000000000000000000000000000000000000000'
 
     before(async () => {
         diamond = await Diamond.deployed();
@@ -113,6 +113,7 @@ contract('Diamond', async (accounts) => {
 
         it("mints 4 NFT, n°1,3,4 to account0 and n°2 to account1", async () => {
             dixelsBefore = await getterFacetDiamond.methods.getDixels().call();
+            assert.isEmpty(dixelsBefore)
             //Mints one NFT ,paying price + gas fees, to address of accounts[0] and registers it to dixel1 variable
             dixel1 = await mintNFT(0, accounts[0])
             //Mints one NFT ,paying price + gas fees, to address of accounts[1] and registers it to dixel2 variable
@@ -137,8 +138,8 @@ contract('Diamond', async (accounts) => {
             NFT2URI = await dixelFacetDiamond.methods.tokenURI(1).call();
 
             //checks that NFT#1 and NFT#2 have the right URI
-            assert.equal(`https://ipfs.io/ipfs/${dixel1.URI}`, NFT1URI)
-            assert.equal(`https://ipfs.io/ipfs/${dixel2.URI}`, NFT2URI)
+            assert.equal("https://ipfs.io/ipfs/"+ dixel1.URI, NFT1URI)
+            assert.equal("https://ipfs.io/ipfs/" + dixel2.URI, NFT2URI)
 
             //Checks that the first minted dixel is the NFT #1
             assert.equal(dixel1.URI, dixels[0].URI)
@@ -185,12 +186,78 @@ contract('Diamond', async (accounts) => {
         })
     })
 
+    describe("Level up", () => {
+        it("levels up NFT1 from level1  to level2",async () => {
+            assert.equal("https://ipfs.io/ipfs/" + (await getterFacetDiamond.methods.getDixels().call())[0].URI, await dixelFacetDiamond.methods.tokenURI(0).call() )
+            assert.equal("https://ipfs.io/ipfs/" + (await getterFacetDiamond.methods.getDixels().call())[0].levelURI[0], await dixelFacetDiamond.methods.tokenURI(0).call(), "actual URI should be equal to the 1st element of levelURI array" )
+            assert.equal((await getterFacetDiamond.methods.getDixels().call())[0].level, 1)
+            await dixelFacetDiamond.methods.levelUp(0).send({
+                from: accounts[0],
+                gas: 1000000
+            })
+
+            assert.equal("https://ipfs.io/ipfs/" + (await getterFacetDiamond.methods.getDixels().call())[0].URI, await dixelFacetDiamond.methods.tokenURI(0).call() )
+            assert.equal("https://ipfs.io/ipfs/" + (await getterFacetDiamond.methods.getDixels().call())[0].levelURI[1], await dixelFacetDiamond.methods.tokenURI(0).call(), "actual URI should be equal to the 2nd element of levelURI array" )
+            assert.equal((await getterFacetDiamond.methods.getDixels().call())[0].level, 2)
+        })
+
+        it("levels up NFT1 from level2  to level3",async () => {
+            assert.equal("https://ipfs.io/ipfs/" + (await getterFacetDiamond.methods.getDixels().call())[0].URI, await dixelFacetDiamond.methods.tokenURI(0).call() )
+            assert.equal("https://ipfs.io/ipfs/" + (await getterFacetDiamond.methods.getDixels().call())[0].levelURI[1], await dixelFacetDiamond.methods.tokenURI(0).call(), "actual URI should be equal to the 2nd element of levelURI array" )
+            await dixelFacetDiamond.methods.levelUp(0).send({
+                from: accounts[0],
+                gas: 1000000
+            })
+
+            assert.equal("https://ipfs.io/ipfs/" + (await getterFacetDiamond.methods.getDixels().call())[0].URI, await dixelFacetDiamond.methods.tokenURI(0).call() )
+            assert.equal("https://ipfs.io/ipfs/" + (await getterFacetDiamond.methods.getDixels().call())[0].levelURI[2], await dixelFacetDiamond.methods.tokenURI(0).call(), "actual URI should be equal to the 3rd element of levelURI array" )
+            assert.equal((await getterFacetDiamond.methods.getDixels().call())[0].level, 3)
+        })
+
+        it("levels up NFT1 from level3  to level4",async () => {
+            assert.equal("https://ipfs.io/ipfs/" + (await getterFacetDiamond.methods.getDixels().call())[0].URI, await dixelFacetDiamond.methods.tokenURI(0).call() )
+            assert.equal("https://ipfs.io/ipfs/" + (await getterFacetDiamond.methods.getDixels().call())[0].levelURI[2], await dixelFacetDiamond.methods.tokenURI(0).call(), "actual URI should be equal to the 3rd element of levelURI array" )
+            await dixelFacetDiamond.methods.levelUp(0).send({
+                from: accounts[0],
+                gas: 1000000
+            })
+
+            assert.equal("https://ipfs.io/ipfs/" + (await getterFacetDiamond.methods.getDixels().call())[0].URI, await dixelFacetDiamond.methods.tokenURI(0).call() )
+            assert.equal("https://ipfs.io/ipfs/" + (await getterFacetDiamond.methods.getDixels().call())[0].levelURI[3], await dixelFacetDiamond.methods.tokenURI(0).call(), "actual URI should be equal to the 4th element of levelURI array" )
+            assert.equal((await getterFacetDiamond.methods.getDixels().call())[0].level, 4)
+        })
+
+        it("levels up NFT1 from level4  to level5",async () => {
+            assert.equal("https://ipfs.io/ipfs/" + (await getterFacetDiamond.methods.getDixels().call())[0].URI, await dixelFacetDiamond.methods.tokenURI(0).call() )
+            assert.equal("https://ipfs.io/ipfs/" + (await getterFacetDiamond.methods.getDixels().call())[0].levelURI[3], await dixelFacetDiamond.methods.tokenURI(0).call(), "actual URI should be equal to the 4th element of levelURI array" )
+            await dixelFacetDiamond.methods.levelUp(0).send({
+                from: accounts[0],
+                gas: 1000000
+            })
+
+            assert.equal("https://ipfs.io/ipfs/" + (await getterFacetDiamond.methods.getDixels().call())[0].URI, await dixelFacetDiamond.methods.tokenURI(0).call() )
+            assert.equal("https://ipfs.io/ipfs/" + (await getterFacetDiamond.methods.getDixels().call())[0].levelURI[4], await dixelFacetDiamond.methods.tokenURI(0).call(), "actual URI should be equal to the 5th element of levelURI array" )
+            assert.equal((await getterFacetDiamond.methods.getDixels().call())[0].level, 5, "level should equal to 5")
+        })
+
+        it("reverts on level up and returns max limit reached", async () => {
+            await dixelFacetDiamond.methods.levelUp(0).send({
+                from: accounts[0],
+                gas: 1000000
+            }).catch((error) => {
+                assert(error, "should revert with 'max level' error ")
+            })
+        })
+    })
+
+    
+
     describe("approvals and transfers", () => {
-        it("approve account[1] to transfer NFT1 from account[0] to account[2] and transfers NFT1 fromm acc0 to acc2",async () => {
+        it("approve account[1] to transfer NFT1 from account[0] to account[2] and transfers NFT1 from acc0 to acc2",async () => {
             isApproved = await dixelFacetDiamond.methods.getApproved(0).call()
 
             //checks that no one is approved to transfer NFT1
-            assert.equal(isApproved, "0x0000000000000000000000000000000000000000")
+            assert.equal(isApproved, zeroAddress)
 
             await dixelFacetDiamond.methods.approve(accounts[1], 0).send({
                 from: accounts[0],
@@ -216,6 +283,19 @@ contract('Diamond', async (accounts) => {
 
         })
 
+        it("should not allow to send another NFT from accounts[0] by accounts[1]",async () => {
+            isApproved = await dixelFacetDiamond.methods.getApproved(2).call()
+            assert.notEqual(isApproved, accounts[1], "accounts[1] should not be approved to transfer NFT3 from accounts[0]" )
+            assert.equal(await dixelFacetDiamond.methods.ownerOf(2).call(), accounts[0], "owner should be accounts[0]")
+
+            await dixelFacetDiamond.methods.safeTransferFrom(accounts[0], accounts[2], 2).send({
+                from: accounts[1],
+                gas: 1000000
+            }).catch((error) => {
+                assert(error, "should revert with error ")
+            })
+        })
+
         it("approves accounts[1] to transfer all from accounts[0]", async () =>{
 
             assert.equal(await dixelFacetDiamond.methods.isApprovedForAll(accounts[0], accounts[1]).call(), false)
@@ -231,23 +311,23 @@ contract('Diamond', async (accounts) => {
 
         it("accounts[1] transfers NFT3 and NFT4 from accounts[0] to accounts[2]", async () => {
 
-            assert.equal(await dixelFacetDiamond.methods.isApprovedForAll(accounts[0], accounts[1]).call(), true)
+            assert.equal(await dixelFacetDiamond.methods.isApprovedForAll(accounts[0], accounts[1]).call(), true, "accounts[1] should be approved for all NFTs of accounts[0]")
 
             await dixelFacetDiamond.methods.safeTransferFrom(accounts[0], accounts[2], 2).send({
                 from: accounts[1],
                 gas: 1000000
             })
 
-            assert.equal(await dixelFacetDiamond.methods.ownerOf(2).call(), accounts[2])
-            assert.equal(await dixelFacetDiamond.methods.ownerOf(3).call(), accounts[0])
-            assert.equal(await dixelFacetDiamond.methods.isApprovedForAll(accounts[0], accounts[1]).call(), true)
+            assert.equal(await dixelFacetDiamond.methods.ownerOf(2).call(), accounts[2], "accounts[2] should be owner of NFT3")
+            assert.equal(await dixelFacetDiamond.methods.ownerOf(3).call(), accounts[0],"accounts[0] should be owner of NFT4")
+            assert.equal(await dixelFacetDiamond.methods.isApprovedForAll(accounts[0], accounts[1]).call(), true,"accounts[1] should be approved for all NFTs of accounts[0]")
 
             await dixelFacetDiamond.methods.transferFrom(accounts[0], accounts[2], 3).send({
                 from: accounts[1],
                 gas: 1000000
             })
 
-            assert.equal(await dixelFacetDiamond.methods.ownerOf(3).call(), accounts[2])
+            assert.equal(await dixelFacetDiamond.methods.ownerOf(3).call(), accounts[2], "accounts[2] should be owner of NFT4")
         })
     })
 

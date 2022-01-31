@@ -82,16 +82,13 @@ contract DixelFacet is ERC721 {
         require(supplies.mintedSupply< LibDixel.maxMintedSupply, "all minted");
         require(getDixelPrice() == msg.value, "not enough ether");
         uint rarity = LibDixel.genRarity();
-        LibDixel.changeSupplies(rarity);
-
         string[] memory mAddressArray = LibDixel.assignAddress(rarity, _addresses);
         Dixel memory tempDix = Dixel(1, mAddressArray[0], mAddressArray, rarity, 0, false);
         ds.dixels.push(tempDix);
-
+        supplies.mintedSupply++;
+        LibDixel.changeSupplies(rarity);
         mint(msg.sender, ds.dixels.length - 1);
         LibDixel.fundCreators(msg.value);
-        supplies.mintedSupply++;
-        supplies.totalSupply++;
         emit DixelMinted(msg.sender, ds.dixels.length, msg.value, tempDix);
     }
 
@@ -109,16 +106,15 @@ contract DixelFacet is ERC721 {
         LibDixel.DixelStorage storage ds = LibDixel.dixelStorage();
         require(ls.freeMintTickets[msg.sender] >= 1, "no tickets");
         require(supplies.lotterySupply < LibDixel.maxLotteryMintedSupply, "No more lotteries");
+
         ls.freeMintTickets[msg.sender] -= 1;
         uint rarity = LibDixel.genRarity();
-        LibDixel.changeSupplies(rarity);
-        
         string[] memory mAddressArray = LibDixel.assignAddress(rarity, _addresses);
         Dixel memory tempDix = Dixel(1, mAddressArray[0], mAddressArray, rarity, 0, false);
         ds.dixels.push(tempDix);
-        mint(msg.sender, ds.dixels.length - 1);
         supplies.lotterySupply++;
-        supplies.totalSupply++;
+        LibDixel.changeSupplies(rarity);
+        mint(msg.sender, ds.dixels.length - 1);
         emit DixelMinted(msg.sender, ds.dixels.length, 0, tempDix);
     }
 
@@ -184,17 +180,18 @@ contract DixelFacet is ERC721 {
         LibDixel.SupplyStorage storage supplies = LibDixel.supplyStorage();
         LibDixel.DixelStorage storage ds = LibDixel.dixelStorage();
         Dixel memory dixel = ds.dixels[_tokenId];
-        uint oldLevel = dixel.level;
-        require(ds.dixels[_tokenId].level < 5, "max lvl");
+        require(ds.dixels[_tokenId].level < 5 , "max lvl");
 
         if (dixel.level == 4) {
             require(supplies.collectorsSupply <= LibDixel.maxCollectors, "limit reached");
             supplies.collectorsSupply++;
         }
-        LibStarm._burnStarm(msg.sender, dixel.level * 1000);
-        dixel.URI = dixel.levelURI[dixel.level + 1];
+        uint oldLevel = dixel.level;
+        dixel.URI = dixel.levelURI[dixel.level];
         dixel.level++;
         ds.dixels[_tokenId] = dixel;
+        LibStarm._burnStarm(msg.sender, dixel.level * 1000);
+        tokenURI(_tokenId);
         emit LevelUp(_tokenId, oldLevel, dixel.level, ds.dixels[_tokenId]);
     }
 
@@ -218,29 +215,5 @@ contract DixelFacet is ERC721 {
         LibStarm._mintStarm(msg.sender, StarmToMint);
         ds.dixels[_tokenId].stakeInitTime = currentBlockTime;
     }
-
-    // /**
-    // * @return returns the array containing all the dixels
-    //  */
-    // function getDixels() external view returns(Dixel[] memory) {
-    //     LibDixel.DixelStorage storage ds = LibDixel.dixelStorage();
-    //     return ds.dixels;
-    // }
-
-    // /**
-    //  * @return supplies are return in a SupplyStorage struct
-    //  */
-    // function returnSupplies() external pure returns(LibDixel.SupplyStorage memory supplies) {
-    //     supplies = LibDixel.supplyStorage();
-    //     return supplies;
-    // }
-
-    // /**
-    //  * @return it returns a uint of the contract balance in ETH
-    //  */
-    // function contractBalance() external view returns(uint) {
-    //     return address(this).balance;
-    // }
-
 
 }

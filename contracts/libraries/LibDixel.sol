@@ -137,16 +137,11 @@ library LibDixel {
         require(supplies.availableToGen > 0, "limit reached");
         
         uint256 rand = _generateRandomness("rarity") % (supplies.availableToGen + 1);
-        if (rand > 0 && rand < supplies.commonSupply) {
-            rarity = 1;
-        } else if (rand > 0 && rand  < supplies.uncommonSupply) {
-            rarity = 2;
-        } else if (rand > 0 && rand < supplies.rareSupply) {
-            rarity = 3;
-        } else if (rand > 0 && rand < supplies.legendarySupply) {
-            rarity = 4;
-        } 
-        return rarity;
+        if (rand > 0 && rand <= supplies.commonSupply) return rarity = 1;
+        else if (rand > supplies.commonSupply && rand  <= supplies.uncommonSupply) return rarity = 2;
+        else if (rand > supplies.uncommonSupply && rand <= supplies.rareSupply) return rarity = 3;
+        else if (rand > supplies.rareSupply && rand <= supplies.legendarySupply) return rarity = 4; 
+        else revert("not in the scope");
     }
 
     /**
@@ -172,14 +167,13 @@ library LibDixel {
     * @param
     * @return
     */
-    function assignAddress(uint256 _rarityIdentifier,string[][] memory _mdtAddresses) internal pure returns(string[] memory){
-        require(_rarityIdentifier <5, "RI not existing");
+    function assignAddress(uint256 _rarityIdentifier, string[][] memory _mdtAddresses) internal pure returns(string[] memory){
+        require(_rarityIdentifier < 5, "RI not existing");
         string[] memory mdtAddressArray;
-        if (_rarityIdentifier == 1) mdtAddressArray = _mdtAddresses[0];
-        if (_rarityIdentifier == 2) mdtAddressArray = _mdtAddresses[1];
-        if (_rarityIdentifier == 3) mdtAddressArray = _mdtAddresses[2];
-        if (_rarityIdentifier == 4) mdtAddressArray = _mdtAddresses[3];
-        return mdtAddressArray;
+        if (_rarityIdentifier == 1) return mdtAddressArray = _mdtAddresses[0];
+        if (_rarityIdentifier == 2) return mdtAddressArray = _mdtAddresses[1];
+        if (_rarityIdentifier == 3) return mdtAddressArray = _mdtAddresses[2];
+        if (_rarityIdentifier == 4) return mdtAddressArray = _mdtAddresses[3];
     }
 
     /**
@@ -203,7 +197,7 @@ library LibDixel {
         } else if (_rarity == 4){
             supplies.legendarySupply--;
         }
-        supplies.totalSupply + 1;
-        supplies.availableToGen - 1;
+        supplies.totalSupply ++;
+        supplies.availableToGen --;
     }
 }
