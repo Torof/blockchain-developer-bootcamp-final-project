@@ -22,35 +22,35 @@
       "type": "function"
     }
   ],
-  "metadata": "{\"compiler\":{\"version\":\"0.8.11+commit.d7f03943\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"checkCreatorBalance\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"creatorWithdrawal\",\"outputs\":[],\"stateMutability\":\"payable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/facets/CreatorsFacet.sol\":\"CreatorsFacet\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/facets/CreatorsFacet.sol\":{\"keccak256\":\"0xb2a4e8a596f4332b221c9b4c4c7354d56f185352e5e0d9ea5b68b8e68a4921e0\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://f147bf381bce30c73726860805046871c49c16e94623f9bc1f97d3a4c7d99c0c\",\"dweb:/ipfs/QmYC3FsqfJNyRcSDJ7vVaHACvQKhWNr3aTknAxFkoomRS7\"]},\"project:/contracts/libraries/LibDixel.sol\":{\"keccak256\":\"0xcb9961a73f1489c9371084948cbc88cde6bf95b0b3064261fae8d48ac2411746\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://434932b8f44eefaa90f1bb0e7f584cca6a9269f63743b03de5e0ea5714758d49\",\"dweb:/ipfs/QmRa3bPCzaU8x6ExHc3puhDoYo7mG1MEyShyrPBDSw7EAH\"]}},\"version\":1}",
-  "bytecode": "0x608060405234801561001057600080fd5b50610521806100206000396000f3fe6080604052600436106100295760003560e01c806352cc97fc1461002e578063bd8921e614610038575b600080fd5b610036610063565b005b34801561004457600080fd5b5061004d610268565b60405161005a9190610424565b60405180910390f35b600061006d6103de565b9050806001016000600281106100865761008561043f565b5b0160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614806101445750806001016001600281106100f3576100f261043f565b5b0160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff16145b610183576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040161017a906104cb565b60405180910390fd5b600061018d6103de565b905060008160000160003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002054905060008260000160003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020819055503373ffffffffffffffffffffffffffffffffffffffff166108fc829081150290604051600060405180830381858888f19350505050158015610262573d6000803e3d6000fd5b50505050565b6000806102736103de565b90508060010160006002811061028c5761028b61043f565b5b0160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff16148061034a5750806001016001600281106102f9576102f861043f565b5b0160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff16145b610389576040517f08c379a0000000000000000000000000000000000000000000000000000000008152600401610380906104cb565b60405180910390fd5b60006103936103de565b90508060000160003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020549250505090565b6000807faaecf6edcf861fc17fc9c5b0a28686a3e50a6d0beadccbac12a685bd4ed4771790508091505090565b6000819050919050565b61041e8161040b565b82525050565b60006020820190506104396000830184610415565b92915050565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052603260045260246000fd5b600082825260208201905092915050565b7f6f6e6c792063726561746f727300000000000000000000000000000000000000600082015250565b60006104b5600d8361046e565b91506104c08261047f565b602082019050919050565b600060208201905081810360008301526104e4816104a8565b905091905056fea264697066735822122088d31d81fbf0cc93e7d3a28540b45866d6736ba1e018cd9c310be72e356e353d64736f6c634300080b0033",
-  "deployedBytecode": "0x6080604052600436106100295760003560e01c806352cc97fc1461002e578063bd8921e614610038575b600080fd5b610036610063565b005b34801561004457600080fd5b5061004d610268565b60405161005a9190610424565b60405180910390f35b600061006d6103de565b9050806001016000600281106100865761008561043f565b5b0160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614806101445750806001016001600281106100f3576100f261043f565b5b0160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff16145b610183576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040161017a906104cb565b60405180910390fd5b600061018d6103de565b905060008160000160003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002054905060008260000160003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020819055503373ffffffffffffffffffffffffffffffffffffffff166108fc829081150290604051600060405180830381858888f19350505050158015610262573d6000803e3d6000fd5b50505050565b6000806102736103de565b90508060010160006002811061028c5761028b61043f565b5b0160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff16148061034a5750806001016001600281106102f9576102f861043f565b5b0160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff16145b610389576040517f08c379a0000000000000000000000000000000000000000000000000000000008152600401610380906104cb565b60405180910390fd5b60006103936103de565b90508060000160003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020549250505090565b6000807faaecf6edcf861fc17fc9c5b0a28686a3e50a6d0beadccbac12a685bd4ed4771790508091505090565b6000819050919050565b61041e8161040b565b82525050565b60006020820190506104396000830184610415565b92915050565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052603260045260246000fd5b600082825260208201905092915050565b7f6f6e6c792063726561746f727300000000000000000000000000000000000000600082015250565b60006104b5600d8361046e565b91506104c08261047f565b602082019050919050565b600060208201905081810360008301526104e4816104a8565b905091905056fea264697066735822122088d31d81fbf0cc93e7d3a28540b45866d6736ba1e018cd9c310be72e356e353d64736f6c634300080b0033",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.11+commit.d7f03943\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"checkCreatorBalance\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"creatorWithdrawal\",\"outputs\":[],\"stateMutability\":\"payable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/facets/CreatorsFacet.sol\":\"CreatorsFacet\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/facets/CreatorsFacet.sol\":{\"keccak256\":\"0xb2a4e8a596f4332b221c9b4c4c7354d56f185352e5e0d9ea5b68b8e68a4921e0\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://f147bf381bce30c73726860805046871c49c16e94623f9bc1f97d3a4c7d99c0c\",\"dweb:/ipfs/QmYC3FsqfJNyRcSDJ7vVaHACvQKhWNr3aTknAxFkoomRS7\"]},\"project:/contracts/libraries/LibDixel.sol\":{\"keccak256\":\"0x82a6395707209f4eb2fafe48076ae80f8eb0fd5eccd0c788be18fa063c7e80a0\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://a7304286e5d78b025dbf73c2732fae15ec327eefc1c86a4d5d791a60acf4ed5a\",\"dweb:/ipfs/QmQfu7CPcyPRJ2aQBgHQ57mmp5c2JQ2vfS9gfXsaLcZMnp\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b50610521806100206000396000f3fe6080604052600436106100295760003560e01c806352cc97fc1461002e578063bd8921e614610038575b600080fd5b610036610063565b005b34801561004457600080fd5b5061004d610268565b60405161005a9190610424565b60405180910390f35b600061006d6103de565b9050806001016000600281106100865761008561043f565b5b0160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614806101445750806001016001600281106100f3576100f261043f565b5b0160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff16145b610183576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040161017a906104cb565b60405180910390fd5b600061018d6103de565b905060008160000160003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002054905060008260000160003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020819055503373ffffffffffffffffffffffffffffffffffffffff166108fc829081150290604051600060405180830381858888f19350505050158015610262573d6000803e3d6000fd5b50505050565b6000806102736103de565b90508060010160006002811061028c5761028b61043f565b5b0160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff16148061034a5750806001016001600281106102f9576102f861043f565b5b0160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff16145b610389576040517f08c379a0000000000000000000000000000000000000000000000000000000008152600401610380906104cb565b60405180910390fd5b60006103936103de565b90508060000160003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020549250505090565b6000807faaecf6edcf861fc17fc9c5b0a28686a3e50a6d0beadccbac12a685bd4ed4771790508091505090565b6000819050919050565b61041e8161040b565b82525050565b60006020820190506104396000830184610415565b92915050565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052603260045260246000fd5b600082825260208201905092915050565b7f6f6e6c792063726561746f727300000000000000000000000000000000000000600082015250565b60006104b5600d8361046e565b91506104c08261047f565b602082019050919050565b600060208201905081810360008301526104e4816104a8565b905091905056fea264697066735822122016bf7341319d47b81dd1313dbfa1d0c76453f40406e3d31c82f02a958959bf7064736f6c634300080b0033",
+  "deployedBytecode": "0x6080604052600436106100295760003560e01c806352cc97fc1461002e578063bd8921e614610038575b600080fd5b610036610063565b005b34801561004457600080fd5b5061004d610268565b60405161005a9190610424565b60405180910390f35b600061006d6103de565b9050806001016000600281106100865761008561043f565b5b0160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614806101445750806001016001600281106100f3576100f261043f565b5b0160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff16145b610183576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040161017a906104cb565b60405180910390fd5b600061018d6103de565b905060008160000160003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002054905060008260000160003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020819055503373ffffffffffffffffffffffffffffffffffffffff166108fc829081150290604051600060405180830381858888f19350505050158015610262573d6000803e3d6000fd5b50505050565b6000806102736103de565b90508060010160006002811061028c5761028b61043f565b5b0160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff16148061034a5750806001016001600281106102f9576102f861043f565b5b0160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff16145b610389576040517f08c379a0000000000000000000000000000000000000000000000000000000008152600401610380906104cb565b60405180910390fd5b60006103936103de565b90508060000160003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020549250505090565b6000807faaecf6edcf861fc17fc9c5b0a28686a3e50a6d0beadccbac12a685bd4ed4771790508091505090565b6000819050919050565b61041e8161040b565b82525050565b60006020820190506104396000830184610415565b92915050565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052603260045260246000fd5b600082825260208201905092915050565b7f6f6e6c792063726561746f727300000000000000000000000000000000000000600082015250565b60006104b5600d8361046e565b91506104c08261047f565b602082019050919050565b600060208201905081810360008301526104e4816104a8565b905091905056fea264697066735822122016bf7341319d47b81dd1313dbfa1d0c76453f40406e3d31c82f02a958959bf7064736f6c634300080b0033",
   "immutableReferences": {},
   "generatedSources": [],
   "deployedGeneratedSources": [
     {
       "ast": {
         "nodeType": "YulBlock",
-        "src": "0:1766:24",
+        "src": "0:1766:17",
         "statements": [
           {
             "body": {
               "nodeType": "YulBlock",
-              "src": "52:32:24",
+              "src": "52:32:17",
               "statements": [
                 {
                   "nodeType": "YulAssignment",
-                  "src": "62:16:24",
+                  "src": "62:16:17",
                   "value": {
                     "name": "value",
                     "nodeType": "YulIdentifier",
-                    "src": "73:5:24"
+                    "src": "73:5:17"
                   },
                   "variableNames": [
                     {
                       "name": "cleaned",
                       "nodeType": "YulIdentifier",
-                      "src": "62:7:24"
+                      "src": "62:7:17"
                     }
                   ]
                 }
@@ -62,7 +62,7 @@
               {
                 "name": "value",
                 "nodeType": "YulTypedName",
-                "src": "34:5:24",
+                "src": "34:5:17",
                 "type": ""
               }
             ],
@@ -70,16 +70,16 @@
               {
                 "name": "cleaned",
                 "nodeType": "YulTypedName",
-                "src": "44:7:24",
+                "src": "44:7:17",
                 "type": ""
               }
             ],
-            "src": "7:77:24"
+            "src": "7:77:17"
           },
           {
             "body": {
               "nodeType": "YulBlock",
-              "src": "155:53:24",
+              "src": "155:53:17",
               "statements": [
                 {
                   "expression": {
@@ -87,35 +87,35 @@
                       {
                         "name": "pos",
                         "nodeType": "YulIdentifier",
-                        "src": "172:3:24"
+                        "src": "172:3:17"
                       },
                       {
                         "arguments": [
                           {
                             "name": "value",
                             "nodeType": "YulIdentifier",
-                            "src": "195:5:24"
+                            "src": "195:5:17"
                           }
                         ],
                         "functionName": {
                           "name": "cleanup_t_uint256",
                           "nodeType": "YulIdentifier",
-                          "src": "177:17:24"
+                          "src": "177:17:17"
                         },
                         "nodeType": "YulFunctionCall",
-                        "src": "177:24:24"
+                        "src": "177:24:17"
                       }
                     ],
                     "functionName": {
                       "name": "mstore",
                       "nodeType": "YulIdentifier",
-                      "src": "165:6:24"
+                      "src": "165:6:17"
                     },
                     "nodeType": "YulFunctionCall",
-                    "src": "165:37:24"
+                    "src": "165:37:17"
                   },
                   "nodeType": "YulExpressionStatement",
-                  "src": "165:37:24"
+                  "src": "165:37:17"
                 }
               ]
             },
@@ -125,37 +125,37 @@
               {
                 "name": "value",
                 "nodeType": "YulTypedName",
-                "src": "143:5:24",
+                "src": "143:5:17",
                 "type": ""
               },
               {
                 "name": "pos",
                 "nodeType": "YulTypedName",
-                "src": "150:3:24",
+                "src": "150:3:17",
                 "type": ""
               }
             ],
-            "src": "90:118:24"
+            "src": "90:118:17"
           },
           {
             "body": {
               "nodeType": "YulBlock",
-              "src": "312:124:24",
+              "src": "312:124:17",
               "statements": [
                 {
                   "nodeType": "YulAssignment",
-                  "src": "322:26:24",
+                  "src": "322:26:17",
                   "value": {
                     "arguments": [
                       {
                         "name": "headStart",
                         "nodeType": "YulIdentifier",
-                        "src": "334:9:24"
+                        "src": "334:9:17"
                       },
                       {
                         "kind": "number",
                         "nodeType": "YulLiteral",
-                        "src": "345:2:24",
+                        "src": "345:2:17",
                         "type": "",
                         "value": "32"
                       }
@@ -163,16 +163,16 @@
                     "functionName": {
                       "name": "add",
                       "nodeType": "YulIdentifier",
-                      "src": "330:3:24"
+                      "src": "330:3:17"
                     },
                     "nodeType": "YulFunctionCall",
-                    "src": "330:18:24"
+                    "src": "330:18:17"
                   },
                   "variableNames": [
                     {
                       "name": "tail",
                       "nodeType": "YulIdentifier",
-                      "src": "322:4:24"
+                      "src": "322:4:17"
                     }
                   ]
                 },
@@ -182,19 +182,19 @@
                       {
                         "name": "value0",
                         "nodeType": "YulIdentifier",
-                        "src": "402:6:24"
+                        "src": "402:6:17"
                       },
                       {
                         "arguments": [
                           {
                             "name": "headStart",
                             "nodeType": "YulIdentifier",
-                            "src": "415:9:24"
+                            "src": "415:9:17"
                           },
                           {
                             "kind": "number",
                             "nodeType": "YulLiteral",
-                            "src": "426:1:24",
+                            "src": "426:1:17",
                             "type": "",
                             "value": "0"
                           }
@@ -202,22 +202,22 @@
                         "functionName": {
                           "name": "add",
                           "nodeType": "YulIdentifier",
-                          "src": "411:3:24"
+                          "src": "411:3:17"
                         },
                         "nodeType": "YulFunctionCall",
-                        "src": "411:17:24"
+                        "src": "411:17:17"
                       }
                     ],
                     "functionName": {
                       "name": "abi_encode_t_uint256_to_t_uint256_fromStack",
                       "nodeType": "YulIdentifier",
-                      "src": "358:43:24"
+                      "src": "358:43:17"
                     },
                     "nodeType": "YulFunctionCall",
-                    "src": "358:71:24"
+                    "src": "358:71:17"
                   },
                   "nodeType": "YulExpressionStatement",
-                  "src": "358:71:24"
+                  "src": "358:71:17"
                 }
               ]
             },
@@ -227,13 +227,13 @@
               {
                 "name": "headStart",
                 "nodeType": "YulTypedName",
-                "src": "284:9:24",
+                "src": "284:9:17",
                 "type": ""
               },
               {
                 "name": "value0",
                 "nodeType": "YulTypedName",
-                "src": "296:6:24",
+                "src": "296:6:17",
                 "type": ""
               }
             ],
@@ -241,16 +241,16 @@
               {
                 "name": "tail",
                 "nodeType": "YulTypedName",
-                "src": "307:4:24",
+                "src": "307:4:17",
                 "type": ""
               }
             ],
-            "src": "214:222:24"
+            "src": "214:222:17"
           },
           {
             "body": {
               "nodeType": "YulBlock",
-              "src": "470:152:24",
+              "src": "470:152:17",
               "statements": [
                 {
                   "expression": {
@@ -258,14 +258,14 @@
                       {
                         "kind": "number",
                         "nodeType": "YulLiteral",
-                        "src": "487:1:24",
+                        "src": "487:1:17",
                         "type": "",
                         "value": "0"
                       },
                       {
                         "kind": "number",
                         "nodeType": "YulLiteral",
-                        "src": "490:77:24",
+                        "src": "490:77:17",
                         "type": "",
                         "value": "35408467139433450592217433187231851964531694900788300625387963629091585785856"
                       }
@@ -273,13 +273,13 @@
                     "functionName": {
                       "name": "mstore",
                       "nodeType": "YulIdentifier",
-                      "src": "480:6:24"
+                      "src": "480:6:17"
                     },
                     "nodeType": "YulFunctionCall",
-                    "src": "480:88:24"
+                    "src": "480:88:17"
                   },
                   "nodeType": "YulExpressionStatement",
-                  "src": "480:88:24"
+                  "src": "480:88:17"
                 },
                 {
                   "expression": {
@@ -287,14 +287,14 @@
                       {
                         "kind": "number",
                         "nodeType": "YulLiteral",
-                        "src": "584:1:24",
+                        "src": "584:1:17",
                         "type": "",
                         "value": "4"
                       },
                       {
                         "kind": "number",
                         "nodeType": "YulLiteral",
-                        "src": "587:4:24",
+                        "src": "587:4:17",
                         "type": "",
                         "value": "0x32"
                       }
@@ -302,13 +302,13 @@
                     "functionName": {
                       "name": "mstore",
                       "nodeType": "YulIdentifier",
-                      "src": "577:6:24"
+                      "src": "577:6:17"
                     },
                     "nodeType": "YulFunctionCall",
-                    "src": "577:15:24"
+                    "src": "577:15:17"
                   },
                   "nodeType": "YulExpressionStatement",
-                  "src": "577:15:24"
+                  "src": "577:15:17"
                 },
                 {
                   "expression": {
@@ -316,14 +316,14 @@
                       {
                         "kind": "number",
                         "nodeType": "YulLiteral",
-                        "src": "608:1:24",
+                        "src": "608:1:17",
                         "type": "",
                         "value": "0"
                       },
                       {
                         "kind": "number",
                         "nodeType": "YulLiteral",
-                        "src": "611:4:24",
+                        "src": "611:4:17",
                         "type": "",
                         "value": "0x24"
                       }
@@ -331,24 +331,24 @@
                     "functionName": {
                       "name": "revert",
                       "nodeType": "YulIdentifier",
-                      "src": "601:6:24"
+                      "src": "601:6:17"
                     },
                     "nodeType": "YulFunctionCall",
-                    "src": "601:15:24"
+                    "src": "601:15:17"
                   },
                   "nodeType": "YulExpressionStatement",
-                  "src": "601:15:24"
+                  "src": "601:15:17"
                 }
               ]
             },
             "name": "panic_error_0x32",
             "nodeType": "YulFunctionDefinition",
-            "src": "442:180:24"
+            "src": "442:180:17"
           },
           {
             "body": {
               "nodeType": "YulBlock",
-              "src": "724:73:24",
+              "src": "724:73:17",
               "statements": [
                 {
                   "expression": {
@@ -356,39 +356,39 @@
                       {
                         "name": "pos",
                         "nodeType": "YulIdentifier",
-                        "src": "741:3:24"
+                        "src": "741:3:17"
                       },
                       {
                         "name": "length",
                         "nodeType": "YulIdentifier",
-                        "src": "746:6:24"
+                        "src": "746:6:17"
                       }
                     ],
                     "functionName": {
                       "name": "mstore",
                       "nodeType": "YulIdentifier",
-                      "src": "734:6:24"
+                      "src": "734:6:17"
                     },
                     "nodeType": "YulFunctionCall",
-                    "src": "734:19:24"
+                    "src": "734:19:17"
                   },
                   "nodeType": "YulExpressionStatement",
-                  "src": "734:19:24"
+                  "src": "734:19:17"
                 },
                 {
                   "nodeType": "YulAssignment",
-                  "src": "762:29:24",
+                  "src": "762:29:17",
                   "value": {
                     "arguments": [
                       {
                         "name": "pos",
                         "nodeType": "YulIdentifier",
-                        "src": "781:3:24"
+                        "src": "781:3:17"
                       },
                       {
                         "kind": "number",
                         "nodeType": "YulLiteral",
-                        "src": "786:4:24",
+                        "src": "786:4:17",
                         "type": "",
                         "value": "0x20"
                       }
@@ -396,16 +396,16 @@
                     "functionName": {
                       "name": "add",
                       "nodeType": "YulIdentifier",
-                      "src": "777:3:24"
+                      "src": "777:3:17"
                     },
                     "nodeType": "YulFunctionCall",
-                    "src": "777:14:24"
+                    "src": "777:14:17"
                   },
                   "variableNames": [
                     {
                       "name": "updated_pos",
                       "nodeType": "YulIdentifier",
-                      "src": "762:11:24"
+                      "src": "762:11:17"
                     }
                   ]
                 }
@@ -417,13 +417,13 @@
               {
                 "name": "pos",
                 "nodeType": "YulTypedName",
-                "src": "696:3:24",
+                "src": "696:3:17",
                 "type": ""
               },
               {
                 "name": "length",
                 "nodeType": "YulTypedName",
-                "src": "701:6:24",
+                "src": "701:6:17",
                 "type": ""
               }
             ],
@@ -431,16 +431,16 @@
               {
                 "name": "updated_pos",
                 "nodeType": "YulTypedName",
-                "src": "712:11:24",
+                "src": "712:11:17",
                 "type": ""
               }
             ],
-            "src": "628:169:24"
+            "src": "628:169:17"
           },
           {
             "body": {
               "nodeType": "YulBlock",
-              "src": "909:57:24",
+              "src": "909:57:17",
               "statements": [
                 {
                   "expression": {
@@ -450,12 +450,12 @@
                           {
                             "name": "memPtr",
                             "nodeType": "YulIdentifier",
-                            "src": "931:6:24"
+                            "src": "931:6:17"
                           },
                           {
                             "kind": "number",
                             "nodeType": "YulLiteral",
-                            "src": "939:1:24",
+                            "src": "939:1:17",
                             "type": "",
                             "value": "0"
                           }
@@ -463,16 +463,16 @@
                         "functionName": {
                           "name": "add",
                           "nodeType": "YulIdentifier",
-                          "src": "927:3:24"
+                          "src": "927:3:17"
                         },
                         "nodeType": "YulFunctionCall",
-                        "src": "927:14:24"
+                        "src": "927:14:17"
                       },
                       {
                         "hexValue": "6f6e6c792063726561746f7273",
                         "kind": "string",
                         "nodeType": "YulLiteral",
-                        "src": "943:15:24",
+                        "src": "943:15:17",
                         "type": "",
                         "value": "only creators"
                       }
@@ -480,13 +480,13 @@
                     "functionName": {
                       "name": "mstore",
                       "nodeType": "YulIdentifier",
-                      "src": "920:6:24"
+                      "src": "920:6:17"
                     },
                     "nodeType": "YulFunctionCall",
-                    "src": "920:39:24"
+                    "src": "920:39:17"
                   },
                   "nodeType": "YulExpressionStatement",
-                  "src": "920:39:24"
+                  "src": "920:39:17"
                 }
               ]
             },
@@ -496,31 +496,31 @@
               {
                 "name": "memPtr",
                 "nodeType": "YulTypedName",
-                "src": "901:6:24",
+                "src": "901:6:17",
                 "type": ""
               }
             ],
-            "src": "803:163:24"
+            "src": "803:163:17"
           },
           {
             "body": {
               "nodeType": "YulBlock",
-              "src": "1118:220:24",
+              "src": "1118:220:17",
               "statements": [
                 {
                   "nodeType": "YulAssignment",
-                  "src": "1128:74:24",
+                  "src": "1128:74:17",
                   "value": {
                     "arguments": [
                       {
                         "name": "pos",
                         "nodeType": "YulIdentifier",
-                        "src": "1194:3:24"
+                        "src": "1194:3:17"
                       },
                       {
                         "kind": "number",
                         "nodeType": "YulLiteral",
-                        "src": "1199:2:24",
+                        "src": "1199:2:17",
                         "type": "",
                         "value": "13"
                       }
@@ -528,16 +528,16 @@
                     "functionName": {
                       "name": "array_storeLengthForEncoding_t_string_memory_ptr_fromStack",
                       "nodeType": "YulIdentifier",
-                      "src": "1135:58:24"
+                      "src": "1135:58:17"
                     },
                     "nodeType": "YulFunctionCall",
-                    "src": "1135:67:24"
+                    "src": "1135:67:17"
                   },
                   "variableNames": [
                     {
                       "name": "pos",
                       "nodeType": "YulIdentifier",
-                      "src": "1128:3:24"
+                      "src": "1128:3:17"
                     }
                   ]
                 },
@@ -547,34 +547,34 @@
                       {
                         "name": "pos",
                         "nodeType": "YulIdentifier",
-                        "src": "1300:3:24"
+                        "src": "1300:3:17"
                       }
                     ],
                     "functionName": {
                       "name": "store_literal_in_memory_b6c951c92f5855a5a37904c1f010b28a8dd8e076610a335acf6d9e0433540351",
                       "nodeType": "YulIdentifier",
-                      "src": "1211:88:24"
+                      "src": "1211:88:17"
                     },
                     "nodeType": "YulFunctionCall",
-                    "src": "1211:93:24"
+                    "src": "1211:93:17"
                   },
                   "nodeType": "YulExpressionStatement",
-                  "src": "1211:93:24"
+                  "src": "1211:93:17"
                 },
                 {
                   "nodeType": "YulAssignment",
-                  "src": "1313:19:24",
+                  "src": "1313:19:17",
                   "value": {
                     "arguments": [
                       {
                         "name": "pos",
                         "nodeType": "YulIdentifier",
-                        "src": "1324:3:24"
+                        "src": "1324:3:17"
                       },
                       {
                         "kind": "number",
                         "nodeType": "YulLiteral",
-                        "src": "1329:2:24",
+                        "src": "1329:2:17",
                         "type": "",
                         "value": "32"
                       }
@@ -582,16 +582,16 @@
                     "functionName": {
                       "name": "add",
                       "nodeType": "YulIdentifier",
-                      "src": "1320:3:24"
+                      "src": "1320:3:17"
                     },
                     "nodeType": "YulFunctionCall",
-                    "src": "1320:12:24"
+                    "src": "1320:12:17"
                   },
                   "variableNames": [
                     {
                       "name": "end",
                       "nodeType": "YulIdentifier",
-                      "src": "1313:3:24"
+                      "src": "1313:3:17"
                     }
                   ]
                 }
@@ -603,7 +603,7 @@
               {
                 "name": "pos",
                 "nodeType": "YulTypedName",
-                "src": "1106:3:24",
+                "src": "1106:3:17",
                 "type": ""
               }
             ],
@@ -611,31 +611,31 @@
               {
                 "name": "end",
                 "nodeType": "YulTypedName",
-                "src": "1114:3:24",
+                "src": "1114:3:17",
                 "type": ""
               }
             ],
-            "src": "972:366:24"
+            "src": "972:366:17"
           },
           {
             "body": {
               "nodeType": "YulBlock",
-              "src": "1515:248:24",
+              "src": "1515:248:17",
               "statements": [
                 {
                   "nodeType": "YulAssignment",
-                  "src": "1525:26:24",
+                  "src": "1525:26:17",
                   "value": {
                     "arguments": [
                       {
                         "name": "headStart",
                         "nodeType": "YulIdentifier",
-                        "src": "1537:9:24"
+                        "src": "1537:9:17"
                       },
                       {
                         "kind": "number",
                         "nodeType": "YulLiteral",
-                        "src": "1548:2:24",
+                        "src": "1548:2:17",
                         "type": "",
                         "value": "32"
                       }
@@ -643,16 +643,16 @@
                     "functionName": {
                       "name": "add",
                       "nodeType": "YulIdentifier",
-                      "src": "1533:3:24"
+                      "src": "1533:3:17"
                     },
                     "nodeType": "YulFunctionCall",
-                    "src": "1533:18:24"
+                    "src": "1533:18:17"
                   },
                   "variableNames": [
                     {
                       "name": "tail",
                       "nodeType": "YulIdentifier",
-                      "src": "1525:4:24"
+                      "src": "1525:4:17"
                     }
                   ]
                 },
@@ -664,12 +664,12 @@
                           {
                             "name": "headStart",
                             "nodeType": "YulIdentifier",
-                            "src": "1572:9:24"
+                            "src": "1572:9:17"
                           },
                           {
                             "kind": "number",
                             "nodeType": "YulLiteral",
-                            "src": "1583:1:24",
+                            "src": "1583:1:17",
                             "type": "",
                             "value": "0"
                           }
@@ -677,68 +677,68 @@
                         "functionName": {
                           "name": "add",
                           "nodeType": "YulIdentifier",
-                          "src": "1568:3:24"
+                          "src": "1568:3:17"
                         },
                         "nodeType": "YulFunctionCall",
-                        "src": "1568:17:24"
+                        "src": "1568:17:17"
                       },
                       {
                         "arguments": [
                           {
                             "name": "tail",
                             "nodeType": "YulIdentifier",
-                            "src": "1591:4:24"
+                            "src": "1591:4:17"
                           },
                           {
                             "name": "headStart",
                             "nodeType": "YulIdentifier",
-                            "src": "1597:9:24"
+                            "src": "1597:9:17"
                           }
                         ],
                         "functionName": {
                           "name": "sub",
                           "nodeType": "YulIdentifier",
-                          "src": "1587:3:24"
+                          "src": "1587:3:17"
                         },
                         "nodeType": "YulFunctionCall",
-                        "src": "1587:20:24"
+                        "src": "1587:20:17"
                       }
                     ],
                     "functionName": {
                       "name": "mstore",
                       "nodeType": "YulIdentifier",
-                      "src": "1561:6:24"
+                      "src": "1561:6:17"
                     },
                     "nodeType": "YulFunctionCall",
-                    "src": "1561:47:24"
+                    "src": "1561:47:17"
                   },
                   "nodeType": "YulExpressionStatement",
-                  "src": "1561:47:24"
+                  "src": "1561:47:17"
                 },
                 {
                   "nodeType": "YulAssignment",
-                  "src": "1617:139:24",
+                  "src": "1617:139:17",
                   "value": {
                     "arguments": [
                       {
                         "name": "tail",
                         "nodeType": "YulIdentifier",
-                        "src": "1751:4:24"
+                        "src": "1751:4:17"
                       }
                     ],
                     "functionName": {
                       "name": "abi_encode_t_stringliteral_b6c951c92f5855a5a37904c1f010b28a8dd8e076610a335acf6d9e0433540351_to_t_string_memory_ptr_fromStack",
                       "nodeType": "YulIdentifier",
-                      "src": "1625:124:24"
+                      "src": "1625:124:17"
                     },
                     "nodeType": "YulFunctionCall",
-                    "src": "1625:131:24"
+                    "src": "1625:131:17"
                   },
                   "variableNames": [
                     {
                       "name": "tail",
                       "nodeType": "YulIdentifier",
-                      "src": "1617:4:24"
+                      "src": "1617:4:17"
                     }
                   ]
                 }
@@ -750,7 +750,7 @@
               {
                 "name": "headStart",
                 "nodeType": "YulTypedName",
-                "src": "1495:9:24",
+                "src": "1495:9:17",
                 "type": ""
               }
             ],
@@ -758,79 +758,79 @@
               {
                 "name": "tail",
                 "nodeType": "YulTypedName",
-                "src": "1510:4:24",
+                "src": "1510:4:17",
                 "type": ""
               }
             ],
-            "src": "1344:419:24"
+            "src": "1344:419:17"
           }
         ]
       },
       "contents": "{\n\n    function cleanup_t_uint256(value) -> cleaned {\n        cleaned := value\n    }\n\n    function abi_encode_t_uint256_to_t_uint256_fromStack(value, pos) {\n        mstore(pos, cleanup_t_uint256(value))\n    }\n\n    function abi_encode_tuple_t_uint256__to_t_uint256__fromStack_reversed(headStart , value0) -> tail {\n        tail := add(headStart, 32)\n\n        abi_encode_t_uint256_to_t_uint256_fromStack(value0,  add(headStart, 0))\n\n    }\n\n    function panic_error_0x32() {\n        mstore(0, 35408467139433450592217433187231851964531694900788300625387963629091585785856)\n        mstore(4, 0x32)\n        revert(0, 0x24)\n    }\n\n    function array_storeLengthForEncoding_t_string_memory_ptr_fromStack(pos, length) -> updated_pos {\n        mstore(pos, length)\n        updated_pos := add(pos, 0x20)\n    }\n\n    function store_literal_in_memory_b6c951c92f5855a5a37904c1f010b28a8dd8e076610a335acf6d9e0433540351(memPtr) {\n\n        mstore(add(memPtr, 0), \"only creators\")\n\n    }\n\n    function abi_encode_t_stringliteral_b6c951c92f5855a5a37904c1f010b28a8dd8e076610a335acf6d9e0433540351_to_t_string_memory_ptr_fromStack(pos) -> end {\n        pos := array_storeLengthForEncoding_t_string_memory_ptr_fromStack(pos, 13)\n        store_literal_in_memory_b6c951c92f5855a5a37904c1f010b28a8dd8e076610a335acf6d9e0433540351(pos)\n        end := add(pos, 32)\n    }\n\n    function abi_encode_tuple_t_stringliteral_b6c951c92f5855a5a37904c1f010b28a8dd8e076610a335acf6d9e0433540351__to_t_string_memory_ptr__fromStack_reversed(headStart ) -> tail {\n        tail := add(headStart, 32)\n\n        mstore(add(headStart, 0), sub(tail, headStart))\n        tail := abi_encode_t_stringliteral_b6c951c92f5855a5a37904c1f010b28a8dd8e076610a335acf6d9e0433540351_to_t_string_memory_ptr_fromStack( tail)\n\n    }\n\n}\n",
-      "id": 24,
+      "id": 17,
       "language": "Yul",
       "name": "#utility.yul"
     }
   ],
-  "sourceMap": "127:841:3:-:0;;;;;;;;;;;;;;;;;;;",
-  "deployedSourceMap": "127:841:3:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;440:291;;;:::i;:::-;;767:199;;;;;;;;;;;;;:::i;:::-;;;;;;;:::i;:::-;;;;;;;;440:291;221:35;259:26;:24;:26::i;:::-;221:64;;317:2;:11;;329:1;317:14;;;;;;;:::i;:::-;;;;;;;;;;;;;303:28;;:10;:28;;;:60;;;;349:2;:11;;361:1;349:14;;;;;;;:::i;:::-;;;;;;;;;;;;;335:28;;:10;:28;;;303:60;295:86;;;;;;;;;;;;:::i;:::-;;;;;;;;;508:35:::1;546:26;:24;:26::i;:::-;508:64;;582:15;600:2;:18;;:30;619:10;600:30;;;;;;;;;;;;;;;;582:48;;673:1;640:2;:18;;:30;659:10;640:30;;;;;;;;;;;;;;;:34;;;;692:10;684:28;;:40;713:10;684:40;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;::::0;::::1;;;;;;498:233;;211:188:::0;440:291::o;767:199::-;832:4;221:35;259:26;:24;:26::i;:::-;221:64;;317:2;:11;;329:1;317:14;;;;;;;:::i;:::-;;;;;;;;;;;;;303:28;;:10;:28;;;:60;;;;349:2;:11;;361:1;349:14;;;;;;;:::i;:::-;;;;;;;;;;;;;335:28;;:10;:28;;;303:60;295:86;;;;;;;;;;;;:::i;:::-;;;;;;;;;848:35:::1;886:26;:24;:26::i;:::-;848:64;;929:2;:18;;:30;948:10;929:30;;;;;;;;;;;;;;;;922:37;;;211:188:::0;767:199;:::o;4545:185:17:-;4595:26;4632:12;1207:28;4632:34;;4710:4;4699:15;;4685:39;4545:185;:::o;7:77:24:-;44:7;73:5;62:16;;7:77;;;:::o;90:118::-;177:24;195:5;177:24;:::i;:::-;172:3;165:37;90:118;;:::o;214:222::-;307:4;345:2;334:9;330:18;322:26;;358:71;426:1;415:9;411:17;402:6;358:71;:::i;:::-;214:222;;;;:::o;442:180::-;490:77;487:1;480:88;587:4;584:1;577:15;611:4;608:1;601:15;628:169;712:11;746:6;741:3;734:19;786:4;781:3;777:14;762:29;;628:169;;;;:::o;803:163::-;943:15;939:1;931:6;927:14;920:39;803:163;:::o;972:366::-;1114:3;1135:67;1199:2;1194:3;1135:67;:::i;:::-;1128:74;;1211:93;1300:3;1211:93;:::i;:::-;1329:2;1324:3;1320:12;1313:19;;972:366;;;:::o;1344:419::-;1510:4;1548:2;1537:9;1533:18;1525:26;;1597:9;1591:4;1587:20;1583:1;1572:9;1568:17;1561:47;1625:131;1751:4;1625:131;:::i;:::-;1617:139;;1344:419;;;:::o",
+  "sourceMap": "127:841:2:-:0;;;;;;;;;;;;;;;;;;;",
+  "deployedSourceMap": "127:841:2:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;440:291;;;:::i;:::-;;767:199;;;;;;;;;;;;;:::i;:::-;;;;;;;:::i;:::-;;;;;;;;440:291;221:35;259:26;:24;:26::i;:::-;221:64;;317:2;:11;;329:1;317:14;;;;;;;:::i;:::-;;;;;;;;;;;;;303:28;;:10;:28;;;:60;;;;349:2;:11;;361:1;349:14;;;;;;;:::i;:::-;;;;;;;;;;;;;335:28;;:10;:28;;;303:60;295:86;;;;;;;;;;;;:::i;:::-;;;;;;;;;508:35:::1;546:26;:24;:26::i;:::-;508:64;;582:15;600:2;:18;;:30;619:10;600:30;;;;;;;;;;;;;;;;582:48;;673:1;640:2;:18;;:30;659:10;640:30;;;;;;;;;;;;;;;:34;;;;692:10;684:28;;:40;713:10;684:40;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;::::0;::::1;;;;;;498:233;;211:188:::0;440:291::o;767:199::-;832:4;221:35;259:26;:24;:26::i;:::-;221:64;;317:2;:11;;329:1;317:14;;;;;;;:::i;:::-;;;;;;;;;;;;;303:28;;:10;:28;;;:60;;;;349:2;:11;;361:1;349:14;;;;;;;:::i;:::-;;;;;;;;;;;;;335:28;;:10;:28;;;303:60;295:86;;;;;;;;;;;;:::i;:::-;;;;;;;;;848:35:::1;886:26;:24;:26::i;:::-;848:64;;929:2;:18;;:30;948:10;929:30;;;;;;;;;;;;;;;;922:37;;;211:188:::0;767:199;:::o;4545:185:12:-;4595:26;4632:12;1207:28;4632:34;;4710:4;4699:15;;4685:39;4545:185;:::o;7:77:17:-;44:7;73:5;62:16;;7:77;;;:::o;90:118::-;177:24;195:5;177:24;:::i;:::-;172:3;165:37;90:118;;:::o;214:222::-;307:4;345:2;334:9;330:18;322:26;;358:71;426:1;415:9;411:17;402:6;358:71;:::i;:::-;214:222;;;;:::o;442:180::-;490:77;487:1;480:88;587:4;584:1;577:15;611:4;608:1;601:15;628:169;712:11;746:6;741:3;734:19;786:4;781:3;777:14;762:29;;628:169;;;;:::o;803:163::-;943:15;939:1;931:6;927:14;920:39;803:163;:::o;972:366::-;1114:3;1135:67;1199:2;1194:3;1135:67;:::i;:::-;1128:74;;1211:93;1300:3;1211:93;:::i;:::-;1329:2;1324:3;1320:12;1313:19;;972:366;;;:::o;1344:419::-;1510:4;1548:2;1537:9;1533:18;1525:26;;1597:9;1591:4;1587:20;1583:1;1572:9;1568:17;1561:47;1625:131;1751:4;1625:131;:::i;:::-;1617:139;;1344:419;;;:::o",
   "source": "//SPDX-License-Identifier: MIT\n\npragma solidity 0.8.11;\n\nimport {\n    Dixel,\n    LibDixel\n} from \"../libraries/LibDixel.sol\";\n\ncontract CreatorsFacet {\n\n        /**\n    * @notice\n    */\n    modifier isCreator() {\n        LibDixel.CreatorsStorage storage cs = LibDixel.creatorsStorage();\n        require(msg.sender == cs.creators[0] || msg.sender == cs.creators[1], \"only creators\");\n        _;\n    }\n\n\n        /**\n     *@notice\n     */\n    function creatorWithdrawal() external payable isCreator() {\n        LibDixel.CreatorsStorage storage cs = LibDixel.creatorsStorage();\n        uint withdrawal = cs.creatorsBalance[msg.sender];\n        cs.creatorsBalance[msg.sender] = 0;\n        payable(msg.sender).transfer(withdrawal);\n    }\n\n    /**\n     *@notice\n     */\n    function checkCreatorBalance() external view isCreator() returns(uint) {\n        LibDixel.CreatorsStorage storage cs = LibDixel.creatorsStorage();\n        return cs.creatorsBalance[msg.sender];\n    }\n}",
   "sourcePath": "/home/torof/blockchain-developer-bootcamp-final-project/contracts/facets/CreatorsFacet.sol",
   "ast": {
     "absolutePath": "project:/contracts/facets/CreatorsFacet.sol",
     "exportedSymbols": {
       "CreatorsFacet": [
-        1331
+        1203
       ],
       "Dixel": [
-        4222
+        3144
       ],
       "LibDixel": [
-        4689
+        3602
       ]
     },
-    "id": 1332,
+    "id": 1204,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 1228,
+        "id": 1100,
         "literals": [
           "solidity",
           "0.8",
           ".11"
         ],
         "nodeType": "PragmaDirective",
-        "src": "32:23:3"
+        "src": "32:23:2"
       },
       {
         "absolutePath": "project:/contracts/libraries/LibDixel.sol",
         "file": "../libraries/LibDixel.sol",
-        "id": 1231,
+        "id": 1103,
         "nameLocation": "-1:-1:-1",
         "nodeType": "ImportDirective",
-        "scope": 1332,
-        "sourceUnit": 4690,
-        "src": "57:68:3",
+        "scope": 1204,
+        "sourceUnit": 3603,
+        "src": "57:68:2",
         "symbolAliases": [
           {
             "foreign": {
-              "id": 1229,
+              "id": 1101,
               "name": "Dixel",
               "nodeType": "Identifier",
               "overloadedDeclarations": [],
-              "src": "70:5:3",
+              "src": "70:5:2",
               "typeDescriptions": {}
             },
             "nameLocation": "-1:-1:-1"
           },
           {
             "foreign": {
-              "id": 1230,
+              "id": 1102,
               "name": "LibDixel",
               "nodeType": "Identifier",
               "overloadedDeclarations": [],
-              "src": "81:8:3",
+              "src": "81:8:2",
               "typeDescriptions": {}
             },
             "nameLocation": "-1:-1:-1"
@@ -845,92 +845,92 @@
         "contractDependencies": [],
         "contractKind": "contract",
         "fullyImplemented": true,
-        "id": 1331,
+        "id": 1203,
         "linearizedBaseContracts": [
-          1331
+          1203
         ],
         "name": "CreatorsFacet",
-        "nameLocation": "136:13:3",
+        "nameLocation": "136:13:2",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "body": {
-              "id": 1263,
+              "id": 1135,
               "nodeType": "Block",
-              "src": "211:188:3",
+              "src": "211:188:2",
               "statements": [
                 {
                   "assignments": [
-                    1238
+                    1110
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 1238,
+                      "id": 1110,
                       "mutability": "mutable",
                       "name": "cs",
-                      "nameLocation": "254:2:3",
+                      "nameLocation": "254:2:2",
                       "nodeType": "VariableDeclaration",
-                      "scope": 1263,
-                      "src": "221:35:3",
+                      "scope": 1135,
+                      "src": "221:35:2",
                       "stateVariable": false,
                       "storageLocation": "storage",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_CreatorsStorage_$4304_storage_ptr",
+                        "typeIdentifier": "t_struct$_CreatorsStorage_$3226_storage_ptr",
                         "typeString": "struct LibDixel.CreatorsStorage"
                       },
                       "typeName": {
-                        "id": 1237,
+                        "id": 1109,
                         "nodeType": "UserDefinedTypeName",
                         "pathNode": {
-                          "id": 1236,
+                          "id": 1108,
                           "name": "LibDixel.CreatorsStorage",
                           "nodeType": "IdentifierPath",
-                          "referencedDeclaration": 4304,
-                          "src": "221:24:3"
+                          "referencedDeclaration": 3226,
+                          "src": "221:24:2"
                         },
-                        "referencedDeclaration": 4304,
-                        "src": "221:24:3",
+                        "referencedDeclaration": 3226,
+                        "src": "221:24:2",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_CreatorsStorage_$4304_storage_ptr",
+                          "typeIdentifier": "t_struct$_CreatorsStorage_$3226_storage_ptr",
                           "typeString": "struct LibDixel.CreatorsStorage"
                         }
                       },
                       "visibility": "internal"
                     }
                   ],
-                  "id": 1242,
+                  "id": 1114,
                   "initialValue": {
                     "arguments": [],
                     "expression": {
                       "argumentTypes": [],
                       "expression": {
-                        "id": 1239,
+                        "id": 1111,
                         "name": "LibDixel",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 4689,
-                        "src": "259:8:3",
+                        "referencedDeclaration": 3602,
+                        "src": "259:8:2",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_contract$_LibDixel_$4689_$",
+                          "typeIdentifier": "t_type$_t_contract$_LibDixel_$3602_$",
                           "typeString": "type(library LibDixel)"
                         }
                       },
-                      "id": 1240,
+                      "id": 1112,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "memberName": "creatorsStorage",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 4387,
-                      "src": "259:24:3",
+                      "referencedDeclaration": 3309,
+                      "src": "259:24:2",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_function_internal_pure$__$returns$_t_struct$_CreatorsStorage_$4304_storage_ptr_$",
+                        "typeIdentifier": "t_function_internal_pure$__$returns$_t_struct$_CreatorsStorage_$3226_storage_ptr_$",
                         "typeString": "function () pure returns (struct LibDixel.CreatorsStorage storage pointer)"
                       }
                     },
-                    "id": 1241,
+                    "id": 1113,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -938,15 +938,15 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "259:26:3",
+                    "src": "259:26:2",
                     "tryCall": false,
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_CreatorsStorage_$4304_storage_ptr",
+                      "typeIdentifier": "t_struct$_CreatorsStorage_$3226_storage_ptr",
                       "typeString": "struct LibDixel.CreatorsStorage storage pointer"
                     }
                   },
                   "nodeType": "VariableDeclarationStatement",
-                  "src": "221:64:3"
+                  "src": "221:64:2"
                 },
                 {
                   "expression": {
@@ -956,7 +956,7 @@
                           "typeIdentifier": "t_bool",
                           "typeString": "bool"
                         },
-                        "id": 1258,
+                        "id": 1130,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -966,32 +966,32 @@
                             "typeIdentifier": "t_address",
                             "typeString": "address"
                           },
-                          "id": 1250,
+                          "id": 1122,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
                           "leftExpression": {
                             "expression": {
-                              "id": 1244,
+                              "id": 1116,
                               "name": "msg",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
                               "referencedDeclaration": 4294967281,
-                              "src": "303:3:3",
+                              "src": "303:3:2",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_magic_message",
                                 "typeString": "msg"
                               }
                             },
-                            "id": 1245,
+                            "id": 1117,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
                             "lValueRequested": false,
                             "memberName": "sender",
                             "nodeType": "MemberAccess",
-                            "src": "303:10:3",
+                            "src": "303:10:2",
                             "typeDescriptions": {
                               "typeIdentifier": "t_address",
                               "typeString": "address"
@@ -1002,42 +1002,42 @@
                           "rightExpression": {
                             "baseExpression": {
                               "expression": {
-                                "id": 1246,
+                                "id": 1118,
                                 "name": "cs",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 1238,
-                                "src": "317:2:3",
+                                "referencedDeclaration": 1110,
+                                "src": "317:2:2",
                                 "typeDescriptions": {
-                                  "typeIdentifier": "t_struct$_CreatorsStorage_$4304_storage_ptr",
+                                  "typeIdentifier": "t_struct$_CreatorsStorage_$3226_storage_ptr",
                                   "typeString": "struct LibDixel.CreatorsStorage storage pointer"
                                 }
                               },
-                              "id": 1247,
+                              "id": 1119,
                               "isConstant": false,
                               "isLValue": true,
                               "isPure": false,
                               "lValueRequested": false,
                               "memberName": "creators",
                               "nodeType": "MemberAccess",
-                              "referencedDeclaration": 4303,
-                              "src": "317:11:3",
+                              "referencedDeclaration": 3225,
+                              "src": "317:11:2",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_array$_t_address_$2_storage",
                                 "typeString": "address[2] storage ref"
                               }
                             },
-                            "id": 1249,
+                            "id": 1121,
                             "indexExpression": {
                               "hexValue": "30",
-                              "id": 1248,
+                              "id": 1120,
                               "isConstant": false,
                               "isLValue": false,
                               "isPure": true,
                               "kind": "number",
                               "lValueRequested": false,
                               "nodeType": "Literal",
-                              "src": "329:1:3",
+                              "src": "329:1:2",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_rational_0_by_1",
                                 "typeString": "int_const 0"
@@ -1049,13 +1049,13 @@
                             "isPure": false,
                             "lValueRequested": false,
                             "nodeType": "IndexAccess",
-                            "src": "317:14:3",
+                            "src": "317:14:2",
                             "typeDescriptions": {
                               "typeIdentifier": "t_address",
                               "typeString": "address"
                             }
                           },
-                          "src": "303:28:3",
+                          "src": "303:28:2",
                           "typeDescriptions": {
                             "typeIdentifier": "t_bool",
                             "typeString": "bool"
@@ -1068,32 +1068,32 @@
                             "typeIdentifier": "t_address",
                             "typeString": "address"
                           },
-                          "id": 1257,
+                          "id": 1129,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
                           "leftExpression": {
                             "expression": {
-                              "id": 1251,
+                              "id": 1123,
                               "name": "msg",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
                               "referencedDeclaration": 4294967281,
-                              "src": "335:3:3",
+                              "src": "335:3:2",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_magic_message",
                                 "typeString": "msg"
                               }
                             },
-                            "id": 1252,
+                            "id": 1124,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
                             "lValueRequested": false,
                             "memberName": "sender",
                             "nodeType": "MemberAccess",
-                            "src": "335:10:3",
+                            "src": "335:10:2",
                             "typeDescriptions": {
                               "typeIdentifier": "t_address",
                               "typeString": "address"
@@ -1104,42 +1104,42 @@
                           "rightExpression": {
                             "baseExpression": {
                               "expression": {
-                                "id": 1253,
+                                "id": 1125,
                                 "name": "cs",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 1238,
-                                "src": "349:2:3",
+                                "referencedDeclaration": 1110,
+                                "src": "349:2:2",
                                 "typeDescriptions": {
-                                  "typeIdentifier": "t_struct$_CreatorsStorage_$4304_storage_ptr",
+                                  "typeIdentifier": "t_struct$_CreatorsStorage_$3226_storage_ptr",
                                   "typeString": "struct LibDixel.CreatorsStorage storage pointer"
                                 }
                               },
-                              "id": 1254,
+                              "id": 1126,
                               "isConstant": false,
                               "isLValue": true,
                               "isPure": false,
                               "lValueRequested": false,
                               "memberName": "creators",
                               "nodeType": "MemberAccess",
-                              "referencedDeclaration": 4303,
-                              "src": "349:11:3",
+                              "referencedDeclaration": 3225,
+                              "src": "349:11:2",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_array$_t_address_$2_storage",
                                 "typeString": "address[2] storage ref"
                               }
                             },
-                            "id": 1256,
+                            "id": 1128,
                             "indexExpression": {
                               "hexValue": "31",
-                              "id": 1255,
+                              "id": 1127,
                               "isConstant": false,
                               "isLValue": false,
                               "isPure": true,
                               "kind": "number",
                               "lValueRequested": false,
                               "nodeType": "Literal",
-                              "src": "361:1:3",
+                              "src": "361:1:2",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_rational_1_by_1",
                                 "typeString": "int_const 1"
@@ -1151,19 +1151,19 @@
                             "isPure": false,
                             "lValueRequested": false,
                             "nodeType": "IndexAccess",
-                            "src": "349:14:3",
+                            "src": "349:14:2",
                             "typeDescriptions": {
                               "typeIdentifier": "t_address",
                               "typeString": "address"
                             }
                           },
-                          "src": "335:28:3",
+                          "src": "335:28:2",
                           "typeDescriptions": {
                             "typeIdentifier": "t_bool",
                             "typeString": "bool"
                           }
                         },
-                        "src": "303:60:3",
+                        "src": "303:60:2",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bool",
                           "typeString": "bool"
@@ -1171,14 +1171,14 @@
                       },
                       {
                         "hexValue": "6f6e6c792063726561746f7273",
-                        "id": 1259,
+                        "id": 1131,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
                         "kind": "string",
                         "lValueRequested": false,
                         "nodeType": "Literal",
-                        "src": "365:15:3",
+                        "src": "365:15:2",
                         "typeDescriptions": {
                           "typeIdentifier": "t_stringliteral_b6c951c92f5855a5a37904c1f010b28a8dd8e076610a335acf6d9e0433540351",
                           "typeString": "literal_string \"only creators\""
@@ -1197,7 +1197,7 @@
                           "typeString": "literal_string \"only creators\""
                         }
                       ],
-                      "id": 1243,
+                      "id": 1115,
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
@@ -1205,13 +1205,13 @@
                         4294967278
                       ],
                       "referencedDeclaration": 4294967278,
-                      "src": "295:7:3",
+                      "src": "295:7:2",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
                         "typeString": "function (bool,string memory) pure"
                       }
                     },
-                    "id": 1260,
+                    "id": 1132,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1219,122 +1219,122 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "295:86:3",
+                    "src": "295:86:2",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 1261,
+                  "id": 1133,
                   "nodeType": "ExpressionStatement",
-                  "src": "295:86:3"
+                  "src": "295:86:2"
                 },
                 {
-                  "id": 1262,
+                  "id": 1134,
                   "nodeType": "PlaceholderStatement",
-                  "src": "391:1:3"
+                  "src": "391:1:2"
                 }
               ]
             },
             "documentation": {
-              "id": 1232,
+              "id": 1104,
               "nodeType": "StructuredDocumentation",
-              "src": "161:24:3",
+              "src": "161:24:2",
               "text": " @notice"
             },
-            "id": 1264,
+            "id": 1136,
             "name": "isCreator",
-            "nameLocation": "199:9:3",
+            "nameLocation": "199:9:2",
             "nodeType": "ModifierDefinition",
             "parameters": {
-              "id": 1233,
+              "id": 1105,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "208:2:3"
+              "src": "208:2:2"
             },
-            "src": "190:209:3",
+            "src": "190:209:2",
             "virtual": false,
             "visibility": "internal"
           },
           {
             "body": {
-              "id": 1305,
+              "id": 1177,
               "nodeType": "Block",
-              "src": "498:233:3",
+              "src": "498:233:2",
               "statements": [
                 {
                   "assignments": [
-                    1274
+                    1146
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 1274,
+                      "id": 1146,
                       "mutability": "mutable",
                       "name": "cs",
-                      "nameLocation": "541:2:3",
+                      "nameLocation": "541:2:2",
                       "nodeType": "VariableDeclaration",
-                      "scope": 1305,
-                      "src": "508:35:3",
+                      "scope": 1177,
+                      "src": "508:35:2",
                       "stateVariable": false,
                       "storageLocation": "storage",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_CreatorsStorage_$4304_storage_ptr",
+                        "typeIdentifier": "t_struct$_CreatorsStorage_$3226_storage_ptr",
                         "typeString": "struct LibDixel.CreatorsStorage"
                       },
                       "typeName": {
-                        "id": 1273,
+                        "id": 1145,
                         "nodeType": "UserDefinedTypeName",
                         "pathNode": {
-                          "id": 1272,
+                          "id": 1144,
                           "name": "LibDixel.CreatorsStorage",
                           "nodeType": "IdentifierPath",
-                          "referencedDeclaration": 4304,
-                          "src": "508:24:3"
+                          "referencedDeclaration": 3226,
+                          "src": "508:24:2"
                         },
-                        "referencedDeclaration": 4304,
-                        "src": "508:24:3",
+                        "referencedDeclaration": 3226,
+                        "src": "508:24:2",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_CreatorsStorage_$4304_storage_ptr",
+                          "typeIdentifier": "t_struct$_CreatorsStorage_$3226_storage_ptr",
                           "typeString": "struct LibDixel.CreatorsStorage"
                         }
                       },
                       "visibility": "internal"
                     }
                   ],
-                  "id": 1278,
+                  "id": 1150,
                   "initialValue": {
                     "arguments": [],
                     "expression": {
                       "argumentTypes": [],
                       "expression": {
-                        "id": 1275,
+                        "id": 1147,
                         "name": "LibDixel",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 4689,
-                        "src": "546:8:3",
+                        "referencedDeclaration": 3602,
+                        "src": "546:8:2",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_contract$_LibDixel_$4689_$",
+                          "typeIdentifier": "t_type$_t_contract$_LibDixel_$3602_$",
                           "typeString": "type(library LibDixel)"
                         }
                       },
-                      "id": 1276,
+                      "id": 1148,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "memberName": "creatorsStorage",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 4387,
-                      "src": "546:24:3",
+                      "referencedDeclaration": 3309,
+                      "src": "546:24:2",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_function_internal_pure$__$returns$_t_struct$_CreatorsStorage_$4304_storage_ptr_$",
+                        "typeIdentifier": "t_function_internal_pure$__$returns$_t_struct$_CreatorsStorage_$3226_storage_ptr_$",
                         "typeString": "function () pure returns (struct LibDixel.CreatorsStorage storage pointer)"
                       }
                     },
-                    "id": 1277,
+                    "id": 1149,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1342,30 +1342,30 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "546:26:3",
+                    "src": "546:26:2",
                     "tryCall": false,
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_CreatorsStorage_$4304_storage_ptr",
+                      "typeIdentifier": "t_struct$_CreatorsStorage_$3226_storage_ptr",
                       "typeString": "struct LibDixel.CreatorsStorage storage pointer"
                     }
                   },
                   "nodeType": "VariableDeclarationStatement",
-                  "src": "508:64:3"
+                  "src": "508:64:2"
                 },
                 {
                   "assignments": [
-                    1280
+                    1152
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 1280,
+                      "id": 1152,
                       "mutability": "mutable",
                       "name": "withdrawal",
-                      "nameLocation": "587:10:3",
+                      "nameLocation": "587:10:2",
                       "nodeType": "VariableDeclaration",
-                      "scope": 1305,
-                      "src": "582:15:3",
+                      "scope": 1177,
+                      "src": "582:15:2",
                       "stateVariable": false,
                       "storageLocation": "default",
                       "typeDescriptions": {
@@ -1373,10 +1373,10 @@
                         "typeString": "uint256"
                       },
                       "typeName": {
-                        "id": 1279,
+                        "id": 1151,
                         "name": "uint",
                         "nodeType": "ElementaryTypeName",
-                        "src": "582:4:3",
+                        "src": "582:4:2",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -1385,57 +1385,57 @@
                       "visibility": "internal"
                     }
                   ],
-                  "id": 1286,
+                  "id": 1158,
                   "initialValue": {
                     "baseExpression": {
                       "expression": {
-                        "id": 1281,
+                        "id": 1153,
                         "name": "cs",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 1274,
-                        "src": "600:2:3",
+                        "referencedDeclaration": 1146,
+                        "src": "600:2:2",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_CreatorsStorage_$4304_storage_ptr",
+                          "typeIdentifier": "t_struct$_CreatorsStorage_$3226_storage_ptr",
                           "typeString": "struct LibDixel.CreatorsStorage storage pointer"
                         }
                       },
-                      "id": 1282,
+                      "id": 1154,
                       "isConstant": false,
                       "isLValue": true,
                       "isPure": false,
                       "lValueRequested": false,
                       "memberName": "creatorsBalance",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 4299,
-                      "src": "600:18:3",
+                      "referencedDeclaration": 3221,
+                      "src": "600:18:2",
                       "typeDescriptions": {
                         "typeIdentifier": "t_mapping$_t_address_$_t_uint256_$",
                         "typeString": "mapping(address => uint256)"
                       }
                     },
-                    "id": 1285,
+                    "id": 1157,
                     "indexExpression": {
                       "expression": {
-                        "id": 1283,
+                        "id": 1155,
                         "name": "msg",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 4294967281,
-                        "src": "619:3:3",
+                        "src": "619:3:2",
                         "typeDescriptions": {
                           "typeIdentifier": "t_magic_message",
                           "typeString": "msg"
                         }
                       },
-                      "id": 1284,
+                      "id": 1156,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "memberName": "sender",
                       "nodeType": "MemberAccess",
-                      "src": "619:10:3",
+                      "src": "619:10:2",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
                         "typeString": "address"
@@ -1446,18 +1446,18 @@
                     "isPure": false,
                     "lValueRequested": false,
                     "nodeType": "IndexAccess",
-                    "src": "600:30:3",
+                    "src": "600:30:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   },
                   "nodeType": "VariableDeclarationStatement",
-                  "src": "582:48:3"
+                  "src": "582:48:2"
                 },
                 {
                   "expression": {
-                    "id": 1294,
+                    "id": 1166,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1465,53 +1465,53 @@
                     "leftHandSide": {
                       "baseExpression": {
                         "expression": {
-                          "id": 1287,
+                          "id": 1159,
                           "name": "cs",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 1274,
-                          "src": "640:2:3",
+                          "referencedDeclaration": 1146,
+                          "src": "640:2:2",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_struct$_CreatorsStorage_$4304_storage_ptr",
+                            "typeIdentifier": "t_struct$_CreatorsStorage_$3226_storage_ptr",
                             "typeString": "struct LibDixel.CreatorsStorage storage pointer"
                           }
                         },
-                        "id": 1291,
+                        "id": 1163,
                         "isConstant": false,
                         "isLValue": true,
                         "isPure": false,
                         "lValueRequested": false,
                         "memberName": "creatorsBalance",
                         "nodeType": "MemberAccess",
-                        "referencedDeclaration": 4299,
-                        "src": "640:18:3",
+                        "referencedDeclaration": 3221,
+                        "src": "640:18:2",
                         "typeDescriptions": {
                           "typeIdentifier": "t_mapping$_t_address_$_t_uint256_$",
                           "typeString": "mapping(address => uint256)"
                         }
                       },
-                      "id": 1292,
+                      "id": 1164,
                       "indexExpression": {
                         "expression": {
-                          "id": 1289,
+                          "id": 1161,
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
                           "referencedDeclaration": 4294967281,
-                          "src": "659:3:3",
+                          "src": "659:3:2",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
                             "typeString": "msg"
                           }
                         },
-                        "id": 1290,
+                        "id": 1162,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
                         "memberName": "sender",
                         "nodeType": "MemberAccess",
-                        "src": "659:10:3",
+                        "src": "659:10:2",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
                           "typeString": "address"
@@ -1522,7 +1522,7 @@
                       "isPure": false,
                       "lValueRequested": true,
                       "nodeType": "IndexAccess",
-                      "src": "640:30:3",
+                      "src": "640:30:2",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -1532,40 +1532,40 @@
                     "operator": "=",
                     "rightHandSide": {
                       "hexValue": "30",
-                      "id": 1293,
+                      "id": 1165,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
                       "kind": "number",
                       "lValueRequested": false,
                       "nodeType": "Literal",
-                      "src": "673:1:3",
+                      "src": "673:1:2",
                       "typeDescriptions": {
                         "typeIdentifier": "t_rational_0_by_1",
                         "typeString": "int_const 0"
                       },
                       "value": "0"
                     },
-                    "src": "640:34:3",
+                    "src": "640:34:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   },
-                  "id": 1295,
+                  "id": 1167,
                   "nodeType": "ExpressionStatement",
-                  "src": "640:34:3"
+                  "src": "640:34:2"
                 },
                 {
                   "expression": {
                     "arguments": [
                       {
-                        "id": 1302,
+                        "id": 1174,
                         "name": "withdrawal",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 1280,
-                        "src": "713:10:3",
+                        "referencedDeclaration": 1152,
+                        "src": "713:10:2",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -1583,25 +1583,25 @@
                         "arguments": [
                           {
                             "expression": {
-                              "id": 1298,
+                              "id": 1170,
                               "name": "msg",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
                               "referencedDeclaration": 4294967281,
-                              "src": "692:3:3",
+                              "src": "692:3:2",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_magic_message",
                                 "typeString": "msg"
                               }
                             },
-                            "id": 1299,
+                            "id": 1171,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
                             "lValueRequested": false,
                             "memberName": "sender",
                             "nodeType": "MemberAccess",
-                            "src": "692:10:3",
+                            "src": "692:10:2",
                             "typeDescriptions": {
                               "typeIdentifier": "t_address",
                               "typeString": "address"
@@ -1615,27 +1615,27 @@
                               "typeString": "address"
                             }
                           ],
-                          "id": 1297,
+                          "id": 1169,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": true,
                           "lValueRequested": false,
                           "nodeType": "ElementaryTypeNameExpression",
-                          "src": "684:8:3",
+                          "src": "684:8:2",
                           "typeDescriptions": {
                             "typeIdentifier": "t_type$_t_address_payable_$",
                             "typeString": "type(address payable)"
                           },
                           "typeName": {
-                            "id": 1296,
+                            "id": 1168,
                             "name": "address",
                             "nodeType": "ElementaryTypeName",
-                            "src": "684:8:3",
+                            "src": "684:8:2",
                             "stateMutability": "payable",
                             "typeDescriptions": {}
                           }
                         },
-                        "id": 1300,
+                        "id": 1172,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -1643,27 +1643,27 @@
                         "lValueRequested": false,
                         "names": [],
                         "nodeType": "FunctionCall",
-                        "src": "684:19:3",
+                        "src": "684:19:2",
                         "tryCall": false,
                         "typeDescriptions": {
                           "typeIdentifier": "t_address_payable",
                           "typeString": "address payable"
                         }
                       },
-                      "id": 1301,
+                      "id": 1173,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "memberName": "transfer",
                       "nodeType": "MemberAccess",
-                      "src": "684:28:3",
+                      "src": "684:28:2",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_transfer_nonpayable$_t_uint256_$returns$__$",
                         "typeString": "function (uint256)"
                       }
                     },
-                    "id": 1303,
+                    "id": 1175,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1671,144 +1671,144 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "684:40:3",
+                    "src": "684:40:2",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 1304,
+                  "id": 1176,
                   "nodeType": "ExpressionStatement",
-                  "src": "684:40:3"
+                  "src": "684:40:2"
                 }
               ]
             },
             "documentation": {
-              "id": 1265,
+              "id": 1137,
               "nodeType": "StructuredDocumentation",
-              "src": "410:25:3",
+              "src": "410:25:2",
               "text": "@notice"
             },
             "functionSelector": "52cc97fc",
-            "id": 1306,
+            "id": 1178,
             "implemented": true,
             "kind": "function",
             "modifiers": [
               {
                 "arguments": [],
-                "id": 1268,
+                "id": 1140,
                 "kind": "modifierInvocation",
                 "modifierName": {
-                  "id": 1267,
+                  "id": 1139,
                   "name": "isCreator",
                   "nodeType": "IdentifierPath",
-                  "referencedDeclaration": 1264,
-                  "src": "486:9:3"
+                  "referencedDeclaration": 1136,
+                  "src": "486:9:2"
                 },
                 "nodeType": "ModifierInvocation",
-                "src": "486:11:3"
+                "src": "486:11:2"
               }
             ],
             "name": "creatorWithdrawal",
-            "nameLocation": "449:17:3",
+            "nameLocation": "449:17:2",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 1266,
+              "id": 1138,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "466:2:3"
+              "src": "466:2:2"
             },
             "returnParameters": {
-              "id": 1269,
+              "id": 1141,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "498:0:3"
+              "src": "498:0:2"
             },
-            "scope": 1331,
-            "src": "440:291:3",
+            "scope": 1203,
+            "src": "440:291:2",
             "stateMutability": "payable",
             "virtual": false,
             "visibility": "external"
           },
           {
             "body": {
-              "id": 1329,
+              "id": 1201,
               "nodeType": "Block",
-              "src": "838:128:3",
+              "src": "838:128:2",
               "statements": [
                 {
                   "assignments": [
-                    1318
+                    1190
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 1318,
+                      "id": 1190,
                       "mutability": "mutable",
                       "name": "cs",
-                      "nameLocation": "881:2:3",
+                      "nameLocation": "881:2:2",
                       "nodeType": "VariableDeclaration",
-                      "scope": 1329,
-                      "src": "848:35:3",
+                      "scope": 1201,
+                      "src": "848:35:2",
                       "stateVariable": false,
                       "storageLocation": "storage",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_CreatorsStorage_$4304_storage_ptr",
+                        "typeIdentifier": "t_struct$_CreatorsStorage_$3226_storage_ptr",
                         "typeString": "struct LibDixel.CreatorsStorage"
                       },
                       "typeName": {
-                        "id": 1317,
+                        "id": 1189,
                         "nodeType": "UserDefinedTypeName",
                         "pathNode": {
-                          "id": 1316,
+                          "id": 1188,
                           "name": "LibDixel.CreatorsStorage",
                           "nodeType": "IdentifierPath",
-                          "referencedDeclaration": 4304,
-                          "src": "848:24:3"
+                          "referencedDeclaration": 3226,
+                          "src": "848:24:2"
                         },
-                        "referencedDeclaration": 4304,
-                        "src": "848:24:3",
+                        "referencedDeclaration": 3226,
+                        "src": "848:24:2",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_CreatorsStorage_$4304_storage_ptr",
+                          "typeIdentifier": "t_struct$_CreatorsStorage_$3226_storage_ptr",
                           "typeString": "struct LibDixel.CreatorsStorage"
                         }
                       },
                       "visibility": "internal"
                     }
                   ],
-                  "id": 1322,
+                  "id": 1194,
                   "initialValue": {
                     "arguments": [],
                     "expression": {
                       "argumentTypes": [],
                       "expression": {
-                        "id": 1319,
+                        "id": 1191,
                         "name": "LibDixel",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 4689,
-                        "src": "886:8:3",
+                        "referencedDeclaration": 3602,
+                        "src": "886:8:2",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_contract$_LibDixel_$4689_$",
+                          "typeIdentifier": "t_type$_t_contract$_LibDixel_$3602_$",
                           "typeString": "type(library LibDixel)"
                         }
                       },
-                      "id": 1320,
+                      "id": 1192,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "memberName": "creatorsStorage",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 4387,
-                      "src": "886:24:3",
+                      "referencedDeclaration": 3309,
+                      "src": "886:24:2",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_function_internal_pure$__$returns$_t_struct$_CreatorsStorage_$4304_storage_ptr_$",
+                        "typeIdentifier": "t_function_internal_pure$__$returns$_t_struct$_CreatorsStorage_$3226_storage_ptr_$",
                         "typeString": "function () pure returns (struct LibDixel.CreatorsStorage storage pointer)"
                       }
                     },
-                    "id": 1321,
+                    "id": 1193,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1816,67 +1816,67 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "886:26:3",
+                    "src": "886:26:2",
                     "tryCall": false,
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_CreatorsStorage_$4304_storage_ptr",
+                      "typeIdentifier": "t_struct$_CreatorsStorage_$3226_storage_ptr",
                       "typeString": "struct LibDixel.CreatorsStorage storage pointer"
                     }
                   },
                   "nodeType": "VariableDeclarationStatement",
-                  "src": "848:64:3"
+                  "src": "848:64:2"
                 },
                 {
                   "expression": {
                     "baseExpression": {
                       "expression": {
-                        "id": 1323,
+                        "id": 1195,
                         "name": "cs",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 1318,
-                        "src": "929:2:3",
+                        "referencedDeclaration": 1190,
+                        "src": "929:2:2",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_CreatorsStorage_$4304_storage_ptr",
+                          "typeIdentifier": "t_struct$_CreatorsStorage_$3226_storage_ptr",
                           "typeString": "struct LibDixel.CreatorsStorage storage pointer"
                         }
                       },
-                      "id": 1324,
+                      "id": 1196,
                       "isConstant": false,
                       "isLValue": true,
                       "isPure": false,
                       "lValueRequested": false,
                       "memberName": "creatorsBalance",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 4299,
-                      "src": "929:18:3",
+                      "referencedDeclaration": 3221,
+                      "src": "929:18:2",
                       "typeDescriptions": {
                         "typeIdentifier": "t_mapping$_t_address_$_t_uint256_$",
                         "typeString": "mapping(address => uint256)"
                       }
                     },
-                    "id": 1327,
+                    "id": 1199,
                     "indexExpression": {
                       "expression": {
-                        "id": 1325,
+                        "id": 1197,
                         "name": "msg",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 4294967281,
-                        "src": "948:3:3",
+                        "src": "948:3:2",
                         "typeDescriptions": {
                           "typeIdentifier": "t_magic_message",
                           "typeString": "msg"
                         }
                       },
-                      "id": 1326,
+                      "id": 1198,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "memberName": "sender",
                       "nodeType": "MemberAccess",
-                      "src": "948:10:3",
+                      "src": "948:10:2",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
                         "typeString": "address"
@@ -1887,67 +1887,67 @@
                     "isPure": false,
                     "lValueRequested": false,
                     "nodeType": "IndexAccess",
-                    "src": "929:30:3",
+                    "src": "929:30:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   },
-                  "functionReturnParameters": 1313,
-                  "id": 1328,
+                  "functionReturnParameters": 1185,
+                  "id": 1200,
                   "nodeType": "Return",
-                  "src": "922:37:3"
+                  "src": "922:37:2"
                 }
               ]
             },
             "documentation": {
-              "id": 1307,
+              "id": 1179,
               "nodeType": "StructuredDocumentation",
-              "src": "737:25:3",
+              "src": "737:25:2",
               "text": "@notice"
             },
             "functionSelector": "bd8921e6",
-            "id": 1330,
+            "id": 1202,
             "implemented": true,
             "kind": "function",
             "modifiers": [
               {
                 "arguments": [],
-                "id": 1310,
+                "id": 1182,
                 "kind": "modifierInvocation",
                 "modifierName": {
-                  "id": 1309,
+                  "id": 1181,
                   "name": "isCreator",
                   "nodeType": "IdentifierPath",
-                  "referencedDeclaration": 1264,
-                  "src": "812:9:3"
+                  "referencedDeclaration": 1136,
+                  "src": "812:9:2"
                 },
                 "nodeType": "ModifierInvocation",
-                "src": "812:11:3"
+                "src": "812:11:2"
               }
             ],
             "name": "checkCreatorBalance",
-            "nameLocation": "776:19:3",
+            "nameLocation": "776:19:2",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 1308,
+              "id": 1180,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "795:2:3"
+              "src": "795:2:2"
             },
             "returnParameters": {
-              "id": 1313,
+              "id": 1185,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1312,
+                  "id": 1184,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1330,
-                  "src": "832:4:3",
+                  "scope": 1202,
+                  "src": "832:4:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1955,10 +1955,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 1311,
+                    "id": 1183,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "832:4:3",
+                    "src": "832:4:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1967,77 +1967,77 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "831:6:3"
+              "src": "831:6:2"
             },
-            "scope": 1331,
-            "src": "767:199:3",
+            "scope": 1203,
+            "src": "767:199:2",
             "stateMutability": "view",
             "virtual": false,
             "visibility": "external"
           }
         ],
-        "scope": 1332,
-        "src": "127:841:3",
+        "scope": 1204,
+        "src": "127:841:2",
         "usedErrors": []
       }
     ],
-    "src": "32:936:3"
+    "src": "32:936:2"
   },
   "legacyAST": {
     "absolutePath": "project:/contracts/facets/CreatorsFacet.sol",
     "exportedSymbols": {
       "CreatorsFacet": [
-        1331
+        1203
       ],
       "Dixel": [
-        4222
+        3144
       ],
       "LibDixel": [
-        4689
+        3602
       ]
     },
-    "id": 1332,
+    "id": 1204,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 1228,
+        "id": 1100,
         "literals": [
           "solidity",
           "0.8",
           ".11"
         ],
         "nodeType": "PragmaDirective",
-        "src": "32:23:3"
+        "src": "32:23:2"
       },
       {
         "absolutePath": "project:/contracts/libraries/LibDixel.sol",
         "file": "../libraries/LibDixel.sol",
-        "id": 1231,
+        "id": 1103,
         "nameLocation": "-1:-1:-1",
         "nodeType": "ImportDirective",
-        "scope": 1332,
-        "sourceUnit": 4690,
-        "src": "57:68:3",
+        "scope": 1204,
+        "sourceUnit": 3603,
+        "src": "57:68:2",
         "symbolAliases": [
           {
             "foreign": {
-              "id": 1229,
+              "id": 1101,
               "name": "Dixel",
               "nodeType": "Identifier",
               "overloadedDeclarations": [],
-              "src": "70:5:3",
+              "src": "70:5:2",
               "typeDescriptions": {}
             },
             "nameLocation": "-1:-1:-1"
           },
           {
             "foreign": {
-              "id": 1230,
+              "id": 1102,
               "name": "LibDixel",
               "nodeType": "Identifier",
               "overloadedDeclarations": [],
-              "src": "81:8:3",
+              "src": "81:8:2",
               "typeDescriptions": {}
             },
             "nameLocation": "-1:-1:-1"
@@ -2052,92 +2052,92 @@
         "contractDependencies": [],
         "contractKind": "contract",
         "fullyImplemented": true,
-        "id": 1331,
+        "id": 1203,
         "linearizedBaseContracts": [
-          1331
+          1203
         ],
         "name": "CreatorsFacet",
-        "nameLocation": "136:13:3",
+        "nameLocation": "136:13:2",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "body": {
-              "id": 1263,
+              "id": 1135,
               "nodeType": "Block",
-              "src": "211:188:3",
+              "src": "211:188:2",
               "statements": [
                 {
                   "assignments": [
-                    1238
+                    1110
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 1238,
+                      "id": 1110,
                       "mutability": "mutable",
                       "name": "cs",
-                      "nameLocation": "254:2:3",
+                      "nameLocation": "254:2:2",
                       "nodeType": "VariableDeclaration",
-                      "scope": 1263,
-                      "src": "221:35:3",
+                      "scope": 1135,
+                      "src": "221:35:2",
                       "stateVariable": false,
                       "storageLocation": "storage",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_CreatorsStorage_$4304_storage_ptr",
+                        "typeIdentifier": "t_struct$_CreatorsStorage_$3226_storage_ptr",
                         "typeString": "struct LibDixel.CreatorsStorage"
                       },
                       "typeName": {
-                        "id": 1237,
+                        "id": 1109,
                         "nodeType": "UserDefinedTypeName",
                         "pathNode": {
-                          "id": 1236,
+                          "id": 1108,
                           "name": "LibDixel.CreatorsStorage",
                           "nodeType": "IdentifierPath",
-                          "referencedDeclaration": 4304,
-                          "src": "221:24:3"
+                          "referencedDeclaration": 3226,
+                          "src": "221:24:2"
                         },
-                        "referencedDeclaration": 4304,
-                        "src": "221:24:3",
+                        "referencedDeclaration": 3226,
+                        "src": "221:24:2",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_CreatorsStorage_$4304_storage_ptr",
+                          "typeIdentifier": "t_struct$_CreatorsStorage_$3226_storage_ptr",
                           "typeString": "struct LibDixel.CreatorsStorage"
                         }
                       },
                       "visibility": "internal"
                     }
                   ],
-                  "id": 1242,
+                  "id": 1114,
                   "initialValue": {
                     "arguments": [],
                     "expression": {
                       "argumentTypes": [],
                       "expression": {
-                        "id": 1239,
+                        "id": 1111,
                         "name": "LibDixel",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 4689,
-                        "src": "259:8:3",
+                        "referencedDeclaration": 3602,
+                        "src": "259:8:2",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_contract$_LibDixel_$4689_$",
+                          "typeIdentifier": "t_type$_t_contract$_LibDixel_$3602_$",
                           "typeString": "type(library LibDixel)"
                         }
                       },
-                      "id": 1240,
+                      "id": 1112,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "memberName": "creatorsStorage",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 4387,
-                      "src": "259:24:3",
+                      "referencedDeclaration": 3309,
+                      "src": "259:24:2",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_function_internal_pure$__$returns$_t_struct$_CreatorsStorage_$4304_storage_ptr_$",
+                        "typeIdentifier": "t_function_internal_pure$__$returns$_t_struct$_CreatorsStorage_$3226_storage_ptr_$",
                         "typeString": "function () pure returns (struct LibDixel.CreatorsStorage storage pointer)"
                       }
                     },
-                    "id": 1241,
+                    "id": 1113,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -2145,15 +2145,15 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "259:26:3",
+                    "src": "259:26:2",
                     "tryCall": false,
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_CreatorsStorage_$4304_storage_ptr",
+                      "typeIdentifier": "t_struct$_CreatorsStorage_$3226_storage_ptr",
                       "typeString": "struct LibDixel.CreatorsStorage storage pointer"
                     }
                   },
                   "nodeType": "VariableDeclarationStatement",
-                  "src": "221:64:3"
+                  "src": "221:64:2"
                 },
                 {
                   "expression": {
@@ -2163,7 +2163,7 @@
                           "typeIdentifier": "t_bool",
                           "typeString": "bool"
                         },
-                        "id": 1258,
+                        "id": 1130,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -2173,32 +2173,32 @@
                             "typeIdentifier": "t_address",
                             "typeString": "address"
                           },
-                          "id": 1250,
+                          "id": 1122,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
                           "leftExpression": {
                             "expression": {
-                              "id": 1244,
+                              "id": 1116,
                               "name": "msg",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
                               "referencedDeclaration": 4294967281,
-                              "src": "303:3:3",
+                              "src": "303:3:2",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_magic_message",
                                 "typeString": "msg"
                               }
                             },
-                            "id": 1245,
+                            "id": 1117,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
                             "lValueRequested": false,
                             "memberName": "sender",
                             "nodeType": "MemberAccess",
-                            "src": "303:10:3",
+                            "src": "303:10:2",
                             "typeDescriptions": {
                               "typeIdentifier": "t_address",
                               "typeString": "address"
@@ -2209,42 +2209,42 @@
                           "rightExpression": {
                             "baseExpression": {
                               "expression": {
-                                "id": 1246,
+                                "id": 1118,
                                 "name": "cs",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 1238,
-                                "src": "317:2:3",
+                                "referencedDeclaration": 1110,
+                                "src": "317:2:2",
                                 "typeDescriptions": {
-                                  "typeIdentifier": "t_struct$_CreatorsStorage_$4304_storage_ptr",
+                                  "typeIdentifier": "t_struct$_CreatorsStorage_$3226_storage_ptr",
                                   "typeString": "struct LibDixel.CreatorsStorage storage pointer"
                                 }
                               },
-                              "id": 1247,
+                              "id": 1119,
                               "isConstant": false,
                               "isLValue": true,
                               "isPure": false,
                               "lValueRequested": false,
                               "memberName": "creators",
                               "nodeType": "MemberAccess",
-                              "referencedDeclaration": 4303,
-                              "src": "317:11:3",
+                              "referencedDeclaration": 3225,
+                              "src": "317:11:2",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_array$_t_address_$2_storage",
                                 "typeString": "address[2] storage ref"
                               }
                             },
-                            "id": 1249,
+                            "id": 1121,
                             "indexExpression": {
                               "hexValue": "30",
-                              "id": 1248,
+                              "id": 1120,
                               "isConstant": false,
                               "isLValue": false,
                               "isPure": true,
                               "kind": "number",
                               "lValueRequested": false,
                               "nodeType": "Literal",
-                              "src": "329:1:3",
+                              "src": "329:1:2",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_rational_0_by_1",
                                 "typeString": "int_const 0"
@@ -2256,13 +2256,13 @@
                             "isPure": false,
                             "lValueRequested": false,
                             "nodeType": "IndexAccess",
-                            "src": "317:14:3",
+                            "src": "317:14:2",
                             "typeDescriptions": {
                               "typeIdentifier": "t_address",
                               "typeString": "address"
                             }
                           },
-                          "src": "303:28:3",
+                          "src": "303:28:2",
                           "typeDescriptions": {
                             "typeIdentifier": "t_bool",
                             "typeString": "bool"
@@ -2275,32 +2275,32 @@
                             "typeIdentifier": "t_address",
                             "typeString": "address"
                           },
-                          "id": 1257,
+                          "id": 1129,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
                           "leftExpression": {
                             "expression": {
-                              "id": 1251,
+                              "id": 1123,
                               "name": "msg",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
                               "referencedDeclaration": 4294967281,
-                              "src": "335:3:3",
+                              "src": "335:3:2",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_magic_message",
                                 "typeString": "msg"
                               }
                             },
-                            "id": 1252,
+                            "id": 1124,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
                             "lValueRequested": false,
                             "memberName": "sender",
                             "nodeType": "MemberAccess",
-                            "src": "335:10:3",
+                            "src": "335:10:2",
                             "typeDescriptions": {
                               "typeIdentifier": "t_address",
                               "typeString": "address"
@@ -2311,42 +2311,42 @@
                           "rightExpression": {
                             "baseExpression": {
                               "expression": {
-                                "id": 1253,
+                                "id": 1125,
                                 "name": "cs",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 1238,
-                                "src": "349:2:3",
+                                "referencedDeclaration": 1110,
+                                "src": "349:2:2",
                                 "typeDescriptions": {
-                                  "typeIdentifier": "t_struct$_CreatorsStorage_$4304_storage_ptr",
+                                  "typeIdentifier": "t_struct$_CreatorsStorage_$3226_storage_ptr",
                                   "typeString": "struct LibDixel.CreatorsStorage storage pointer"
                                 }
                               },
-                              "id": 1254,
+                              "id": 1126,
                               "isConstant": false,
                               "isLValue": true,
                               "isPure": false,
                               "lValueRequested": false,
                               "memberName": "creators",
                               "nodeType": "MemberAccess",
-                              "referencedDeclaration": 4303,
-                              "src": "349:11:3",
+                              "referencedDeclaration": 3225,
+                              "src": "349:11:2",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_array$_t_address_$2_storage",
                                 "typeString": "address[2] storage ref"
                               }
                             },
-                            "id": 1256,
+                            "id": 1128,
                             "indexExpression": {
                               "hexValue": "31",
-                              "id": 1255,
+                              "id": 1127,
                               "isConstant": false,
                               "isLValue": false,
                               "isPure": true,
                               "kind": "number",
                               "lValueRequested": false,
                               "nodeType": "Literal",
-                              "src": "361:1:3",
+                              "src": "361:1:2",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_rational_1_by_1",
                                 "typeString": "int_const 1"
@@ -2358,19 +2358,19 @@
                             "isPure": false,
                             "lValueRequested": false,
                             "nodeType": "IndexAccess",
-                            "src": "349:14:3",
+                            "src": "349:14:2",
                             "typeDescriptions": {
                               "typeIdentifier": "t_address",
                               "typeString": "address"
                             }
                           },
-                          "src": "335:28:3",
+                          "src": "335:28:2",
                           "typeDescriptions": {
                             "typeIdentifier": "t_bool",
                             "typeString": "bool"
                           }
                         },
-                        "src": "303:60:3",
+                        "src": "303:60:2",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bool",
                           "typeString": "bool"
@@ -2378,14 +2378,14 @@
                       },
                       {
                         "hexValue": "6f6e6c792063726561746f7273",
-                        "id": 1259,
+                        "id": 1131,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
                         "kind": "string",
                         "lValueRequested": false,
                         "nodeType": "Literal",
-                        "src": "365:15:3",
+                        "src": "365:15:2",
                         "typeDescriptions": {
                           "typeIdentifier": "t_stringliteral_b6c951c92f5855a5a37904c1f010b28a8dd8e076610a335acf6d9e0433540351",
                           "typeString": "literal_string \"only creators\""
@@ -2404,7 +2404,7 @@
                           "typeString": "literal_string \"only creators\""
                         }
                       ],
-                      "id": 1243,
+                      "id": 1115,
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
@@ -2412,13 +2412,13 @@
                         4294967278
                       ],
                       "referencedDeclaration": 4294967278,
-                      "src": "295:7:3",
+                      "src": "295:7:2",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
                         "typeString": "function (bool,string memory) pure"
                       }
                     },
-                    "id": 1260,
+                    "id": 1132,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -2426,122 +2426,122 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "295:86:3",
+                    "src": "295:86:2",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 1261,
+                  "id": 1133,
                   "nodeType": "ExpressionStatement",
-                  "src": "295:86:3"
+                  "src": "295:86:2"
                 },
                 {
-                  "id": 1262,
+                  "id": 1134,
                   "nodeType": "PlaceholderStatement",
-                  "src": "391:1:3"
+                  "src": "391:1:2"
                 }
               ]
             },
             "documentation": {
-              "id": 1232,
+              "id": 1104,
               "nodeType": "StructuredDocumentation",
-              "src": "161:24:3",
+              "src": "161:24:2",
               "text": " @notice"
             },
-            "id": 1264,
+            "id": 1136,
             "name": "isCreator",
-            "nameLocation": "199:9:3",
+            "nameLocation": "199:9:2",
             "nodeType": "ModifierDefinition",
             "parameters": {
-              "id": 1233,
+              "id": 1105,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "208:2:3"
+              "src": "208:2:2"
             },
-            "src": "190:209:3",
+            "src": "190:209:2",
             "virtual": false,
             "visibility": "internal"
           },
           {
             "body": {
-              "id": 1305,
+              "id": 1177,
               "nodeType": "Block",
-              "src": "498:233:3",
+              "src": "498:233:2",
               "statements": [
                 {
                   "assignments": [
-                    1274
+                    1146
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 1274,
+                      "id": 1146,
                       "mutability": "mutable",
                       "name": "cs",
-                      "nameLocation": "541:2:3",
+                      "nameLocation": "541:2:2",
                       "nodeType": "VariableDeclaration",
-                      "scope": 1305,
-                      "src": "508:35:3",
+                      "scope": 1177,
+                      "src": "508:35:2",
                       "stateVariable": false,
                       "storageLocation": "storage",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_CreatorsStorage_$4304_storage_ptr",
+                        "typeIdentifier": "t_struct$_CreatorsStorage_$3226_storage_ptr",
                         "typeString": "struct LibDixel.CreatorsStorage"
                       },
                       "typeName": {
-                        "id": 1273,
+                        "id": 1145,
                         "nodeType": "UserDefinedTypeName",
                         "pathNode": {
-                          "id": 1272,
+                          "id": 1144,
                           "name": "LibDixel.CreatorsStorage",
                           "nodeType": "IdentifierPath",
-                          "referencedDeclaration": 4304,
-                          "src": "508:24:3"
+                          "referencedDeclaration": 3226,
+                          "src": "508:24:2"
                         },
-                        "referencedDeclaration": 4304,
-                        "src": "508:24:3",
+                        "referencedDeclaration": 3226,
+                        "src": "508:24:2",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_CreatorsStorage_$4304_storage_ptr",
+                          "typeIdentifier": "t_struct$_CreatorsStorage_$3226_storage_ptr",
                           "typeString": "struct LibDixel.CreatorsStorage"
                         }
                       },
                       "visibility": "internal"
                     }
                   ],
-                  "id": 1278,
+                  "id": 1150,
                   "initialValue": {
                     "arguments": [],
                     "expression": {
                       "argumentTypes": [],
                       "expression": {
-                        "id": 1275,
+                        "id": 1147,
                         "name": "LibDixel",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 4689,
-                        "src": "546:8:3",
+                        "referencedDeclaration": 3602,
+                        "src": "546:8:2",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_contract$_LibDixel_$4689_$",
+                          "typeIdentifier": "t_type$_t_contract$_LibDixel_$3602_$",
                           "typeString": "type(library LibDixel)"
                         }
                       },
-                      "id": 1276,
+                      "id": 1148,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "memberName": "creatorsStorage",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 4387,
-                      "src": "546:24:3",
+                      "referencedDeclaration": 3309,
+                      "src": "546:24:2",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_function_internal_pure$__$returns$_t_struct$_CreatorsStorage_$4304_storage_ptr_$",
+                        "typeIdentifier": "t_function_internal_pure$__$returns$_t_struct$_CreatorsStorage_$3226_storage_ptr_$",
                         "typeString": "function () pure returns (struct LibDixel.CreatorsStorage storage pointer)"
                       }
                     },
-                    "id": 1277,
+                    "id": 1149,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -2549,30 +2549,30 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "546:26:3",
+                    "src": "546:26:2",
                     "tryCall": false,
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_CreatorsStorage_$4304_storage_ptr",
+                      "typeIdentifier": "t_struct$_CreatorsStorage_$3226_storage_ptr",
                       "typeString": "struct LibDixel.CreatorsStorage storage pointer"
                     }
                   },
                   "nodeType": "VariableDeclarationStatement",
-                  "src": "508:64:3"
+                  "src": "508:64:2"
                 },
                 {
                   "assignments": [
-                    1280
+                    1152
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 1280,
+                      "id": 1152,
                       "mutability": "mutable",
                       "name": "withdrawal",
-                      "nameLocation": "587:10:3",
+                      "nameLocation": "587:10:2",
                       "nodeType": "VariableDeclaration",
-                      "scope": 1305,
-                      "src": "582:15:3",
+                      "scope": 1177,
+                      "src": "582:15:2",
                       "stateVariable": false,
                       "storageLocation": "default",
                       "typeDescriptions": {
@@ -2580,10 +2580,10 @@
                         "typeString": "uint256"
                       },
                       "typeName": {
-                        "id": 1279,
+                        "id": 1151,
                         "name": "uint",
                         "nodeType": "ElementaryTypeName",
-                        "src": "582:4:3",
+                        "src": "582:4:2",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -2592,57 +2592,57 @@
                       "visibility": "internal"
                     }
                   ],
-                  "id": 1286,
+                  "id": 1158,
                   "initialValue": {
                     "baseExpression": {
                       "expression": {
-                        "id": 1281,
+                        "id": 1153,
                         "name": "cs",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 1274,
-                        "src": "600:2:3",
+                        "referencedDeclaration": 1146,
+                        "src": "600:2:2",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_CreatorsStorage_$4304_storage_ptr",
+                          "typeIdentifier": "t_struct$_CreatorsStorage_$3226_storage_ptr",
                           "typeString": "struct LibDixel.CreatorsStorage storage pointer"
                         }
                       },
-                      "id": 1282,
+                      "id": 1154,
                       "isConstant": false,
                       "isLValue": true,
                       "isPure": false,
                       "lValueRequested": false,
                       "memberName": "creatorsBalance",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 4299,
-                      "src": "600:18:3",
+                      "referencedDeclaration": 3221,
+                      "src": "600:18:2",
                       "typeDescriptions": {
                         "typeIdentifier": "t_mapping$_t_address_$_t_uint256_$",
                         "typeString": "mapping(address => uint256)"
                       }
                     },
-                    "id": 1285,
+                    "id": 1157,
                     "indexExpression": {
                       "expression": {
-                        "id": 1283,
+                        "id": 1155,
                         "name": "msg",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 4294967281,
-                        "src": "619:3:3",
+                        "src": "619:3:2",
                         "typeDescriptions": {
                           "typeIdentifier": "t_magic_message",
                           "typeString": "msg"
                         }
                       },
-                      "id": 1284,
+                      "id": 1156,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "memberName": "sender",
                       "nodeType": "MemberAccess",
-                      "src": "619:10:3",
+                      "src": "619:10:2",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
                         "typeString": "address"
@@ -2653,18 +2653,18 @@
                     "isPure": false,
                     "lValueRequested": false,
                     "nodeType": "IndexAccess",
-                    "src": "600:30:3",
+                    "src": "600:30:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   },
                   "nodeType": "VariableDeclarationStatement",
-                  "src": "582:48:3"
+                  "src": "582:48:2"
                 },
                 {
                   "expression": {
-                    "id": 1294,
+                    "id": 1166,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -2672,53 +2672,53 @@
                     "leftHandSide": {
                       "baseExpression": {
                         "expression": {
-                          "id": 1287,
+                          "id": 1159,
                           "name": "cs",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 1274,
-                          "src": "640:2:3",
+                          "referencedDeclaration": 1146,
+                          "src": "640:2:2",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_struct$_CreatorsStorage_$4304_storage_ptr",
+                            "typeIdentifier": "t_struct$_CreatorsStorage_$3226_storage_ptr",
                             "typeString": "struct LibDixel.CreatorsStorage storage pointer"
                           }
                         },
-                        "id": 1291,
+                        "id": 1163,
                         "isConstant": false,
                         "isLValue": true,
                         "isPure": false,
                         "lValueRequested": false,
                         "memberName": "creatorsBalance",
                         "nodeType": "MemberAccess",
-                        "referencedDeclaration": 4299,
-                        "src": "640:18:3",
+                        "referencedDeclaration": 3221,
+                        "src": "640:18:2",
                         "typeDescriptions": {
                           "typeIdentifier": "t_mapping$_t_address_$_t_uint256_$",
                           "typeString": "mapping(address => uint256)"
                         }
                       },
-                      "id": 1292,
+                      "id": 1164,
                       "indexExpression": {
                         "expression": {
-                          "id": 1289,
+                          "id": 1161,
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
                           "referencedDeclaration": 4294967281,
-                          "src": "659:3:3",
+                          "src": "659:3:2",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
                             "typeString": "msg"
                           }
                         },
-                        "id": 1290,
+                        "id": 1162,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
                         "memberName": "sender",
                         "nodeType": "MemberAccess",
-                        "src": "659:10:3",
+                        "src": "659:10:2",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
                           "typeString": "address"
@@ -2729,7 +2729,7 @@
                       "isPure": false,
                       "lValueRequested": true,
                       "nodeType": "IndexAccess",
-                      "src": "640:30:3",
+                      "src": "640:30:2",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -2739,40 +2739,40 @@
                     "operator": "=",
                     "rightHandSide": {
                       "hexValue": "30",
-                      "id": 1293,
+                      "id": 1165,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
                       "kind": "number",
                       "lValueRequested": false,
                       "nodeType": "Literal",
-                      "src": "673:1:3",
+                      "src": "673:1:2",
                       "typeDescriptions": {
                         "typeIdentifier": "t_rational_0_by_1",
                         "typeString": "int_const 0"
                       },
                       "value": "0"
                     },
-                    "src": "640:34:3",
+                    "src": "640:34:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   },
-                  "id": 1295,
+                  "id": 1167,
                   "nodeType": "ExpressionStatement",
-                  "src": "640:34:3"
+                  "src": "640:34:2"
                 },
                 {
                   "expression": {
                     "arguments": [
                       {
-                        "id": 1302,
+                        "id": 1174,
                         "name": "withdrawal",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 1280,
-                        "src": "713:10:3",
+                        "referencedDeclaration": 1152,
+                        "src": "713:10:2",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -2790,25 +2790,25 @@
                         "arguments": [
                           {
                             "expression": {
-                              "id": 1298,
+                              "id": 1170,
                               "name": "msg",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
                               "referencedDeclaration": 4294967281,
-                              "src": "692:3:3",
+                              "src": "692:3:2",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_magic_message",
                                 "typeString": "msg"
                               }
                             },
-                            "id": 1299,
+                            "id": 1171,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
                             "lValueRequested": false,
                             "memberName": "sender",
                             "nodeType": "MemberAccess",
-                            "src": "692:10:3",
+                            "src": "692:10:2",
                             "typeDescriptions": {
                               "typeIdentifier": "t_address",
                               "typeString": "address"
@@ -2822,27 +2822,27 @@
                               "typeString": "address"
                             }
                           ],
-                          "id": 1297,
+                          "id": 1169,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": true,
                           "lValueRequested": false,
                           "nodeType": "ElementaryTypeNameExpression",
-                          "src": "684:8:3",
+                          "src": "684:8:2",
                           "typeDescriptions": {
                             "typeIdentifier": "t_type$_t_address_payable_$",
                             "typeString": "type(address payable)"
                           },
                           "typeName": {
-                            "id": 1296,
+                            "id": 1168,
                             "name": "address",
                             "nodeType": "ElementaryTypeName",
-                            "src": "684:8:3",
+                            "src": "684:8:2",
                             "stateMutability": "payable",
                             "typeDescriptions": {}
                           }
                         },
-                        "id": 1300,
+                        "id": 1172,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -2850,27 +2850,27 @@
                         "lValueRequested": false,
                         "names": [],
                         "nodeType": "FunctionCall",
-                        "src": "684:19:3",
+                        "src": "684:19:2",
                         "tryCall": false,
                         "typeDescriptions": {
                           "typeIdentifier": "t_address_payable",
                           "typeString": "address payable"
                         }
                       },
-                      "id": 1301,
+                      "id": 1173,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "memberName": "transfer",
                       "nodeType": "MemberAccess",
-                      "src": "684:28:3",
+                      "src": "684:28:2",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_transfer_nonpayable$_t_uint256_$returns$__$",
                         "typeString": "function (uint256)"
                       }
                     },
-                    "id": 1303,
+                    "id": 1175,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -2878,144 +2878,144 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "684:40:3",
+                    "src": "684:40:2",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 1304,
+                  "id": 1176,
                   "nodeType": "ExpressionStatement",
-                  "src": "684:40:3"
+                  "src": "684:40:2"
                 }
               ]
             },
             "documentation": {
-              "id": 1265,
+              "id": 1137,
               "nodeType": "StructuredDocumentation",
-              "src": "410:25:3",
+              "src": "410:25:2",
               "text": "@notice"
             },
             "functionSelector": "52cc97fc",
-            "id": 1306,
+            "id": 1178,
             "implemented": true,
             "kind": "function",
             "modifiers": [
               {
                 "arguments": [],
-                "id": 1268,
+                "id": 1140,
                 "kind": "modifierInvocation",
                 "modifierName": {
-                  "id": 1267,
+                  "id": 1139,
                   "name": "isCreator",
                   "nodeType": "IdentifierPath",
-                  "referencedDeclaration": 1264,
-                  "src": "486:9:3"
+                  "referencedDeclaration": 1136,
+                  "src": "486:9:2"
                 },
                 "nodeType": "ModifierInvocation",
-                "src": "486:11:3"
+                "src": "486:11:2"
               }
             ],
             "name": "creatorWithdrawal",
-            "nameLocation": "449:17:3",
+            "nameLocation": "449:17:2",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 1266,
+              "id": 1138,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "466:2:3"
+              "src": "466:2:2"
             },
             "returnParameters": {
-              "id": 1269,
+              "id": 1141,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "498:0:3"
+              "src": "498:0:2"
             },
-            "scope": 1331,
-            "src": "440:291:3",
+            "scope": 1203,
+            "src": "440:291:2",
             "stateMutability": "payable",
             "virtual": false,
             "visibility": "external"
           },
           {
             "body": {
-              "id": 1329,
+              "id": 1201,
               "nodeType": "Block",
-              "src": "838:128:3",
+              "src": "838:128:2",
               "statements": [
                 {
                   "assignments": [
-                    1318
+                    1190
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 1318,
+                      "id": 1190,
                       "mutability": "mutable",
                       "name": "cs",
-                      "nameLocation": "881:2:3",
+                      "nameLocation": "881:2:2",
                       "nodeType": "VariableDeclaration",
-                      "scope": 1329,
-                      "src": "848:35:3",
+                      "scope": 1201,
+                      "src": "848:35:2",
                       "stateVariable": false,
                       "storageLocation": "storage",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_CreatorsStorage_$4304_storage_ptr",
+                        "typeIdentifier": "t_struct$_CreatorsStorage_$3226_storage_ptr",
                         "typeString": "struct LibDixel.CreatorsStorage"
                       },
                       "typeName": {
-                        "id": 1317,
+                        "id": 1189,
                         "nodeType": "UserDefinedTypeName",
                         "pathNode": {
-                          "id": 1316,
+                          "id": 1188,
                           "name": "LibDixel.CreatorsStorage",
                           "nodeType": "IdentifierPath",
-                          "referencedDeclaration": 4304,
-                          "src": "848:24:3"
+                          "referencedDeclaration": 3226,
+                          "src": "848:24:2"
                         },
-                        "referencedDeclaration": 4304,
-                        "src": "848:24:3",
+                        "referencedDeclaration": 3226,
+                        "src": "848:24:2",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_CreatorsStorage_$4304_storage_ptr",
+                          "typeIdentifier": "t_struct$_CreatorsStorage_$3226_storage_ptr",
                           "typeString": "struct LibDixel.CreatorsStorage"
                         }
                       },
                       "visibility": "internal"
                     }
                   ],
-                  "id": 1322,
+                  "id": 1194,
                   "initialValue": {
                     "arguments": [],
                     "expression": {
                       "argumentTypes": [],
                       "expression": {
-                        "id": 1319,
+                        "id": 1191,
                         "name": "LibDixel",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 4689,
-                        "src": "886:8:3",
+                        "referencedDeclaration": 3602,
+                        "src": "886:8:2",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_contract$_LibDixel_$4689_$",
+                          "typeIdentifier": "t_type$_t_contract$_LibDixel_$3602_$",
                           "typeString": "type(library LibDixel)"
                         }
                       },
-                      "id": 1320,
+                      "id": 1192,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "memberName": "creatorsStorage",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 4387,
-                      "src": "886:24:3",
+                      "referencedDeclaration": 3309,
+                      "src": "886:24:2",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_function_internal_pure$__$returns$_t_struct$_CreatorsStorage_$4304_storage_ptr_$",
+                        "typeIdentifier": "t_function_internal_pure$__$returns$_t_struct$_CreatorsStorage_$3226_storage_ptr_$",
                         "typeString": "function () pure returns (struct LibDixel.CreatorsStorage storage pointer)"
                       }
                     },
-                    "id": 1321,
+                    "id": 1193,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -3023,67 +3023,67 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "886:26:3",
+                    "src": "886:26:2",
                     "tryCall": false,
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_CreatorsStorage_$4304_storage_ptr",
+                      "typeIdentifier": "t_struct$_CreatorsStorage_$3226_storage_ptr",
                       "typeString": "struct LibDixel.CreatorsStorage storage pointer"
                     }
                   },
                   "nodeType": "VariableDeclarationStatement",
-                  "src": "848:64:3"
+                  "src": "848:64:2"
                 },
                 {
                   "expression": {
                     "baseExpression": {
                       "expression": {
-                        "id": 1323,
+                        "id": 1195,
                         "name": "cs",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 1318,
-                        "src": "929:2:3",
+                        "referencedDeclaration": 1190,
+                        "src": "929:2:2",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_CreatorsStorage_$4304_storage_ptr",
+                          "typeIdentifier": "t_struct$_CreatorsStorage_$3226_storage_ptr",
                           "typeString": "struct LibDixel.CreatorsStorage storage pointer"
                         }
                       },
-                      "id": 1324,
+                      "id": 1196,
                       "isConstant": false,
                       "isLValue": true,
                       "isPure": false,
                       "lValueRequested": false,
                       "memberName": "creatorsBalance",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 4299,
-                      "src": "929:18:3",
+                      "referencedDeclaration": 3221,
+                      "src": "929:18:2",
                       "typeDescriptions": {
                         "typeIdentifier": "t_mapping$_t_address_$_t_uint256_$",
                         "typeString": "mapping(address => uint256)"
                       }
                     },
-                    "id": 1327,
+                    "id": 1199,
                     "indexExpression": {
                       "expression": {
-                        "id": 1325,
+                        "id": 1197,
                         "name": "msg",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 4294967281,
-                        "src": "948:3:3",
+                        "src": "948:3:2",
                         "typeDescriptions": {
                           "typeIdentifier": "t_magic_message",
                           "typeString": "msg"
                         }
                       },
-                      "id": 1326,
+                      "id": 1198,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "memberName": "sender",
                       "nodeType": "MemberAccess",
-                      "src": "948:10:3",
+                      "src": "948:10:2",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
                         "typeString": "address"
@@ -3094,67 +3094,67 @@
                     "isPure": false,
                     "lValueRequested": false,
                     "nodeType": "IndexAccess",
-                    "src": "929:30:3",
+                    "src": "929:30:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   },
-                  "functionReturnParameters": 1313,
-                  "id": 1328,
+                  "functionReturnParameters": 1185,
+                  "id": 1200,
                   "nodeType": "Return",
-                  "src": "922:37:3"
+                  "src": "922:37:2"
                 }
               ]
             },
             "documentation": {
-              "id": 1307,
+              "id": 1179,
               "nodeType": "StructuredDocumentation",
-              "src": "737:25:3",
+              "src": "737:25:2",
               "text": "@notice"
             },
             "functionSelector": "bd8921e6",
-            "id": 1330,
+            "id": 1202,
             "implemented": true,
             "kind": "function",
             "modifiers": [
               {
                 "arguments": [],
-                "id": 1310,
+                "id": 1182,
                 "kind": "modifierInvocation",
                 "modifierName": {
-                  "id": 1309,
+                  "id": 1181,
                   "name": "isCreator",
                   "nodeType": "IdentifierPath",
-                  "referencedDeclaration": 1264,
-                  "src": "812:9:3"
+                  "referencedDeclaration": 1136,
+                  "src": "812:9:2"
                 },
                 "nodeType": "ModifierInvocation",
-                "src": "812:11:3"
+                "src": "812:11:2"
               }
             ],
             "name": "checkCreatorBalance",
-            "nameLocation": "776:19:3",
+            "nameLocation": "776:19:2",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 1308,
+              "id": 1180,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "795:2:3"
+              "src": "795:2:2"
             },
             "returnParameters": {
-              "id": 1313,
+              "id": 1185,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1312,
+                  "id": 1184,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1330,
-                  "src": "832:4:3",
+                  "scope": 1202,
+                  "src": "832:4:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -3162,10 +3162,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 1311,
+                    "id": 1183,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "832:4:3",
+                    "src": "832:4:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -3174,21 +3174,21 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "831:6:3"
+              "src": "831:6:2"
             },
-            "scope": 1331,
-            "src": "767:199:3",
+            "scope": 1203,
+            "src": "767:199:2",
             "stateMutability": "view",
             "virtual": false,
             "visibility": "external"
           }
         ],
-        "scope": 1332,
-        "src": "127:841:3",
+        "scope": 1204,
+        "src": "127:841:2",
         "usedErrors": []
       }
     ],
-    "src": "32:936:3"
+    "src": "32:936:2"
   },
   "compiler": {
     "name": "solc",
@@ -3196,7 +3196,7 @@
   },
   "networks": {},
   "schemaVersion": "3.4.4",
-  "updatedAt": "2022-01-28T19:35:15.995Z",
+  "updatedAt": "2022-01-31T18:51:12.038Z",
   "devdoc": {
     "kind": "dev",
     "methods": {},

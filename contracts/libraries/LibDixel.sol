@@ -146,6 +146,7 @@ library LibDixel {
 
     /**
     * @dev pseudo random generation. To be replaced by an oracle RNG
+    * @param _statName a string parameter
     * @return returns a random uint
     */
     function _generateRandomness(string memory _statName) internal view returns (uint256){
@@ -153,23 +154,22 @@ library LibDixel {
     }
 
     /**
-    * @notice
-    * @param
-    * @return
+    * @dev pseudo random generation. To be replaced by an oracle RNG
+    * @param _statName a string parameter
+    * @return a random uint256
     */
         function _generateRandomnA(string memory _statName) internal view returns (uint256){
         return uint256(keccak256(abi.encodePacked(block.timestamp, msg.sender, _statName)));
     }
 
     /**
-    * @notice
-    * @param
-    * @param
-    * @return
+    * @notice assigns an array of addresses pointing to the metadata of each level of the dixel
+    * @param _rarityIdentifier the actual rarity of the dixel
+    * @param _mdtAddresses all possible arrays of addresses. One will become the levelURI array of the newly minted dixel.
+    * @return mdtAddressArray
     */
-    function assignAddress(uint256 _rarityIdentifier, string[][] memory _mdtAddresses) internal pure returns(string[] memory){
+    function assignAddress(uint256 _rarityIdentifier, string[][] memory _mdtAddresses) internal pure returns(string[] memory mdtAddressArray){
         require(_rarityIdentifier < 5, "RI not existing");
-        string[] memory mdtAddressArray;
         if (_rarityIdentifier == 1) return mdtAddressArray = _mdtAddresses[0];
         if (_rarityIdentifier == 2) return mdtAddressArray = _mdtAddresses[1];
         if (_rarityIdentifier == 3) return mdtAddressArray = _mdtAddresses[2];
