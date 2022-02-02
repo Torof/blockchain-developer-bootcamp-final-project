@@ -8,10 +8,6 @@ const OwnershipFacet = artifacts.require('OwnershipFacet')
 const LotteryFacet = artifacts.require('LotteryFacet')
 const DixelFacet = artifacts.require('DixelFacet')
 const GetterFacet = artifacts.require('GetterFacet')
-const Test1Facet = artifacts.require('Test1Facet')
-const Test2Facet = artifacts.require('Test2Facet')
-
-
 
 const FacetCutAction = {
   Add: 0,
@@ -35,8 +31,6 @@ module.exports = function (deployer, network, accounts) {
   deployer.deploy(DixelFacet)
   deployer.deploy(LotteryFacet)
   deployer.deploy(GetterFacet)
-  deployer.deploy(Test1Facet)
-  deployer.deploy(Test2Facet)
 
   deployer.deploy(DiamondCutFacet)
   deployer.deploy(DiamondLoupeFacet)

@@ -11,6 +11,9 @@ import {
 import {
     LibStarm
 } from "../libraries/LibStarm.sol";
+import {
+    LibOracle
+} from "../libraries/LibOracle.sol";
 import "../ERC721.sol";
 
 contract DixelFacet is ERC721 {
@@ -34,7 +37,7 @@ contract DixelFacet is ERC721 {
      */
     event LevelUp(uint _tokenId, uint _oldLevel, uint _newLevel, Dixel _dixel);
 
-
+    event GenRandom(uint256 randomNum);
 
     modifier isOwner(uint _tokenId) {
         require(msg.sender == ownerOf(_tokenId), "not owner");

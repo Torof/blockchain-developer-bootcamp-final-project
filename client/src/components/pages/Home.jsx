@@ -40,13 +40,3 @@ export default class Home extends React.Component {
         )
     }
 }
-
-// uint256 dixSupply;
-//         uint256 commonSupply;
-//         uint256 uncommonSupply;
-//         uint256 rareSupply;
-//         uint256 legendarySupply;
-//         uint256 mintedSupply;
-//         uint256 lotterySupply;
-//         uint256 collectorsSupply;
-//         uint256 availableToGen;

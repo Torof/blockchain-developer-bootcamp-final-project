@@ -117,10 +117,6 @@ export default class LotteryPage extends React.Component {
             await lotteryFacet.methods.withdrawLotteryStarm().send({
                 from: accounts[0]
             })
-            .on("receipt", (receipt) => {
-                let returnValues = receipt.events.StarmClaimed.returnValues
-                console.log(returnValues)
-            })
             .catch((error) => {
                 if(error.code === 4001) return alert("transaction rejected")
                 else if(error.code === -32603){

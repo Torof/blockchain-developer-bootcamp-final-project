@@ -68,7 +68,7 @@ module.exports = {
     },
     matic: {
       provider: function() {
-        return new HDWalletProvider(process.env.MNEMONIC, process.env.ALCHEMY_MATIC_URL)
+        return new HDWalletProvider(process.env.MNEMONIC, process.env.ALCHEMY_MUMBAI_URL)
       },
       network_id: 80001,
       confirmations: 2,

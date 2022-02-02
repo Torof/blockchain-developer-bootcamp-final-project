@@ -1,6 +1,8 @@
 // SPDX-License-Identifier: MIT
 pragma solidity 0.8.11;
 
+import {LibOracle} from "./LibOracle.sol";
+
     /**
     * @notice the structure of a Dixel
     * @param level uint the level of the NFT 1-4
@@ -132,34 +134,17 @@ library LibDixel {
     * @dev randomly generates the rarity of the NFT to mint
     * @return rarity a uint between 1 to 4
     */
-    function genRarity() internal view returns (uint256 rarity) {
+    function genRarity() internal returns (uint256 rarity) {
         SupplyStorage storage supplies = supplyStorage();
+        
         require(supplies.availableToGen > 0, "limit reached");
         
-        uint256 rand = _generateRandomness("rarity") % (supplies.availableToGen + 1);
+        uint256 rand = LibOracle.getRandomNumber() % (supplies.availableToGen + 1);
         if (rand > 0 && rand <= supplies.commonSupply) return rarity = 1;
         else if (rand > supplies.commonSupply && rand  <= supplies.uncommonSupply) return rarity = 2;
         else if (rand > supplies.uncommonSupply && rand <= supplies.rareSupply) return rarity = 3;
         else if (rand > supplies.rareSupply && rand <= supplies.legendarySupply) return rarity = 4; 
         else revert("not in the scope");
-    }
-
-    /**
-    * @dev pseudo random generation. To be replaced by an oracle RNG
-    * @param _statName a string parameter
-    * @return returns a random uint
-    */
-    function _generateRandomness(string memory _statName) internal view returns (uint256){
-        return uint256(keccak256(abi.encodePacked(block.timestamp, msg.sender, _statName)));
-    }
-
-    /**
-    * @dev pseudo random generation. To be replaced by an oracle RNG
-    * @param _statName a string parameter
-    * @return a random uint256
-    */
-        function _generateRandomnA(string memory _statName) internal view returns (uint256){
-        return uint256(keccak256(abi.encodePacked(block.timestamp, msg.sender, _statName)));
     }
 
     /**

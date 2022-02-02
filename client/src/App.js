@@ -38,18 +38,29 @@ class App extends Component {
         window.location.reload();
       })
 
+      // SWITCH TO MUMBAI
+      // await window.ethereum.request({
+      //   method: 'wallet_switchEthereumChain',
+      //   params: [{ chainId: '0x13881' }],
+      // }).catch(async () => {
+      //   await window.ethereum.request({
+      //     method: 'wallet_addEthereumChain',
+      //     params: [{ 
+      //       chainId: '0x13881',
+      //       rpcUrls: ['https://matic-mumbai.chainstacklabs.com'],
+      //       chainName: 'MATIC',
+      //     }],
+      //   }).catch(error => console.log(error))
+      // })
+
+      //SWITCH TO RINKEBY
       await window.ethereum.request({
-        method: 'wallet_switchEthereumChain',
-        params: [{ chainId: '0x4' }],
-      }).catch((error) => {
-        console.log(error)
-        alert("You need to connect to Network Rinkeby")
-      })
+          method: 'wallet_switchEthereumChain',
+          params: [{ chainId: '0x4' }],
+        })
 
       // Get the diamond contract instance.
       const networkId = await web3.eth.net.getId();
-      console.log("network id: ")
-      console.log(networkId)
       const deployedNetwork = DiamondContract.networks[networkId];
 
       //Dixel facet

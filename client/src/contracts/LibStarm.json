@@ -33,30 +33,30 @@
   "immutableReferences": {},
   "generatedSources": [],
   "deployedGeneratedSources": [],
-  "sourceMap": "59:2245:19:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;",
-  "deployedSourceMap": "59:2245:19:-:0;;;;;;;;",
+  "sourceMap": "59:2245:21:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;",
+  "deployedSourceMap": "59:2245:21:-:0;;;;;;;;",
   "source": "// SPDX-License-Identifier: MIT\n\npragma solidity 0.8.11;\n\n\nlibrary LibStarm {\n    bytes32 constant starmStorageSlot = keccak256(\"starmStorage\");\n\n    /**\n     * @dev Emitted when `value` tokens are moved from one account (`from`) to\n     * another (`to`).\n     *\n     * Note that `value` may be zero.\n     */\n    event Transfer(address indexed from, address indexed to, uint256 value);\n\n    /**\n    * @notice\n    * @param starmToWithdraw mapping of the Starm an address can withdraw\n    * @param _balances a mapping of the total Starm an address possesses\n    * @param _totalSupply a uint of the total supply of Starm tokens.\n    */\n    struct StarmStorage {\n    mapping(address => uint) starmToWithdraw;\n    mapping(address => uint256) _balances;\n    uint256 _totalSupply;\n    }\n\n    /**\n    * @notice fetch the StarmStorage struct saved at a precise memory slot\n    */\n    function starmStorage() internal pure returns (StarmStorage storage sti){\n        bytes32 slot = starmStorageSlot;\n        assembly {\n            sti.slot := slot\n        }\n    }\n    \n    /**\n    * @notice mints Starm\n    * @param _account address of the owner of the newly minted starm tokens\n    * @param _amount amount of starm tokens to mint\n     */\n    function _mintStarm(address _account, uint256 _amount) internal {\n        LibStarm.StarmStorage storage ss = LibStarm.starmStorage();\n        require(_account != address(0), \"ERC20: mint to the zero address\");\n\n        ss._totalSupply += _amount;\n        ss._balances[_account] += _amount;\n        emit Transfer(address(0), _account, _amount);\n\n    }\n\n    /**\n    * @notice burns Starm\n    * @param _account address of the owner of the newly minted starm tokens\n    * @param _amount amount of starm tokens to mint\n     */\n        function _burnStarm(address _account, uint256 _amount) internal {\n        LibStarm.StarmStorage storage ss = LibStarm.starmStorage();\n        require(_account != address(0), \"ERC20: burn from the zero address\");\n        uint256 accountBalance = ss._balances[_account];\n        require(accountBalance >= _amount, \"ERC20: burn amount exceeds balance\");\n        unchecked {\n            ss._balances[_account] = accountBalance - _amount;\n        }\n        ss._totalSupply -= _amount;\n\n        emit Transfer(_account, address(0), _amount);    }\n}\n",
   "sourcePath": "/home/torof/blockchain-developer-bootcamp-final-project/contracts/libraries/LibStarm.sol",
   "ast": {
     "absolutePath": "project:/contracts/libraries/LibStarm.sol",
     "exportedSymbols": {
       "LibStarm": [
-        4916
+        5246
       ]
     },
-    "id": 4917,
+    "id": 5247,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 4758,
+        "id": 5088,
         "literals": [
           "solidity",
           "0.8",
           ".11"
         ],
         "nodeType": "PragmaDirective",
-        "src": "33:23:19"
+        "src": "33:23:21"
       },
       {
         "abstract": false,
@@ -65,23 +65,23 @@
         "contractDependencies": [],
         "contractKind": "library",
         "fullyImplemented": true,
-        "id": 4916,
+        "id": 5246,
         "linearizedBaseContracts": [
-          4916
+          5246
         ],
         "name": "LibStarm",
-        "nameLocation": "67:8:19",
+        "nameLocation": "67:8:21",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "constant": true,
-            "id": 4763,
+            "id": 5093,
             "mutability": "constant",
             "name": "starmStorageSlot",
-            "nameLocation": "99:16:19",
+            "nameLocation": "99:16:21",
             "nodeType": "VariableDeclaration",
-            "scope": 4916,
-            "src": "82:61:19",
+            "scope": 5246,
+            "src": "82:61:21",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -89,10 +89,10 @@
               "typeString": "bytes32"
             },
             "typeName": {
-              "id": 4759,
+              "id": 5089,
               "name": "bytes32",
               "nodeType": "ElementaryTypeName",
-              "src": "82:7:19",
+              "src": "82:7:21",
               "typeDescriptions": {
                 "typeIdentifier": "t_bytes32",
                 "typeString": "bytes32"
@@ -102,14 +102,14 @@
               "arguments": [
                 {
                   "hexValue": "737461726d53746f72616765",
-                  "id": 4761,
+                  "id": 5091,
                   "isConstant": false,
                   "isLValue": false,
                   "isPure": true,
                   "kind": "string",
                   "lValueRequested": false,
                   "nodeType": "Literal",
-                  "src": "128:14:19",
+                  "src": "128:14:21",
                   "typeDescriptions": {
                     "typeIdentifier": "t_stringliteral_1b091a9fb79d8a0a791074366f5ea0051fa79aed1deb4e83519829de6fb92bb1",
                     "typeString": "literal_string \"starmStorage\""
@@ -124,18 +124,18 @@
                     "typeString": "literal_string \"starmStorage\""
                   }
                 ],
-                "id": 4760,
+                "id": 5090,
                 "name": "keccak256",
                 "nodeType": "Identifier",
                 "overloadedDeclarations": [],
                 "referencedDeclaration": 4294967288,
-                "src": "118:9:19",
+                "src": "118:9:21",
                 "typeDescriptions": {
                   "typeIdentifier": "t_function_keccak256_pure$_t_bytes_memory_ptr_$returns$_t_bytes32_$",
                   "typeString": "function (bytes memory) pure returns (bytes32)"
                 }
               },
-              "id": 4762,
+              "id": 5092,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
@@ -143,7 +143,7 @@
               "lValueRequested": false,
               "names": [],
               "nodeType": "FunctionCall",
-              "src": "118:25:19",
+              "src": "118:25:21",
               "tryCall": false,
               "typeDescriptions": {
                 "typeIdentifier": "t_bytes32",
@@ -155,29 +155,29 @@
           {
             "anonymous": false,
             "documentation": {
-              "id": 4764,
+              "id": 5094,
               "nodeType": "StructuredDocumentation",
-              "src": "150:158:19",
+              "src": "150:158:21",
               "text": " @dev Emitted when `value` tokens are moved from one account (`from`) to\n another (`to`).\n Note that `value` may be zero."
             },
-            "id": 4772,
+            "id": 5102,
             "name": "Transfer",
-            "nameLocation": "319:8:19",
+            "nameLocation": "319:8:21",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 4771,
+              "id": 5101,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 4766,
+                  "id": 5096,
                   "indexed": true,
                   "mutability": "mutable",
                   "name": "from",
-                  "nameLocation": "344:4:19",
+                  "nameLocation": "344:4:21",
                   "nodeType": "VariableDeclaration",
-                  "scope": 4772,
-                  "src": "328:20:19",
+                  "scope": 5102,
+                  "src": "328:20:21",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -185,10 +185,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 4765,
+                    "id": 5095,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "328:7:19",
+                    "src": "328:7:21",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -199,14 +199,14 @@
                 },
                 {
                   "constant": false,
-                  "id": 4768,
+                  "id": 5098,
                   "indexed": true,
                   "mutability": "mutable",
                   "name": "to",
-                  "nameLocation": "366:2:19",
+                  "nameLocation": "366:2:21",
                   "nodeType": "VariableDeclaration",
-                  "scope": 4772,
-                  "src": "350:18:19",
+                  "scope": 5102,
+                  "src": "350:18:21",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -214,10 +214,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 4767,
+                    "id": 5097,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "350:7:19",
+                    "src": "350:7:21",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -228,14 +228,14 @@
                 },
                 {
                   "constant": false,
-                  "id": 4770,
+                  "id": 5100,
                   "indexed": false,
                   "mutability": "mutable",
                   "name": "value",
-                  "nameLocation": "378:5:19",
+                  "nameLocation": "378:5:21",
                   "nodeType": "VariableDeclaration",
-                  "scope": 4772,
-                  "src": "370:13:19",
+                  "scope": 5102,
+                  "src": "370:13:21",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -243,10 +243,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 4769,
+                    "id": 5099,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "370:7:19",
+                    "src": "370:7:21",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -255,23 +255,23 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "327:57:19"
+              "src": "327:57:21"
             },
-            "src": "313:72:19"
+            "src": "313:72:21"
           },
           {
             "canonicalName": "LibStarm.StarmStorage",
-            "id": 4783,
+            "id": 5113,
             "members": [
               {
                 "constant": false,
-                "id": 4776,
+                "id": 5106,
                 "mutability": "mutable",
                 "name": "starmToWithdraw",
-                "nameLocation": "688:15:19",
+                "nameLocation": "688:15:21",
                 "nodeType": "VariableDeclaration",
-                "scope": 4783,
-                "src": "663:40:19",
+                "scope": 5113,
+                "src": "663:40:21",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -279,28 +279,28 @@
                   "typeString": "mapping(address => uint256)"
                 },
                 "typeName": {
-                  "id": 4775,
+                  "id": 5105,
                   "keyType": {
-                    "id": 4773,
+                    "id": 5103,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "671:7:19",
+                    "src": "671:7:21",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
                     }
                   },
                   "nodeType": "Mapping",
-                  "src": "663:24:19",
+                  "src": "663:24:21",
                   "typeDescriptions": {
                     "typeIdentifier": "t_mapping$_t_address_$_t_uint256_$",
                     "typeString": "mapping(address => uint256)"
                   },
                   "valueType": {
-                    "id": 4774,
+                    "id": 5104,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "682:4:19",
+                    "src": "682:4:21",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -311,13 +311,13 @@
               },
               {
                 "constant": false,
-                "id": 4780,
+                "id": 5110,
                 "mutability": "mutable",
                 "name": "_balances",
-                "nameLocation": "737:9:19",
+                "nameLocation": "737:9:21",
                 "nodeType": "VariableDeclaration",
-                "scope": 4783,
-                "src": "709:37:19",
+                "scope": 5113,
+                "src": "709:37:21",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -325,28 +325,28 @@
                   "typeString": "mapping(address => uint256)"
                 },
                 "typeName": {
-                  "id": 4779,
+                  "id": 5109,
                   "keyType": {
-                    "id": 4777,
+                    "id": 5107,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "717:7:19",
+                    "src": "717:7:21",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
                     }
                   },
                   "nodeType": "Mapping",
-                  "src": "709:27:19",
+                  "src": "709:27:21",
                   "typeDescriptions": {
                     "typeIdentifier": "t_mapping$_t_address_$_t_uint256_$",
                     "typeString": "mapping(address => uint256)"
                   },
                   "valueType": {
-                    "id": 4778,
+                    "id": 5108,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "728:7:19",
+                    "src": "728:7:21",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -357,13 +357,13 @@
               },
               {
                 "constant": false,
-                "id": 4782,
+                "id": 5112,
                 "mutability": "mutable",
                 "name": "_totalSupply",
-                "nameLocation": "760:12:19",
+                "nameLocation": "760:12:21",
                 "nodeType": "VariableDeclaration",
-                "scope": 4783,
-                "src": "752:20:19",
+                "scope": 5113,
+                "src": "752:20:21",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -371,10 +371,10 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 4781,
+                  "id": 5111,
                   "name": "uint256",
                   "nodeType": "ElementaryTypeName",
-                  "src": "752:7:19",
+                  "src": "752:7:21",
                   "typeDescriptions": {
                     "typeIdentifier": "t_uint256",
                     "typeString": "uint256"
@@ -384,32 +384,32 @@
               }
             ],
             "name": "StarmStorage",
-            "nameLocation": "644:12:19",
+            "nameLocation": "644:12:21",
             "nodeType": "StructDefinition",
-            "scope": 4916,
-            "src": "637:142:19",
+            "scope": 5246,
+            "src": "637:142:21",
             "visibility": "public"
           },
           {
             "body": {
-              "id": 4795,
+              "id": 5125,
               "nodeType": "Block",
-              "src": "947:106:19",
+              "src": "947:106:21",
               "statements": [
                 {
                   "assignments": [
-                    4791
+                    5121
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 4791,
+                      "id": 5121,
                       "mutability": "mutable",
                       "name": "slot",
-                      "nameLocation": "965:4:19",
+                      "nameLocation": "965:4:21",
                       "nodeType": "VariableDeclaration",
-                      "scope": 4795,
-                      "src": "957:12:19",
+                      "scope": 5125,
+                      "src": "957:12:21",
                       "stateVariable": false,
                       "storageLocation": "default",
                       "typeDescriptions": {
@@ -417,10 +417,10 @@
                         "typeString": "bytes32"
                       },
                       "typeName": {
-                        "id": 4790,
+                        "id": 5120,
                         "name": "bytes32",
                         "nodeType": "ElementaryTypeName",
-                        "src": "957:7:19",
+                        "src": "957:7:21",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bytes32",
                           "typeString": "bytes32"
@@ -429,40 +429,40 @@
                       "visibility": "internal"
                     }
                   ],
-                  "id": 4793,
+                  "id": 5123,
                   "initialValue": {
-                    "id": 4792,
+                    "id": 5122,
                     "name": "starmStorageSlot",
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
-                    "referencedDeclaration": 4763,
-                    "src": "972:16:19",
+                    "referencedDeclaration": 5093,
+                    "src": "972:16:21",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
                     }
                   },
                   "nodeType": "VariableDeclarationStatement",
-                  "src": "957:31:19"
+                  "src": "957:31:21"
                 },
                 {
                   "AST": {
                     "nodeType": "YulBlock",
-                    "src": "1007:40:19",
+                    "src": "1007:40:21",
                     "statements": [
                       {
                         "nodeType": "YulAssignment",
-                        "src": "1021:16:19",
+                        "src": "1021:16:21",
                         "value": {
                           "name": "slot",
                           "nodeType": "YulIdentifier",
-                          "src": "1033:4:19"
+                          "src": "1033:4:21"
                         },
                         "variableNames": [
                           {
                             "name": "sti.slot",
                             "nodeType": "YulIdentifier",
-                            "src": "1021:8:19"
+                            "src": "1021:8:21"
                           }
                         ]
                       }
@@ -471,171 +471,171 @@
                   "evmVersion": "london",
                   "externalReferences": [
                     {
-                      "declaration": 4791,
+                      "declaration": 5121,
                       "isOffset": false,
                       "isSlot": false,
-                      "src": "1033:4:19",
+                      "src": "1033:4:21",
                       "valueSize": 1
                     },
                     {
-                      "declaration": 4788,
+                      "declaration": 5118,
                       "isOffset": false,
                       "isSlot": true,
-                      "src": "1021:8:19",
+                      "src": "1021:8:21",
                       "suffix": "slot",
                       "valueSize": 1
                     }
                   ],
-                  "id": 4794,
+                  "id": 5124,
                   "nodeType": "InlineAssembly",
-                  "src": "998:49:19"
+                  "src": "998:49:21"
                 }
               ]
             },
             "documentation": {
-              "id": 4784,
+              "id": 5114,
               "nodeType": "StructuredDocumentation",
-              "src": "785:85:19",
+              "src": "785:85:21",
               "text": " @notice fetch the StarmStorage struct saved at a precise memory slot"
             },
-            "id": 4796,
+            "id": 5126,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "starmStorage",
-            "nameLocation": "884:12:19",
+            "nameLocation": "884:12:21",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 4785,
+              "id": 5115,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "896:2:19"
+              "src": "896:2:21"
             },
             "returnParameters": {
-              "id": 4789,
+              "id": 5119,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 4788,
+                  "id": 5118,
                   "mutability": "mutable",
                   "name": "sti",
-                  "nameLocation": "943:3:19",
+                  "nameLocation": "943:3:21",
                   "nodeType": "VariableDeclaration",
-                  "scope": 4796,
-                  "src": "922:24:19",
+                  "scope": 5126,
+                  "src": "922:24:21",
                   "stateVariable": false,
                   "storageLocation": "storage",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_struct$_StarmStorage_$4783_storage_ptr",
+                    "typeIdentifier": "t_struct$_StarmStorage_$5113_storage_ptr",
                     "typeString": "struct LibStarm.StarmStorage"
                   },
                   "typeName": {
-                    "id": 4787,
+                    "id": 5117,
                     "nodeType": "UserDefinedTypeName",
                     "pathNode": {
-                      "id": 4786,
+                      "id": 5116,
                       "name": "StarmStorage",
                       "nodeType": "IdentifierPath",
-                      "referencedDeclaration": 4783,
-                      "src": "922:12:19"
+                      "referencedDeclaration": 5113,
+                      "src": "922:12:21"
                     },
-                    "referencedDeclaration": 4783,
-                    "src": "922:12:19",
+                    "referencedDeclaration": 5113,
+                    "src": "922:12:21",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_StarmStorage_$4783_storage_ptr",
+                      "typeIdentifier": "t_struct$_StarmStorage_$5113_storage_ptr",
                       "typeString": "struct LibStarm.StarmStorage"
                     }
                   },
                   "visibility": "internal"
                 }
               ],
-              "src": "921:26:19"
+              "src": "921:26:21"
             },
-            "scope": 4916,
-            "src": "875:178:19",
+            "scope": 5246,
+            "src": "875:178:21",
             "stateMutability": "pure",
             "virtual": false,
             "visibility": "internal"
           },
           {
             "body": {
-              "id": 4846,
+              "id": 5176,
               "nodeType": "Block",
-              "src": "1297:286:19",
+              "src": "1297:286:21",
               "statements": [
                 {
                   "assignments": [
-                    4808
+                    5138
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 4808,
+                      "id": 5138,
                       "mutability": "mutable",
                       "name": "ss",
-                      "nameLocation": "1337:2:19",
+                      "nameLocation": "1337:2:21",
                       "nodeType": "VariableDeclaration",
-                      "scope": 4846,
-                      "src": "1307:32:19",
+                      "scope": 5176,
+                      "src": "1307:32:21",
                       "stateVariable": false,
                       "storageLocation": "storage",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_StarmStorage_$4783_storage_ptr",
+                        "typeIdentifier": "t_struct$_StarmStorage_$5113_storage_ptr",
                         "typeString": "struct LibStarm.StarmStorage"
                       },
                       "typeName": {
-                        "id": 4807,
+                        "id": 5137,
                         "nodeType": "UserDefinedTypeName",
                         "pathNode": {
-                          "id": 4806,
+                          "id": 5136,
                           "name": "LibStarm.StarmStorage",
                           "nodeType": "IdentifierPath",
-                          "referencedDeclaration": 4783,
-                          "src": "1307:21:19"
+                          "referencedDeclaration": 5113,
+                          "src": "1307:21:21"
                         },
-                        "referencedDeclaration": 4783,
-                        "src": "1307:21:19",
+                        "referencedDeclaration": 5113,
+                        "src": "1307:21:21",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_StarmStorage_$4783_storage_ptr",
+                          "typeIdentifier": "t_struct$_StarmStorage_$5113_storage_ptr",
                           "typeString": "struct LibStarm.StarmStorage"
                         }
                       },
                       "visibility": "internal"
                     }
                   ],
-                  "id": 4812,
+                  "id": 5142,
                   "initialValue": {
                     "arguments": [],
                     "expression": {
                       "argumentTypes": [],
                       "expression": {
-                        "id": 4809,
+                        "id": 5139,
                         "name": "LibStarm",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 4916,
-                        "src": "1342:8:19",
+                        "referencedDeclaration": 5246,
+                        "src": "1342:8:21",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_contract$_LibStarm_$4916_$",
+                          "typeIdentifier": "t_type$_t_contract$_LibStarm_$5246_$",
                           "typeString": "type(library LibStarm)"
                         }
                       },
-                      "id": 4810,
+                      "id": 5140,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "memberName": "starmStorage",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 4796,
-                      "src": "1342:21:19",
+                      "referencedDeclaration": 5126,
+                      "src": "1342:21:21",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_function_internal_pure$__$returns$_t_struct$_StarmStorage_$4783_storage_ptr_$",
+                        "typeIdentifier": "t_function_internal_pure$__$returns$_t_struct$_StarmStorage_$5113_storage_ptr_$",
                         "typeString": "function () pure returns (struct LibStarm.StarmStorage storage pointer)"
                       }
                     },
-                    "id": 4811,
+                    "id": 5141,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -643,15 +643,15 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "1342:23:19",
+                    "src": "1342:23:21",
                     "tryCall": false,
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_StarmStorage_$4783_storage_ptr",
+                      "typeIdentifier": "t_struct$_StarmStorage_$5113_storage_ptr",
                       "typeString": "struct LibStarm.StarmStorage storage pointer"
                     }
                   },
                   "nodeType": "VariableDeclarationStatement",
-                  "src": "1307:58:19"
+                  "src": "1307:58:21"
                 },
                 {
                   "expression": {
@@ -661,18 +661,18 @@
                           "typeIdentifier": "t_address",
                           "typeString": "address"
                         },
-                        "id": 4819,
+                        "id": 5149,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
                         "leftExpression": {
-                          "id": 4814,
+                          "id": 5144,
                           "name": "_account",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 4799,
-                          "src": "1383:8:19",
+                          "referencedDeclaration": 5129,
+                          "src": "1383:8:21",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
                             "typeString": "address"
@@ -684,14 +684,14 @@
                           "arguments": [
                             {
                               "hexValue": "30",
-                              "id": 4817,
+                              "id": 5147,
                               "isConstant": false,
                               "isLValue": false,
                               "isPure": true,
                               "kind": "number",
                               "lValueRequested": false,
                               "nodeType": "Literal",
-                              "src": "1403:1:19",
+                              "src": "1403:1:21",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_rational_0_by_1",
                                 "typeString": "int_const 0"
@@ -706,26 +706,26 @@
                                 "typeString": "int_const 0"
                               }
                             ],
-                            "id": 4816,
+                            "id": 5146,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
                             "lValueRequested": false,
                             "nodeType": "ElementaryTypeNameExpression",
-                            "src": "1395:7:19",
+                            "src": "1395:7:21",
                             "typeDescriptions": {
                               "typeIdentifier": "t_type$_t_address_$",
                               "typeString": "type(address)"
                             },
                             "typeName": {
-                              "id": 4815,
+                              "id": 5145,
                               "name": "address",
                               "nodeType": "ElementaryTypeName",
-                              "src": "1395:7:19",
+                              "src": "1395:7:21",
                               "typeDescriptions": {}
                             }
                           },
-                          "id": 4818,
+                          "id": 5148,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": true,
@@ -733,14 +733,14 @@
                           "lValueRequested": false,
                           "names": [],
                           "nodeType": "FunctionCall",
-                          "src": "1395:10:19",
+                          "src": "1395:10:21",
                           "tryCall": false,
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
                             "typeString": "address"
                           }
                         },
-                        "src": "1383:22:19",
+                        "src": "1383:22:21",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bool",
                           "typeString": "bool"
@@ -748,14 +748,14 @@
                       },
                       {
                         "hexValue": "45524332303a206d696e7420746f20746865207a65726f2061646472657373",
-                        "id": 4820,
+                        "id": 5150,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
                         "kind": "string",
                         "lValueRequested": false,
                         "nodeType": "Literal",
-                        "src": "1407:33:19",
+                        "src": "1407:33:21",
                         "typeDescriptions": {
                           "typeIdentifier": "t_stringliteral_fc0b381caf0a47702017f3c4b358ebe3d3aff6c60ce819a8bf3ef5a95d4f202e",
                           "typeString": "literal_string \"ERC20: mint to the zero address\""
@@ -774,7 +774,7 @@
                           "typeString": "literal_string \"ERC20: mint to the zero address\""
                         }
                       ],
-                      "id": 4813,
+                      "id": 5143,
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
@@ -782,13 +782,13 @@
                         4294967278
                       ],
                       "referencedDeclaration": 4294967278,
-                      "src": "1375:7:19",
+                      "src": "1375:7:21",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
                         "typeString": "function (bool,string memory) pure"
                       }
                     },
-                    "id": 4821,
+                    "id": 5151,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -796,46 +796,46 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "1375:66:19",
+                    "src": "1375:66:21",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 4822,
+                  "id": 5152,
                   "nodeType": "ExpressionStatement",
-                  "src": "1375:66:19"
+                  "src": "1375:66:21"
                 },
                 {
                   "expression": {
-                    "id": 4827,
+                    "id": 5157,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
                       "expression": {
-                        "id": 4823,
+                        "id": 5153,
                         "name": "ss",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 4808,
-                        "src": "1452:2:19",
+                        "referencedDeclaration": 5138,
+                        "src": "1452:2:21",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_StarmStorage_$4783_storage_ptr",
+                          "typeIdentifier": "t_struct$_StarmStorage_$5113_storage_ptr",
                           "typeString": "struct LibStarm.StarmStorage storage pointer"
                         }
                       },
-                      "id": 4825,
+                      "id": 5155,
                       "isConstant": false,
                       "isLValue": true,
                       "isPure": false,
                       "lValueRequested": true,
                       "memberName": "_totalSupply",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 4782,
-                      "src": "1452:15:19",
+                      "referencedDeclaration": 5112,
+                      "src": "1452:15:21",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -844,30 +844,30 @@
                     "nodeType": "Assignment",
                     "operator": "+=",
                     "rightHandSide": {
-                      "id": 4826,
+                      "id": 5156,
                       "name": "_amount",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 4801,
-                      "src": "1471:7:19",
+                      "referencedDeclaration": 5131,
+                      "src": "1471:7:21",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
                       }
                     },
-                    "src": "1452:26:19",
+                    "src": "1452:26:21",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   },
-                  "id": 4828,
+                  "id": 5158,
                   "nodeType": "ExpressionStatement",
-                  "src": "1452:26:19"
+                  "src": "1452:26:21"
                 },
                 {
                   "expression": {
-                    "id": 4835,
+                    "id": 5165,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -875,39 +875,39 @@
                     "leftHandSide": {
                       "baseExpression": {
                         "expression": {
-                          "id": 4829,
+                          "id": 5159,
                           "name": "ss",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 4808,
-                          "src": "1488:2:19",
+                          "referencedDeclaration": 5138,
+                          "src": "1488:2:21",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_struct$_StarmStorage_$4783_storage_ptr",
+                            "typeIdentifier": "t_struct$_StarmStorage_$5113_storage_ptr",
                             "typeString": "struct LibStarm.StarmStorage storage pointer"
                           }
                         },
-                        "id": 4832,
+                        "id": 5162,
                         "isConstant": false,
                         "isLValue": true,
                         "isPure": false,
                         "lValueRequested": false,
                         "memberName": "_balances",
                         "nodeType": "MemberAccess",
-                        "referencedDeclaration": 4780,
-                        "src": "1488:12:19",
+                        "referencedDeclaration": 5110,
+                        "src": "1488:12:21",
                         "typeDescriptions": {
                           "typeIdentifier": "t_mapping$_t_address_$_t_uint256_$",
                           "typeString": "mapping(address => uint256)"
                         }
                       },
-                      "id": 4833,
+                      "id": 5163,
                       "indexExpression": {
-                        "id": 4831,
+                        "id": 5161,
                         "name": "_account",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 4799,
-                        "src": "1501:8:19",
+                        "referencedDeclaration": 5129,
+                        "src": "1501:8:21",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
                           "typeString": "address"
@@ -918,7 +918,7 @@
                       "isPure": false,
                       "lValueRequested": true,
                       "nodeType": "IndexAccess",
-                      "src": "1488:22:19",
+                      "src": "1488:22:21",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -927,26 +927,26 @@
                     "nodeType": "Assignment",
                     "operator": "+=",
                     "rightHandSide": {
-                      "id": 4834,
+                      "id": 5164,
                       "name": "_amount",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 4801,
-                      "src": "1514:7:19",
+                      "referencedDeclaration": 5131,
+                      "src": "1514:7:21",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
                       }
                     },
-                    "src": "1488:33:19",
+                    "src": "1488:33:21",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   },
-                  "id": 4836,
+                  "id": 5166,
                   "nodeType": "ExpressionStatement",
-                  "src": "1488:33:19"
+                  "src": "1488:33:21"
                 },
                 {
                   "eventCall": {
@@ -955,14 +955,14 @@
                         "arguments": [
                           {
                             "hexValue": "30",
-                            "id": 4840,
+                            "id": 5170,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
                             "kind": "number",
                             "lValueRequested": false,
                             "nodeType": "Literal",
-                            "src": "1553:1:19",
+                            "src": "1553:1:21",
                             "typeDescriptions": {
                               "typeIdentifier": "t_rational_0_by_1",
                               "typeString": "int_const 0"
@@ -977,26 +977,26 @@
                               "typeString": "int_const 0"
                             }
                           ],
-                          "id": 4839,
+                          "id": 5169,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": true,
                           "lValueRequested": false,
                           "nodeType": "ElementaryTypeNameExpression",
-                          "src": "1545:7:19",
+                          "src": "1545:7:21",
                           "typeDescriptions": {
                             "typeIdentifier": "t_type$_t_address_$",
                             "typeString": "type(address)"
                           },
                           "typeName": {
-                            "id": 4838,
+                            "id": 5168,
                             "name": "address",
                             "nodeType": "ElementaryTypeName",
-                            "src": "1545:7:19",
+                            "src": "1545:7:21",
                             "typeDescriptions": {}
                           }
                         },
-                        "id": 4841,
+                        "id": 5171,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
@@ -1004,7 +1004,7 @@
                         "lValueRequested": false,
                         "names": [],
                         "nodeType": "FunctionCall",
-                        "src": "1545:10:19",
+                        "src": "1545:10:21",
                         "tryCall": false,
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
@@ -1012,24 +1012,24 @@
                         }
                       },
                       {
-                        "id": 4842,
+                        "id": 5172,
                         "name": "_account",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 4799,
-                        "src": "1557:8:19",
+                        "referencedDeclaration": 5129,
+                        "src": "1557:8:21",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
                           "typeString": "address"
                         }
                       },
                       {
-                        "id": 4843,
+                        "id": 5173,
                         "name": "_amount",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 4801,
-                        "src": "1567:7:19",
+                        "referencedDeclaration": 5131,
+                        "src": "1567:7:21",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -1051,18 +1051,18 @@
                           "typeString": "uint256"
                         }
                       ],
-                      "id": 4837,
+                      "id": 5167,
                       "name": "Transfer",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 4772,
-                      "src": "1536:8:19",
+                      "referencedDeclaration": 5102,
+                      "src": "1536:8:21",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_event_nonpayable$_t_address_$_t_address_$_t_uint256_$returns$__$",
                         "typeString": "function (address,address,uint256)"
                       }
                     },
-                    "id": 4844,
+                    "id": 5174,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1070,45 +1070,45 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "1536:39:19",
+                    "src": "1536:39:21",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 4845,
+                  "id": 5175,
                   "nodeType": "EmitStatement",
-                  "src": "1531:44:19"
+                  "src": "1531:44:21"
                 }
               ]
             },
             "documentation": {
-              "id": 4797,
+              "id": 5127,
               "nodeType": "StructuredDocumentation",
-              "src": "1063:165:19",
+              "src": "1063:165:21",
               "text": " @notice mints Starm\n @param _account address of the owner of the newly minted starm tokens\n @param _amount amount of starm tokens to mint"
             },
-            "id": 4847,
+            "id": 5177,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "_mintStarm",
-            "nameLocation": "1242:10:19",
+            "nameLocation": "1242:10:21",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 4802,
+              "id": 5132,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 4799,
+                  "id": 5129,
                   "mutability": "mutable",
                   "name": "_account",
-                  "nameLocation": "1261:8:19",
+                  "nameLocation": "1261:8:21",
                   "nodeType": "VariableDeclaration",
-                  "scope": 4847,
-                  "src": "1253:16:19",
+                  "scope": 5177,
+                  "src": "1253:16:21",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1116,10 +1116,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 4798,
+                    "id": 5128,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1253:7:19",
+                    "src": "1253:7:21",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -1130,13 +1130,13 @@
                 },
                 {
                   "constant": false,
-                  "id": 4801,
+                  "id": 5131,
                   "mutability": "mutable",
                   "name": "_amount",
-                  "nameLocation": "1279:7:19",
+                  "nameLocation": "1279:7:21",
                   "nodeType": "VariableDeclaration",
-                  "scope": 4847,
-                  "src": "1271:15:19",
+                  "scope": 5177,
+                  "src": "1271:15:21",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1144,10 +1144,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 4800,
+                    "id": 5130,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1271:7:19",
+                    "src": "1271:7:21",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1156,98 +1156,98 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1252:35:19"
+              "src": "1252:35:21"
             },
             "returnParameters": {
-              "id": 4803,
+              "id": 5133,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "1297:0:19"
+              "src": "1297:0:21"
             },
-            "scope": 4916,
-            "src": "1233:350:19",
+            "scope": 5246,
+            "src": "1233:350:21",
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "internal"
           },
           {
             "body": {
-              "id": 4914,
+              "id": 5244,
               "nodeType": "Block",
-              "src": "1827:475:19",
+              "src": "1827:475:21",
               "statements": [
                 {
                   "assignments": [
-                    4859
+                    5189
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 4859,
+                      "id": 5189,
                       "mutability": "mutable",
                       "name": "ss",
-                      "nameLocation": "1867:2:19",
+                      "nameLocation": "1867:2:21",
                       "nodeType": "VariableDeclaration",
-                      "scope": 4914,
-                      "src": "1837:32:19",
+                      "scope": 5244,
+                      "src": "1837:32:21",
                       "stateVariable": false,
                       "storageLocation": "storage",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_StarmStorage_$4783_storage_ptr",
+                        "typeIdentifier": "t_struct$_StarmStorage_$5113_storage_ptr",
                         "typeString": "struct LibStarm.StarmStorage"
                       },
                       "typeName": {
-                        "id": 4858,
+                        "id": 5188,
                         "nodeType": "UserDefinedTypeName",
                         "pathNode": {
-                          "id": 4857,
+                          "id": 5187,
                           "name": "LibStarm.StarmStorage",
                           "nodeType": "IdentifierPath",
-                          "referencedDeclaration": 4783,
-                          "src": "1837:21:19"
+                          "referencedDeclaration": 5113,
+                          "src": "1837:21:21"
                         },
-                        "referencedDeclaration": 4783,
-                        "src": "1837:21:19",
+                        "referencedDeclaration": 5113,
+                        "src": "1837:21:21",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_StarmStorage_$4783_storage_ptr",
+                          "typeIdentifier": "t_struct$_StarmStorage_$5113_storage_ptr",
                           "typeString": "struct LibStarm.StarmStorage"
                         }
                       },
                       "visibility": "internal"
                     }
                   ],
-                  "id": 4863,
+                  "id": 5193,
                   "initialValue": {
                     "arguments": [],
                     "expression": {
                       "argumentTypes": [],
                       "expression": {
-                        "id": 4860,
+                        "id": 5190,
                         "name": "LibStarm",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 4916,
-                        "src": "1872:8:19",
+                        "referencedDeclaration": 5246,
+                        "src": "1872:8:21",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_contract$_LibStarm_$4916_$",
+                          "typeIdentifier": "t_type$_t_contract$_LibStarm_$5246_$",
                           "typeString": "type(library LibStarm)"
                         }
                       },
-                      "id": 4861,
+                      "id": 5191,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "memberName": "starmStorage",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 4796,
-                      "src": "1872:21:19",
+                      "referencedDeclaration": 5126,
+                      "src": "1872:21:21",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_function_internal_pure$__$returns$_t_struct$_StarmStorage_$4783_storage_ptr_$",
+                        "typeIdentifier": "t_function_internal_pure$__$returns$_t_struct$_StarmStorage_$5113_storage_ptr_$",
                         "typeString": "function () pure returns (struct LibStarm.StarmStorage storage pointer)"
                       }
                     },
-                    "id": 4862,
+                    "id": 5192,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1255,15 +1255,15 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "1872:23:19",
+                    "src": "1872:23:21",
                     "tryCall": false,
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_StarmStorage_$4783_storage_ptr",
+                      "typeIdentifier": "t_struct$_StarmStorage_$5113_storage_ptr",
                       "typeString": "struct LibStarm.StarmStorage storage pointer"
                     }
                   },
                   "nodeType": "VariableDeclarationStatement",
-                  "src": "1837:58:19"
+                  "src": "1837:58:21"
                 },
                 {
                   "expression": {
@@ -1273,18 +1273,18 @@
                           "typeIdentifier": "t_address",
                           "typeString": "address"
                         },
-                        "id": 4870,
+                        "id": 5200,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
                         "leftExpression": {
-                          "id": 4865,
+                          "id": 5195,
                           "name": "_account",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 4850,
-                          "src": "1913:8:19",
+                          "referencedDeclaration": 5180,
+                          "src": "1913:8:21",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
                             "typeString": "address"
@@ -1296,14 +1296,14 @@
                           "arguments": [
                             {
                               "hexValue": "30",
-                              "id": 4868,
+                              "id": 5198,
                               "isConstant": false,
                               "isLValue": false,
                               "isPure": true,
                               "kind": "number",
                               "lValueRequested": false,
                               "nodeType": "Literal",
-                              "src": "1933:1:19",
+                              "src": "1933:1:21",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_rational_0_by_1",
                                 "typeString": "int_const 0"
@@ -1318,26 +1318,26 @@
                                 "typeString": "int_const 0"
                               }
                             ],
-                            "id": 4867,
+                            "id": 5197,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
                             "lValueRequested": false,
                             "nodeType": "ElementaryTypeNameExpression",
-                            "src": "1925:7:19",
+                            "src": "1925:7:21",
                             "typeDescriptions": {
                               "typeIdentifier": "t_type$_t_address_$",
                               "typeString": "type(address)"
                             },
                             "typeName": {
-                              "id": 4866,
+                              "id": 5196,
                               "name": "address",
                               "nodeType": "ElementaryTypeName",
-                              "src": "1925:7:19",
+                              "src": "1925:7:21",
                               "typeDescriptions": {}
                             }
                           },
-                          "id": 4869,
+                          "id": 5199,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": true,
@@ -1345,14 +1345,14 @@
                           "lValueRequested": false,
                           "names": [],
                           "nodeType": "FunctionCall",
-                          "src": "1925:10:19",
+                          "src": "1925:10:21",
                           "tryCall": false,
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
                             "typeString": "address"
                           }
                         },
-                        "src": "1913:22:19",
+                        "src": "1913:22:21",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bool",
                           "typeString": "bool"
@@ -1360,14 +1360,14 @@
                       },
                       {
                         "hexValue": "45524332303a206275726e2066726f6d20746865207a65726f2061646472657373",
-                        "id": 4871,
+                        "id": 5201,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
                         "kind": "string",
                         "lValueRequested": false,
                         "nodeType": "Literal",
-                        "src": "1937:35:19",
+                        "src": "1937:35:21",
                         "typeDescriptions": {
                           "typeIdentifier": "t_stringliteral_b16788493b576042bb52c50ed56189e0b250db113c7bfb1c3897d25cf9632d7f",
                           "typeString": "literal_string \"ERC20: burn from the zero address\""
@@ -1386,7 +1386,7 @@
                           "typeString": "literal_string \"ERC20: burn from the zero address\""
                         }
                       ],
-                      "id": 4864,
+                      "id": 5194,
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
@@ -1394,13 +1394,13 @@
                         4294967278
                       ],
                       "referencedDeclaration": 4294967278,
-                      "src": "1905:7:19",
+                      "src": "1905:7:21",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
                         "typeString": "function (bool,string memory) pure"
                       }
                     },
-                    "id": 4872,
+                    "id": 5202,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1408,31 +1408,31 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "1905:68:19",
+                    "src": "1905:68:21",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 4873,
+                  "id": 5203,
                   "nodeType": "ExpressionStatement",
-                  "src": "1905:68:19"
+                  "src": "1905:68:21"
                 },
                 {
                   "assignments": [
-                    4875
+                    5205
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 4875,
+                      "id": 5205,
                       "mutability": "mutable",
                       "name": "accountBalance",
-                      "nameLocation": "1991:14:19",
+                      "nameLocation": "1991:14:21",
                       "nodeType": "VariableDeclaration",
-                      "scope": 4914,
-                      "src": "1983:22:19",
+                      "scope": 5244,
+                      "src": "1983:22:21",
                       "stateVariable": false,
                       "storageLocation": "default",
                       "typeDescriptions": {
@@ -1440,10 +1440,10 @@
                         "typeString": "uint256"
                       },
                       "typeName": {
-                        "id": 4874,
+                        "id": 5204,
                         "name": "uint256",
                         "nodeType": "ElementaryTypeName",
-                        "src": "1983:7:19",
+                        "src": "1983:7:21",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -1452,43 +1452,43 @@
                       "visibility": "internal"
                     }
                   ],
-                  "id": 4880,
+                  "id": 5210,
                   "initialValue": {
                     "baseExpression": {
                       "expression": {
-                        "id": 4876,
+                        "id": 5206,
                         "name": "ss",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 4859,
-                        "src": "2008:2:19",
+                        "referencedDeclaration": 5189,
+                        "src": "2008:2:21",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_StarmStorage_$4783_storage_ptr",
+                          "typeIdentifier": "t_struct$_StarmStorage_$5113_storage_ptr",
                           "typeString": "struct LibStarm.StarmStorage storage pointer"
                         }
                       },
-                      "id": 4877,
+                      "id": 5207,
                       "isConstant": false,
                       "isLValue": true,
                       "isPure": false,
                       "lValueRequested": false,
                       "memberName": "_balances",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 4780,
-                      "src": "2008:12:19",
+                      "referencedDeclaration": 5110,
+                      "src": "2008:12:21",
                       "typeDescriptions": {
                         "typeIdentifier": "t_mapping$_t_address_$_t_uint256_$",
                         "typeString": "mapping(address => uint256)"
                       }
                     },
-                    "id": 4879,
+                    "id": 5209,
                     "indexExpression": {
-                      "id": 4878,
+                      "id": 5208,
                       "name": "_account",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 4850,
-                      "src": "2021:8:19",
+                      "referencedDeclaration": 5180,
+                      "src": "2021:8:21",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
                         "typeString": "address"
@@ -1499,14 +1499,14 @@
                     "isPure": false,
                     "lValueRequested": false,
                     "nodeType": "IndexAccess",
-                    "src": "2008:22:19",
+                    "src": "2008:22:21",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   },
                   "nodeType": "VariableDeclarationStatement",
-                  "src": "1983:47:19"
+                  "src": "1983:47:21"
                 },
                 {
                   "expression": {
@@ -1516,18 +1516,18 @@
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
                         },
-                        "id": 4884,
+                        "id": 5214,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
                         "leftExpression": {
-                          "id": 4882,
+                          "id": 5212,
                           "name": "accountBalance",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 4875,
-                          "src": "2048:14:19",
+                          "referencedDeclaration": 5205,
+                          "src": "2048:14:21",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
@@ -1536,18 +1536,18 @@
                         "nodeType": "BinaryOperation",
                         "operator": ">=",
                         "rightExpression": {
-                          "id": 4883,
+                          "id": 5213,
                           "name": "_amount",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 4852,
-                          "src": "2066:7:19",
+                          "referencedDeclaration": 5182,
+                          "src": "2066:7:21",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
                           }
                         },
-                        "src": "2048:25:19",
+                        "src": "2048:25:21",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bool",
                           "typeString": "bool"
@@ -1555,14 +1555,14 @@
                       },
                       {
                         "hexValue": "45524332303a206275726e20616d6f756e7420657863656564732062616c616e6365",
-                        "id": 4885,
+                        "id": 5215,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
                         "kind": "string",
                         "lValueRequested": false,
                         "nodeType": "Literal",
-                        "src": "2075:36:19",
+                        "src": "2075:36:21",
                         "typeDescriptions": {
                           "typeIdentifier": "t_stringliteral_149b126e7125232b4200af45303d04fba8b74653b1a295a6a561a528c33fefdd",
                           "typeString": "literal_string \"ERC20: burn amount exceeds balance\""
@@ -1581,7 +1581,7 @@
                           "typeString": "literal_string \"ERC20: burn amount exceeds balance\""
                         }
                       ],
-                      "id": 4881,
+                      "id": 5211,
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
@@ -1589,13 +1589,13 @@
                         4294967278
                       ],
                       "referencedDeclaration": 4294967278,
-                      "src": "2040:7:19",
+                      "src": "2040:7:21",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
                         "typeString": "function (bool,string memory) pure"
                       }
                     },
-                    "id": 4886,
+                    "id": 5216,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1603,25 +1603,25 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "2040:72:19",
+                    "src": "2040:72:21",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 4887,
+                  "id": 5217,
                   "nodeType": "ExpressionStatement",
-                  "src": "2040:72:19"
+                  "src": "2040:72:21"
                 },
                 {
-                  "id": 4898,
+                  "id": 5228,
                   "nodeType": "UncheckedBlock",
-                  "src": "2122:84:19",
+                  "src": "2122:84:21",
                   "statements": [
                     {
                       "expression": {
-                        "id": 4896,
+                        "id": 5226,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -1629,39 +1629,39 @@
                         "leftHandSide": {
                           "baseExpression": {
                             "expression": {
-                              "id": 4888,
+                              "id": 5218,
                               "name": "ss",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 4859,
-                              "src": "2146:2:19",
+                              "referencedDeclaration": 5189,
+                              "src": "2146:2:21",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_struct$_StarmStorage_$4783_storage_ptr",
+                                "typeIdentifier": "t_struct$_StarmStorage_$5113_storage_ptr",
                                 "typeString": "struct LibStarm.StarmStorage storage pointer"
                               }
                             },
-                            "id": 4891,
+                            "id": 5221,
                             "isConstant": false,
                             "isLValue": true,
                             "isPure": false,
                             "lValueRequested": false,
                             "memberName": "_balances",
                             "nodeType": "MemberAccess",
-                            "referencedDeclaration": 4780,
-                            "src": "2146:12:19",
+                            "referencedDeclaration": 5110,
+                            "src": "2146:12:21",
                             "typeDescriptions": {
                               "typeIdentifier": "t_mapping$_t_address_$_t_uint256_$",
                               "typeString": "mapping(address => uint256)"
                             }
                           },
-                          "id": 4892,
+                          "id": 5222,
                           "indexExpression": {
-                            "id": 4890,
+                            "id": 5220,
                             "name": "_account",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 4850,
-                            "src": "2159:8:19",
+                            "referencedDeclaration": 5180,
+                            "src": "2159:8:21",
                             "typeDescriptions": {
                               "typeIdentifier": "t_address",
                               "typeString": "address"
@@ -1672,7 +1672,7 @@
                           "isPure": false,
                           "lValueRequested": true,
                           "nodeType": "IndexAccess",
-                          "src": "2146:22:19",
+                          "src": "2146:22:21",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
@@ -1685,18 +1685,18 @@
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
                           },
-                          "id": 4895,
+                          "id": 5225,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
                           "leftExpression": {
-                            "id": 4893,
+                            "id": 5223,
                             "name": "accountBalance",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 4875,
-                            "src": "2171:14:19",
+                            "referencedDeclaration": 5205,
+                            "src": "2171:14:21",
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
                               "typeString": "uint256"
@@ -1705,64 +1705,64 @@
                           "nodeType": "BinaryOperation",
                           "operator": "-",
                           "rightExpression": {
-                            "id": 4894,
+                            "id": 5224,
                             "name": "_amount",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 4852,
-                            "src": "2188:7:19",
+                            "referencedDeclaration": 5182,
+                            "src": "2188:7:21",
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
                               "typeString": "uint256"
                             }
                           },
-                          "src": "2171:24:19",
+                          "src": "2171:24:21",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
                           }
                         },
-                        "src": "2146:49:19",
+                        "src": "2146:49:21",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
                         }
                       },
-                      "id": 4897,
+                      "id": 5227,
                       "nodeType": "ExpressionStatement",
-                      "src": "2146:49:19"
+                      "src": "2146:49:21"
                     }
                   ]
                 },
                 {
                   "expression": {
-                    "id": 4903,
+                    "id": 5233,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
                       "expression": {
-                        "id": 4899,
+                        "id": 5229,
                         "name": "ss",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 4859,
-                        "src": "2215:2:19",
+                        "referencedDeclaration": 5189,
+                        "src": "2215:2:21",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_StarmStorage_$4783_storage_ptr",
+                          "typeIdentifier": "t_struct$_StarmStorage_$5113_storage_ptr",
                           "typeString": "struct LibStarm.StarmStorage storage pointer"
                         }
                       },
-                      "id": 4901,
+                      "id": 5231,
                       "isConstant": false,
                       "isLValue": true,
                       "isPure": false,
                       "lValueRequested": true,
                       "memberName": "_totalSupply",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 4782,
-                      "src": "2215:15:19",
+                      "referencedDeclaration": 5112,
+                      "src": "2215:15:21",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -1771,37 +1771,37 @@
                     "nodeType": "Assignment",
                     "operator": "-=",
                     "rightHandSide": {
-                      "id": 4902,
+                      "id": 5232,
                       "name": "_amount",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 4852,
-                      "src": "2234:7:19",
+                      "referencedDeclaration": 5182,
+                      "src": "2234:7:21",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
                       }
                     },
-                    "src": "2215:26:19",
+                    "src": "2215:26:21",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   },
-                  "id": 4904,
+                  "id": 5234,
                   "nodeType": "ExpressionStatement",
-                  "src": "2215:26:19"
+                  "src": "2215:26:21"
                 },
                 {
                   "eventCall": {
                     "arguments": [
                       {
-                        "id": 4906,
+                        "id": 5236,
                         "name": "_account",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 4850,
-                        "src": "2266:8:19",
+                        "referencedDeclaration": 5180,
+                        "src": "2266:8:21",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
                           "typeString": "address"
@@ -1811,14 +1811,14 @@
                         "arguments": [
                           {
                             "hexValue": "30",
-                            "id": 4909,
+                            "id": 5239,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
                             "kind": "number",
                             "lValueRequested": false,
                             "nodeType": "Literal",
-                            "src": "2284:1:19",
+                            "src": "2284:1:21",
                             "typeDescriptions": {
                               "typeIdentifier": "t_rational_0_by_1",
                               "typeString": "int_const 0"
@@ -1833,26 +1833,26 @@
                               "typeString": "int_const 0"
                             }
                           ],
-                          "id": 4908,
+                          "id": 5238,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": true,
                           "lValueRequested": false,
                           "nodeType": "ElementaryTypeNameExpression",
-                          "src": "2276:7:19",
+                          "src": "2276:7:21",
                           "typeDescriptions": {
                             "typeIdentifier": "t_type$_t_address_$",
                             "typeString": "type(address)"
                           },
                           "typeName": {
-                            "id": 4907,
+                            "id": 5237,
                             "name": "address",
                             "nodeType": "ElementaryTypeName",
-                            "src": "2276:7:19",
+                            "src": "2276:7:21",
                             "typeDescriptions": {}
                           }
                         },
-                        "id": 4910,
+                        "id": 5240,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
@@ -1860,7 +1860,7 @@
                         "lValueRequested": false,
                         "names": [],
                         "nodeType": "FunctionCall",
-                        "src": "2276:10:19",
+                        "src": "2276:10:21",
                         "tryCall": false,
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
@@ -1868,12 +1868,12 @@
                         }
                       },
                       {
-                        "id": 4911,
+                        "id": 5241,
                         "name": "_amount",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 4852,
-                        "src": "2288:7:19",
+                        "referencedDeclaration": 5182,
+                        "src": "2288:7:21",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -1895,18 +1895,18 @@
                           "typeString": "uint256"
                         }
                       ],
-                      "id": 4905,
+                      "id": 5235,
                       "name": "Transfer",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 4772,
-                      "src": "2257:8:19",
+                      "referencedDeclaration": 5102,
+                      "src": "2257:8:21",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_event_nonpayable$_t_address_$_t_address_$_t_uint256_$returns$__$",
                         "typeString": "function (address,address,uint256)"
                       }
                     },
-                    "id": 4912,
+                    "id": 5242,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1914,45 +1914,45 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "2257:39:19",
+                    "src": "2257:39:21",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 4913,
+                  "id": 5243,
                   "nodeType": "EmitStatement",
-                  "src": "2252:44:19"
+                  "src": "2252:44:21"
                 }
               ]
             },
             "documentation": {
-              "id": 4848,
+              "id": 5178,
               "nodeType": "StructuredDocumentation",
-              "src": "1589:165:19",
+              "src": "1589:165:21",
               "text": " @notice burns Starm\n @param _account address of the owner of the newly minted starm tokens\n @param _amount amount of starm tokens to mint"
             },
-            "id": 4915,
+            "id": 5245,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "_burnStarm",
-            "nameLocation": "1772:10:19",
+            "nameLocation": "1772:10:21",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 4853,
+              "id": 5183,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 4850,
+                  "id": 5180,
                   "mutability": "mutable",
                   "name": "_account",
-                  "nameLocation": "1791:8:19",
+                  "nameLocation": "1791:8:21",
                   "nodeType": "VariableDeclaration",
-                  "scope": 4915,
-                  "src": "1783:16:19",
+                  "scope": 5245,
+                  "src": "1783:16:21",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1960,10 +1960,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 4849,
+                    "id": 5179,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1783:7:19",
+                    "src": "1783:7:21",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -1974,13 +1974,13 @@
                 },
                 {
                   "constant": false,
-                  "id": 4852,
+                  "id": 5182,
                   "mutability": "mutable",
                   "name": "_amount",
-                  "nameLocation": "1809:7:19",
+                  "nameLocation": "1809:7:21",
                   "nodeType": "VariableDeclaration",
-                  "scope": 4915,
-                  "src": "1801:15:19",
+                  "scope": 5245,
+                  "src": "1801:15:21",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1988,10 +1988,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 4851,
+                    "id": 5181,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1801:7:19",
+                    "src": "1801:7:21",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -2000,48 +2000,48 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1782:35:19"
+              "src": "1782:35:21"
             },
             "returnParameters": {
-              "id": 4854,
+              "id": 5184,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "1827:0:19"
+              "src": "1827:0:21"
             },
-            "scope": 4916,
-            "src": "1763:539:19",
+            "scope": 5246,
+            "src": "1763:539:21",
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "internal"
           }
         ],
-        "scope": 4917,
-        "src": "59:2245:19",
+        "scope": 5247,
+        "src": "59:2245:21",
         "usedErrors": []
       }
     ],
-    "src": "33:2272:19"
+    "src": "33:2272:21"
   },
   "legacyAST": {
     "absolutePath": "project:/contracts/libraries/LibStarm.sol",
     "exportedSymbols": {
       "LibStarm": [
-        4916
+        5246
       ]
     },
-    "id": 4917,
+    "id": 5247,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 4758,
+        "id": 5088,
         "literals": [
           "solidity",
           "0.8",
           ".11"
         ],
         "nodeType": "PragmaDirective",
-        "src": "33:23:19"
+        "src": "33:23:21"
       },
       {
         "abstract": false,
@@ -2050,23 +2050,23 @@
         "contractDependencies": [],
         "contractKind": "library",
         "fullyImplemented": true,
-        "id": 4916,
+        "id": 5246,
         "linearizedBaseContracts": [
-          4916
+          5246
         ],
         "name": "LibStarm",
-        "nameLocation": "67:8:19",
+        "nameLocation": "67:8:21",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "constant": true,
-            "id": 4763,
+            "id": 5093,
             "mutability": "constant",
             "name": "starmStorageSlot",
-            "nameLocation": "99:16:19",
+            "nameLocation": "99:16:21",
             "nodeType": "VariableDeclaration",
-            "scope": 4916,
-            "src": "82:61:19",
+            "scope": 5246,
+            "src": "82:61:21",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -2074,10 +2074,10 @@
               "typeString": "bytes32"
             },
             "typeName": {
-              "id": 4759,
+              "id": 5089,
               "name": "bytes32",
               "nodeType": "ElementaryTypeName",
-              "src": "82:7:19",
+              "src": "82:7:21",
               "typeDescriptions": {
                 "typeIdentifier": "t_bytes32",
                 "typeString": "bytes32"
@@ -2087,14 +2087,14 @@
               "arguments": [
                 {
                   "hexValue": "737461726d53746f72616765",
-                  "id": 4761,
+                  "id": 5091,
                   "isConstant": false,
                   "isLValue": false,
                   "isPure": true,
                   "kind": "string",
                   "lValueRequested": false,
                   "nodeType": "Literal",
-                  "src": "128:14:19",
+                  "src": "128:14:21",
                   "typeDescriptions": {
                     "typeIdentifier": "t_stringliteral_1b091a9fb79d8a0a791074366f5ea0051fa79aed1deb4e83519829de6fb92bb1",
                     "typeString": "literal_string \"starmStorage\""
@@ -2109,18 +2109,18 @@
                     "typeString": "literal_string \"starmStorage\""
                   }
                 ],
-                "id": 4760,
+                "id": 5090,
                 "name": "keccak256",
                 "nodeType": "Identifier",
                 "overloadedDeclarations": [],
                 "referencedDeclaration": 4294967288,
-                "src": "118:9:19",
+                "src": "118:9:21",
                 "typeDescriptions": {
                   "typeIdentifier": "t_function_keccak256_pure$_t_bytes_memory_ptr_$returns$_t_bytes32_$",
                   "typeString": "function (bytes memory) pure returns (bytes32)"
                 }
               },
-              "id": 4762,
+              "id": 5092,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
@@ -2128,7 +2128,7 @@
               "lValueRequested": false,
               "names": [],
               "nodeType": "FunctionCall",
-              "src": "118:25:19",
+              "src": "118:25:21",
               "tryCall": false,
               "typeDescriptions": {
                 "typeIdentifier": "t_bytes32",
@@ -2140,29 +2140,29 @@
           {
             "anonymous": false,
             "documentation": {
-              "id": 4764,
+              "id": 5094,
               "nodeType": "StructuredDocumentation",
-              "src": "150:158:19",
+              "src": "150:158:21",
               "text": " @dev Emitted when `value` tokens are moved from one account (`from`) to\n another (`to`).\n Note that `value` may be zero."
             },
-            "id": 4772,
+            "id": 5102,
             "name": "Transfer",
-            "nameLocation": "319:8:19",
+            "nameLocation": "319:8:21",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 4771,
+              "id": 5101,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 4766,
+                  "id": 5096,
                   "indexed": true,
                   "mutability": "mutable",
                   "name": "from",
-                  "nameLocation": "344:4:19",
+                  "nameLocation": "344:4:21",
                   "nodeType": "VariableDeclaration",
-                  "scope": 4772,
-                  "src": "328:20:19",
+                  "scope": 5102,
+                  "src": "328:20:21",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2170,10 +2170,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 4765,
+                    "id": 5095,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "328:7:19",
+                    "src": "328:7:21",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -2184,14 +2184,14 @@
                 },
                 {
                   "constant": false,
-                  "id": 4768,
+                  "id": 5098,
                   "indexed": true,
                   "mutability": "mutable",
                   "name": "to",
-                  "nameLocation": "366:2:19",
+                  "nameLocation": "366:2:21",
                   "nodeType": "VariableDeclaration",
-                  "scope": 4772,
-                  "src": "350:18:19",
+                  "scope": 5102,
+                  "src": "350:18:21",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2199,10 +2199,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 4767,
+                    "id": 5097,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "350:7:19",
+                    "src": "350:7:21",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -2213,14 +2213,14 @@
                 },
                 {
                   "constant": false,
-                  "id": 4770,
+                  "id": 5100,
                   "indexed": false,
                   "mutability": "mutable",
                   "name": "value",
-                  "nameLocation": "378:5:19",
+                  "nameLocation": "378:5:21",
                   "nodeType": "VariableDeclaration",
-                  "scope": 4772,
-                  "src": "370:13:19",
+                  "scope": 5102,
+                  "src": "370:13:21",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2228,10 +2228,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 4769,
+                    "id": 5099,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "370:7:19",
+                    "src": "370:7:21",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -2240,23 +2240,23 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "327:57:19"
+              "src": "327:57:21"
             },
-            "src": "313:72:19"
+            "src": "313:72:21"
           },
           {
             "canonicalName": "LibStarm.StarmStorage",
-            "id": 4783,
+            "id": 5113,
             "members": [
               {
                 "constant": false,
-                "id": 4776,
+                "id": 5106,
                 "mutability": "mutable",
                 "name": "starmToWithdraw",
-                "nameLocation": "688:15:19",
+                "nameLocation": "688:15:21",
                 "nodeType": "VariableDeclaration",
-                "scope": 4783,
-                "src": "663:40:19",
+                "scope": 5113,
+                "src": "663:40:21",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -2264,28 +2264,28 @@
                   "typeString": "mapping(address => uint256)"
                 },
                 "typeName": {
-                  "id": 4775,
+                  "id": 5105,
                   "keyType": {
-                    "id": 4773,
+                    "id": 5103,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "671:7:19",
+                    "src": "671:7:21",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
                     }
                   },
                   "nodeType": "Mapping",
-                  "src": "663:24:19",
+                  "src": "663:24:21",
                   "typeDescriptions": {
                     "typeIdentifier": "t_mapping$_t_address_$_t_uint256_$",
                     "typeString": "mapping(address => uint256)"
                   },
                   "valueType": {
-                    "id": 4774,
+                    "id": 5104,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "682:4:19",
+                    "src": "682:4:21",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -2296,13 +2296,13 @@
               },
               {
                 "constant": false,
-                "id": 4780,
+                "id": 5110,
                 "mutability": "mutable",
                 "name": "_balances",
-                "nameLocation": "737:9:19",
+                "nameLocation": "737:9:21",
                 "nodeType": "VariableDeclaration",
-                "scope": 4783,
-                "src": "709:37:19",
+                "scope": 5113,
+                "src": "709:37:21",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -2310,28 +2310,28 @@
                   "typeString": "mapping(address => uint256)"
                 },
                 "typeName": {
-                  "id": 4779,
+                  "id": 5109,
                   "keyType": {
-                    "id": 4777,
+                    "id": 5107,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "717:7:19",
+                    "src": "717:7:21",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
                     }
                   },
                   "nodeType": "Mapping",
-                  "src": "709:27:19",
+                  "src": "709:27:21",
                   "typeDescriptions": {
                     "typeIdentifier": "t_mapping$_t_address_$_t_uint256_$",
                     "typeString": "mapping(address => uint256)"
                   },
                   "valueType": {
-                    "id": 4778,
+                    "id": 5108,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "728:7:19",
+                    "src": "728:7:21",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -2342,13 +2342,13 @@
               },
               {
                 "constant": false,
-                "id": 4782,
+                "id": 5112,
                 "mutability": "mutable",
                 "name": "_totalSupply",
-                "nameLocation": "760:12:19",
+                "nameLocation": "760:12:21",
                 "nodeType": "VariableDeclaration",
-                "scope": 4783,
-                "src": "752:20:19",
+                "scope": 5113,
+                "src": "752:20:21",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -2356,10 +2356,10 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 4781,
+                  "id": 5111,
                   "name": "uint256",
                   "nodeType": "ElementaryTypeName",
-                  "src": "752:7:19",
+                  "src": "752:7:21",
                   "typeDescriptions": {
                     "typeIdentifier": "t_uint256",
                     "typeString": "uint256"
@@ -2369,32 +2369,32 @@
               }
             ],
             "name": "StarmStorage",
-            "nameLocation": "644:12:19",
+            "nameLocation": "644:12:21",
             "nodeType": "StructDefinition",
-            "scope": 4916,
-            "src": "637:142:19",
+            "scope": 5246,
+            "src": "637:142:21",
             "visibility": "public"
           },
           {
             "body": {
-              "id": 4795,
+              "id": 5125,
               "nodeType": "Block",
-              "src": "947:106:19",
+              "src": "947:106:21",
               "statements": [
                 {
                   "assignments": [
-                    4791
+                    5121
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 4791,
+                      "id": 5121,
                       "mutability": "mutable",
                       "name": "slot",
-                      "nameLocation": "965:4:19",
+                      "nameLocation": "965:4:21",
                       "nodeType": "VariableDeclaration",
-                      "scope": 4795,
-                      "src": "957:12:19",
+                      "scope": 5125,
+                      "src": "957:12:21",
                       "stateVariable": false,
                       "storageLocation": "default",
                       "typeDescriptions": {
@@ -2402,10 +2402,10 @@
                         "typeString": "bytes32"
                       },
                       "typeName": {
-                        "id": 4790,
+                        "id": 5120,
                         "name": "bytes32",
                         "nodeType": "ElementaryTypeName",
-                        "src": "957:7:19",
+                        "src": "957:7:21",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bytes32",
                           "typeString": "bytes32"
@@ -2414,40 +2414,40 @@
                       "visibility": "internal"
                     }
                   ],
-                  "id": 4793,
+                  "id": 5123,
                   "initialValue": {
-                    "id": 4792,
+                    "id": 5122,
                     "name": "starmStorageSlot",
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
-                    "referencedDeclaration": 4763,
-                    "src": "972:16:19",
+                    "referencedDeclaration": 5093,
+                    "src": "972:16:21",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
                     }
                   },
                   "nodeType": "VariableDeclarationStatement",
-                  "src": "957:31:19"
+                  "src": "957:31:21"
                 },
                 {
                   "AST": {
                     "nodeType": "YulBlock",
-                    "src": "1007:40:19",
+                    "src": "1007:40:21",
                     "statements": [
                       {
                         "nodeType": "YulAssignment",
-                        "src": "1021:16:19",
+                        "src": "1021:16:21",
                         "value": {
                           "name": "slot",
                           "nodeType": "YulIdentifier",
-                          "src": "1033:4:19"
+                          "src": "1033:4:21"
                         },
                         "variableNames": [
                           {
                             "name": "sti.slot",
                             "nodeType": "YulIdentifier",
-                            "src": "1021:8:19"
+                            "src": "1021:8:21"
                           }
                         ]
                       }
@@ -2456,171 +2456,171 @@
                   "evmVersion": "london",
                   "externalReferences": [
                     {
-                      "declaration": 4791,
+                      "declaration": 5121,
                       "isOffset": false,
                       "isSlot": false,
-                      "src": "1033:4:19",
+                      "src": "1033:4:21",
                       "valueSize": 1
                     },
                     {
-                      "declaration": 4788,
+                      "declaration": 5118,
                       "isOffset": false,
                       "isSlot": true,
-                      "src": "1021:8:19",
+                      "src": "1021:8:21",
                       "suffix": "slot",
                       "valueSize": 1
                     }
                   ],
-                  "id": 4794,
+                  "id": 5124,
                   "nodeType": "InlineAssembly",
-                  "src": "998:49:19"
+                  "src": "998:49:21"
                 }
               ]
             },
             "documentation": {
-              "id": 4784,
+              "id": 5114,
               "nodeType": "StructuredDocumentation",
-              "src": "785:85:19",
+              "src": "785:85:21",
               "text": " @notice fetch the StarmStorage struct saved at a precise memory slot"
             },
-            "id": 4796,
+            "id": 5126,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "starmStorage",
-            "nameLocation": "884:12:19",
+            "nameLocation": "884:12:21",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 4785,
+              "id": 5115,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "896:2:19"
+              "src": "896:2:21"
             },
             "returnParameters": {
-              "id": 4789,
+              "id": 5119,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 4788,
+                  "id": 5118,
                   "mutability": "mutable",
                   "name": "sti",
-                  "nameLocation": "943:3:19",
+                  "nameLocation": "943:3:21",
                   "nodeType": "VariableDeclaration",
-                  "scope": 4796,
-                  "src": "922:24:19",
+                  "scope": 5126,
+                  "src": "922:24:21",
                   "stateVariable": false,
                   "storageLocation": "storage",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_struct$_StarmStorage_$4783_storage_ptr",
+                    "typeIdentifier": "t_struct$_StarmStorage_$5113_storage_ptr",
                     "typeString": "struct LibStarm.StarmStorage"
                   },
                   "typeName": {
-                    "id": 4787,
+                    "id": 5117,
                     "nodeType": "UserDefinedTypeName",
                     "pathNode": {
-                      "id": 4786,
+                      "id": 5116,
                       "name": "StarmStorage",
                       "nodeType": "IdentifierPath",
-                      "referencedDeclaration": 4783,
-                      "src": "922:12:19"
+                      "referencedDeclaration": 5113,
+                      "src": "922:12:21"
                     },
-                    "referencedDeclaration": 4783,
-                    "src": "922:12:19",
+                    "referencedDeclaration": 5113,
+                    "src": "922:12:21",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_StarmStorage_$4783_storage_ptr",
+                      "typeIdentifier": "t_struct$_StarmStorage_$5113_storage_ptr",
                       "typeString": "struct LibStarm.StarmStorage"
                     }
                   },
                   "visibility": "internal"
                 }
               ],
-              "src": "921:26:19"
+              "src": "921:26:21"
             },
-            "scope": 4916,
-            "src": "875:178:19",
+            "scope": 5246,
+            "src": "875:178:21",
             "stateMutability": "pure",
             "virtual": false,
             "visibility": "internal"
           },
           {
             "body": {
-              "id": 4846,
+              "id": 5176,
               "nodeType": "Block",
-              "src": "1297:286:19",
+              "src": "1297:286:21",
               "statements": [
                 {
                   "assignments": [
-                    4808
+                    5138
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 4808,
+                      "id": 5138,
                       "mutability": "mutable",
                       "name": "ss",
-                      "nameLocation": "1337:2:19",
+                      "nameLocation": "1337:2:21",
                       "nodeType": "VariableDeclaration",
-                      "scope": 4846,
-                      "src": "1307:32:19",
+                      "scope": 5176,
+                      "src": "1307:32:21",
                       "stateVariable": false,
                       "storageLocation": "storage",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_StarmStorage_$4783_storage_ptr",
+                        "typeIdentifier": "t_struct$_StarmStorage_$5113_storage_ptr",
                         "typeString": "struct LibStarm.StarmStorage"
                       },
                       "typeName": {
-                        "id": 4807,
+                        "id": 5137,
                         "nodeType": "UserDefinedTypeName",
                         "pathNode": {
-                          "id": 4806,
+                          "id": 5136,
                           "name": "LibStarm.StarmStorage",
                           "nodeType": "IdentifierPath",
-                          "referencedDeclaration": 4783,
-                          "src": "1307:21:19"
+                          "referencedDeclaration": 5113,
+                          "src": "1307:21:21"
                         },
-                        "referencedDeclaration": 4783,
-                        "src": "1307:21:19",
+                        "referencedDeclaration": 5113,
+                        "src": "1307:21:21",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_StarmStorage_$4783_storage_ptr",
+                          "typeIdentifier": "t_struct$_StarmStorage_$5113_storage_ptr",
                           "typeString": "struct LibStarm.StarmStorage"
                         }
                       },
                       "visibility": "internal"
                     }
                   ],
-                  "id": 4812,
+                  "id": 5142,
                   "initialValue": {
                     "arguments": [],
                     "expression": {
                       "argumentTypes": [],
                       "expression": {
-                        "id": 4809,
+                        "id": 5139,
                         "name": "LibStarm",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 4916,
-                        "src": "1342:8:19",
+                        "referencedDeclaration": 5246,
+                        "src": "1342:8:21",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_contract$_LibStarm_$4916_$",
+                          "typeIdentifier": "t_type$_t_contract$_LibStarm_$5246_$",
                           "typeString": "type(library LibStarm)"
                         }
                       },
-                      "id": 4810,
+                      "id": 5140,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "memberName": "starmStorage",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 4796,
-                      "src": "1342:21:19",
+                      "referencedDeclaration": 5126,
+                      "src": "1342:21:21",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_function_internal_pure$__$returns$_t_struct$_StarmStorage_$4783_storage_ptr_$",
+                        "typeIdentifier": "t_function_internal_pure$__$returns$_t_struct$_StarmStorage_$5113_storage_ptr_$",
                         "typeString": "function () pure returns (struct LibStarm.StarmStorage storage pointer)"
                       }
                     },
-                    "id": 4811,
+                    "id": 5141,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -2628,15 +2628,15 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "1342:23:19",
+                    "src": "1342:23:21",
                     "tryCall": false,
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_StarmStorage_$4783_storage_ptr",
+                      "typeIdentifier": "t_struct$_StarmStorage_$5113_storage_ptr",
                       "typeString": "struct LibStarm.StarmStorage storage pointer"
                     }
                   },
                   "nodeType": "VariableDeclarationStatement",
-                  "src": "1307:58:19"
+                  "src": "1307:58:21"
                 },
                 {
                   "expression": {
@@ -2646,18 +2646,18 @@
                           "typeIdentifier": "t_address",
                           "typeString": "address"
                         },
-                        "id": 4819,
+                        "id": 5149,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
                         "leftExpression": {
-                          "id": 4814,
+                          "id": 5144,
                           "name": "_account",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 4799,
-                          "src": "1383:8:19",
+                          "referencedDeclaration": 5129,
+                          "src": "1383:8:21",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
                             "typeString": "address"
@@ -2669,14 +2669,14 @@
                           "arguments": [
                             {
                               "hexValue": "30",
-                              "id": 4817,
+                              "id": 5147,
                               "isConstant": false,
                               "isLValue": false,
                               "isPure": true,
                               "kind": "number",
                               "lValueRequested": false,
                               "nodeType": "Literal",
-                              "src": "1403:1:19",
+                              "src": "1403:1:21",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_rational_0_by_1",
                                 "typeString": "int_const 0"
@@ -2691,26 +2691,26 @@
                                 "typeString": "int_const 0"
                               }
                             ],
-                            "id": 4816,
+                            "id": 5146,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
                             "lValueRequested": false,
                             "nodeType": "ElementaryTypeNameExpression",
-                            "src": "1395:7:19",
+                            "src": "1395:7:21",
                             "typeDescriptions": {
                               "typeIdentifier": "t_type$_t_address_$",
                               "typeString": "type(address)"
                             },
                             "typeName": {
-                              "id": 4815,
+                              "id": 5145,
                               "name": "address",
                               "nodeType": "ElementaryTypeName",
-                              "src": "1395:7:19",
+                              "src": "1395:7:21",
                               "typeDescriptions": {}
                             }
                           },
-                          "id": 4818,
+                          "id": 5148,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": true,
@@ -2718,14 +2718,14 @@
                           "lValueRequested": false,
                           "names": [],
                           "nodeType": "FunctionCall",
-                          "src": "1395:10:19",
+                          "src": "1395:10:21",
                           "tryCall": false,
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
                             "typeString": "address"
                           }
                         },
-                        "src": "1383:22:19",
+                        "src": "1383:22:21",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bool",
                           "typeString": "bool"
@@ -2733,14 +2733,14 @@
                       },
                       {
                         "hexValue": "45524332303a206d696e7420746f20746865207a65726f2061646472657373",
-                        "id": 4820,
+                        "id": 5150,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
                         "kind": "string",
                         "lValueRequested": false,
                         "nodeType": "Literal",
-                        "src": "1407:33:19",
+                        "src": "1407:33:21",
                         "typeDescriptions": {
                           "typeIdentifier": "t_stringliteral_fc0b381caf0a47702017f3c4b358ebe3d3aff6c60ce819a8bf3ef5a95d4f202e",
                           "typeString": "literal_string \"ERC20: mint to the zero address\""
@@ -2759,7 +2759,7 @@
                           "typeString": "literal_string \"ERC20: mint to the zero address\""
                         }
                       ],
-                      "id": 4813,
+                      "id": 5143,
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
@@ -2767,13 +2767,13 @@
                         4294967278
                       ],
                       "referencedDeclaration": 4294967278,
-                      "src": "1375:7:19",
+                      "src": "1375:7:21",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
                         "typeString": "function (bool,string memory) pure"
                       }
                     },
-                    "id": 4821,
+                    "id": 5151,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -2781,46 +2781,46 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "1375:66:19",
+                    "src": "1375:66:21",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 4822,
+                  "id": 5152,
                   "nodeType": "ExpressionStatement",
-                  "src": "1375:66:19"
+                  "src": "1375:66:21"
                 },
                 {
                   "expression": {
-                    "id": 4827,
+                    "id": 5157,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
                       "expression": {
-                        "id": 4823,
+                        "id": 5153,
                         "name": "ss",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 4808,
-                        "src": "1452:2:19",
+                        "referencedDeclaration": 5138,
+                        "src": "1452:2:21",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_StarmStorage_$4783_storage_ptr",
+                          "typeIdentifier": "t_struct$_StarmStorage_$5113_storage_ptr",
                           "typeString": "struct LibStarm.StarmStorage storage pointer"
                         }
                       },
-                      "id": 4825,
+                      "id": 5155,
                       "isConstant": false,
                       "isLValue": true,
                       "isPure": false,
                       "lValueRequested": true,
                       "memberName": "_totalSupply",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 4782,
-                      "src": "1452:15:19",
+                      "referencedDeclaration": 5112,
+                      "src": "1452:15:21",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -2829,30 +2829,30 @@
                     "nodeType": "Assignment",
                     "operator": "+=",
                     "rightHandSide": {
-                      "id": 4826,
+                      "id": 5156,
                       "name": "_amount",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 4801,
-                      "src": "1471:7:19",
+                      "referencedDeclaration": 5131,
+                      "src": "1471:7:21",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
                       }
                     },
-                    "src": "1452:26:19",
+                    "src": "1452:26:21",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   },
-                  "id": 4828,
+                  "id": 5158,
                   "nodeType": "ExpressionStatement",
-                  "src": "1452:26:19"
+                  "src": "1452:26:21"
                 },
                 {
                   "expression": {
-                    "id": 4835,
+                    "id": 5165,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -2860,39 +2860,39 @@
                     "leftHandSide": {
                       "baseExpression": {
                         "expression": {
-                          "id": 4829,
+                          "id": 5159,
                           "name": "ss",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 4808,
-                          "src": "1488:2:19",
+                          "referencedDeclaration": 5138,
+                          "src": "1488:2:21",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_struct$_StarmStorage_$4783_storage_ptr",
+                            "typeIdentifier": "t_struct$_StarmStorage_$5113_storage_ptr",
                             "typeString": "struct LibStarm.StarmStorage storage pointer"
                           }
                         },
-                        "id": 4832,
+                        "id": 5162,
                         "isConstant": false,
                         "isLValue": true,
                         "isPure": false,
                         "lValueRequested": false,
                         "memberName": "_balances",
                         "nodeType": "MemberAccess",
-                        "referencedDeclaration": 4780,
-                        "src": "1488:12:19",
+                        "referencedDeclaration": 5110,
+                        "src": "1488:12:21",
                         "typeDescriptions": {
                           "typeIdentifier": "t_mapping$_t_address_$_t_uint256_$",
                           "typeString": "mapping(address => uint256)"
                         }
                       },
-                      "id": 4833,
+                      "id": 5163,
                       "indexExpression": {
-                        "id": 4831,
+                        "id": 5161,
                         "name": "_account",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 4799,
-                        "src": "1501:8:19",
+                        "referencedDeclaration": 5129,
+                        "src": "1501:8:21",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
                           "typeString": "address"
@@ -2903,7 +2903,7 @@
                       "isPure": false,
                       "lValueRequested": true,
                       "nodeType": "IndexAccess",
-                      "src": "1488:22:19",
+                      "src": "1488:22:21",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -2912,26 +2912,26 @@
                     "nodeType": "Assignment",
                     "operator": "+=",
                     "rightHandSide": {
-                      "id": 4834,
+                      "id": 5164,
                       "name": "_amount",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 4801,
-                      "src": "1514:7:19",
+                      "referencedDeclaration": 5131,
+                      "src": "1514:7:21",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
                       }
                     },
-                    "src": "1488:33:19",
+                    "src": "1488:33:21",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   },
-                  "id": 4836,
+                  "id": 5166,
                   "nodeType": "ExpressionStatement",
-                  "src": "1488:33:19"
+                  "src": "1488:33:21"
                 },
                 {
                   "eventCall": {
@@ -2940,14 +2940,14 @@
                         "arguments": [
                           {
                             "hexValue": "30",
-                            "id": 4840,
+                            "id": 5170,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
                             "kind": "number",
                             "lValueRequested": false,
                             "nodeType": "Literal",
-                            "src": "1553:1:19",
+                            "src": "1553:1:21",
                             "typeDescriptions": {
                               "typeIdentifier": "t_rational_0_by_1",
                               "typeString": "int_const 0"
@@ -2962,26 +2962,26 @@
                               "typeString": "int_const 0"
                             }
                           ],
-                          "id": 4839,
+                          "id": 5169,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": true,
                           "lValueRequested": false,
                           "nodeType": "ElementaryTypeNameExpression",
-                          "src": "1545:7:19",
+                          "src": "1545:7:21",
                           "typeDescriptions": {
                             "typeIdentifier": "t_type$_t_address_$",
                             "typeString": "type(address)"
                           },
                           "typeName": {
-                            "id": 4838,
+                            "id": 5168,
                             "name": "address",
                             "nodeType": "ElementaryTypeName",
-                            "src": "1545:7:19",
+                            "src": "1545:7:21",
                             "typeDescriptions": {}
                           }
                         },
-                        "id": 4841,
+                        "id": 5171,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
@@ -2989,7 +2989,7 @@
                         "lValueRequested": false,
                         "names": [],
                         "nodeType": "FunctionCall",
-                        "src": "1545:10:19",
+                        "src": "1545:10:21",
                         "tryCall": false,
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
@@ -2997,24 +2997,24 @@
                         }
                       },
                       {
-                        "id": 4842,
+                        "id": 5172,
                         "name": "_account",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 4799,
-                        "src": "1557:8:19",
+                        "referencedDeclaration": 5129,
+                        "src": "1557:8:21",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
                           "typeString": "address"
                         }
                       },
                       {
-                        "id": 4843,
+                        "id": 5173,
                         "name": "_amount",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 4801,
-                        "src": "1567:7:19",
+                        "referencedDeclaration": 5131,
+                        "src": "1567:7:21",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -3036,18 +3036,18 @@
                           "typeString": "uint256"
                         }
                       ],
-                      "id": 4837,
+                      "id": 5167,
                       "name": "Transfer",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 4772,
-                      "src": "1536:8:19",
+                      "referencedDeclaration": 5102,
+                      "src": "1536:8:21",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_event_nonpayable$_t_address_$_t_address_$_t_uint256_$returns$__$",
                         "typeString": "function (address,address,uint256)"
                       }
                     },
-                    "id": 4844,
+                    "id": 5174,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -3055,45 +3055,45 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "1536:39:19",
+                    "src": "1536:39:21",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 4845,
+                  "id": 5175,
                   "nodeType": "EmitStatement",
-                  "src": "1531:44:19"
+                  "src": "1531:44:21"
                 }
               ]
             },
             "documentation": {
-              "id": 4797,
+              "id": 5127,
               "nodeType": "StructuredDocumentation",
-              "src": "1063:165:19",
+              "src": "1063:165:21",
               "text": " @notice mints Starm\n @param _account address of the owner of the newly minted starm tokens\n @param _amount amount of starm tokens to mint"
             },
-            "id": 4847,
+            "id": 5177,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "_mintStarm",
-            "nameLocation": "1242:10:19",
+            "nameLocation": "1242:10:21",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 4802,
+              "id": 5132,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 4799,
+                  "id": 5129,
                   "mutability": "mutable",
                   "name": "_account",
-                  "nameLocation": "1261:8:19",
+                  "nameLocation": "1261:8:21",
                   "nodeType": "VariableDeclaration",
-                  "scope": 4847,
-                  "src": "1253:16:19",
+                  "scope": 5177,
+                  "src": "1253:16:21",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -3101,10 +3101,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 4798,
+                    "id": 5128,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1253:7:19",
+                    "src": "1253:7:21",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -3115,13 +3115,13 @@
                 },
                 {
                   "constant": false,
-                  "id": 4801,
+                  "id": 5131,
                   "mutability": "mutable",
                   "name": "_amount",
-                  "nameLocation": "1279:7:19",
+                  "nameLocation": "1279:7:21",
                   "nodeType": "VariableDeclaration",
-                  "scope": 4847,
-                  "src": "1271:15:19",
+                  "scope": 5177,
+                  "src": "1271:15:21",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -3129,10 +3129,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 4800,
+                    "id": 5130,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1271:7:19",
+                    "src": "1271:7:21",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -3141,98 +3141,98 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1252:35:19"
+              "src": "1252:35:21"
             },
             "returnParameters": {
-              "id": 4803,
+              "id": 5133,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "1297:0:19"
+              "src": "1297:0:21"
             },
-            "scope": 4916,
-            "src": "1233:350:19",
+            "scope": 5246,
+            "src": "1233:350:21",
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "internal"
           },
           {
             "body": {
-              "id": 4914,
+              "id": 5244,
               "nodeType": "Block",
-              "src": "1827:475:19",
+              "src": "1827:475:21",
               "statements": [
                 {
                   "assignments": [
-                    4859
+                    5189
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 4859,
+                      "id": 5189,
                       "mutability": "mutable",
                       "name": "ss",
-                      "nameLocation": "1867:2:19",
+                      "nameLocation": "1867:2:21",
                       "nodeType": "VariableDeclaration",
-                      "scope": 4914,
-                      "src": "1837:32:19",
+                      "scope": 5244,
+                      "src": "1837:32:21",
                       "stateVariable": false,
                       "storageLocation": "storage",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_StarmStorage_$4783_storage_ptr",
+                        "typeIdentifier": "t_struct$_StarmStorage_$5113_storage_ptr",
                         "typeString": "struct LibStarm.StarmStorage"
                       },
                       "typeName": {
-                        "id": 4858,
+                        "id": 5188,
                         "nodeType": "UserDefinedTypeName",
                         "pathNode": {
-                          "id": 4857,
+                          "id": 5187,
                           "name": "LibStarm.StarmStorage",
                           "nodeType": "IdentifierPath",
-                          "referencedDeclaration": 4783,
-                          "src": "1837:21:19"
+                          "referencedDeclaration": 5113,
+                          "src": "1837:21:21"
                         },
-                        "referencedDeclaration": 4783,
-                        "src": "1837:21:19",
+                        "referencedDeclaration": 5113,
+                        "src": "1837:21:21",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_StarmStorage_$4783_storage_ptr",
+                          "typeIdentifier": "t_struct$_StarmStorage_$5113_storage_ptr",
                           "typeString": "struct LibStarm.StarmStorage"
                         }
                       },
                       "visibility": "internal"
                     }
                   ],
-                  "id": 4863,
+                  "id": 5193,
                   "initialValue": {
                     "arguments": [],
                     "expression": {
                       "argumentTypes": [],
                       "expression": {
-                        "id": 4860,
+                        "id": 5190,
                         "name": "LibStarm",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 4916,
-                        "src": "1872:8:19",
+                        "referencedDeclaration": 5246,
+                        "src": "1872:8:21",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_contract$_LibStarm_$4916_$",
+                          "typeIdentifier": "t_type$_t_contract$_LibStarm_$5246_$",
                           "typeString": "type(library LibStarm)"
                         }
                       },
-                      "id": 4861,
+                      "id": 5191,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "memberName": "starmStorage",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 4796,
-                      "src": "1872:21:19",
+                      "referencedDeclaration": 5126,
+                      "src": "1872:21:21",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_function_internal_pure$__$returns$_t_struct$_StarmStorage_$4783_storage_ptr_$",
+                        "typeIdentifier": "t_function_internal_pure$__$returns$_t_struct$_StarmStorage_$5113_storage_ptr_$",
                         "typeString": "function () pure returns (struct LibStarm.StarmStorage storage pointer)"
                       }
                     },
-                    "id": 4862,
+                    "id": 5192,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -3240,15 +3240,15 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "1872:23:19",
+                    "src": "1872:23:21",
                     "tryCall": false,
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_StarmStorage_$4783_storage_ptr",
+                      "typeIdentifier": "t_struct$_StarmStorage_$5113_storage_ptr",
                       "typeString": "struct LibStarm.StarmStorage storage pointer"
                     }
                   },
                   "nodeType": "VariableDeclarationStatement",
-                  "src": "1837:58:19"
+                  "src": "1837:58:21"
                 },
                 {
                   "expression": {
@@ -3258,18 +3258,18 @@
                           "typeIdentifier": "t_address",
                           "typeString": "address"
                         },
-                        "id": 4870,
+                        "id": 5200,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
                         "leftExpression": {
-                          "id": 4865,
+                          "id": 5195,
                           "name": "_account",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 4850,
-                          "src": "1913:8:19",
+                          "referencedDeclaration": 5180,
+                          "src": "1913:8:21",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
                             "typeString": "address"
@@ -3281,14 +3281,14 @@
                           "arguments": [
                             {
                               "hexValue": "30",
-                              "id": 4868,
+                              "id": 5198,
                               "isConstant": false,
                               "isLValue": false,
                               "isPure": true,
                               "kind": "number",
                               "lValueRequested": false,
                               "nodeType": "Literal",
-                              "src": "1933:1:19",
+                              "src": "1933:1:21",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_rational_0_by_1",
                                 "typeString": "int_const 0"
@@ -3303,26 +3303,26 @@
                                 "typeString": "int_const 0"
                               }
                             ],
-                            "id": 4867,
+                            "id": 5197,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
                             "lValueRequested": false,
                             "nodeType": "ElementaryTypeNameExpression",
-                            "src": "1925:7:19",
+                            "src": "1925:7:21",
                             "typeDescriptions": {
                               "typeIdentifier": "t_type$_t_address_$",
                               "typeString": "type(address)"
                             },
                             "typeName": {
-                              "id": 4866,
+                              "id": 5196,
                               "name": "address",
                               "nodeType": "ElementaryTypeName",
-                              "src": "1925:7:19",
+                              "src": "1925:7:21",
                               "typeDescriptions": {}
                             }
                           },
-                          "id": 4869,
+                          "id": 5199,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": true,
@@ -3330,14 +3330,14 @@
                           "lValueRequested": false,
                           "names": [],
                           "nodeType": "FunctionCall",
-                          "src": "1925:10:19",
+                          "src": "1925:10:21",
                           "tryCall": false,
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
                             "typeString": "address"
                           }
                         },
-                        "src": "1913:22:19",
+                        "src": "1913:22:21",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bool",
                           "typeString": "bool"
@@ -3345,14 +3345,14 @@
                       },
                       {
                         "hexValue": "45524332303a206275726e2066726f6d20746865207a65726f2061646472657373",
-                        "id": 4871,
+                        "id": 5201,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
                         "kind": "string",
                         "lValueRequested": false,
                         "nodeType": "Literal",
-                        "src": "1937:35:19",
+                        "src": "1937:35:21",
                         "typeDescriptions": {
                           "typeIdentifier": "t_stringliteral_b16788493b576042bb52c50ed56189e0b250db113c7bfb1c3897d25cf9632d7f",
                           "typeString": "literal_string \"ERC20: burn from the zero address\""
@@ -3371,7 +3371,7 @@
                           "typeString": "literal_string \"ERC20: burn from the zero address\""
                         }
                       ],
-                      "id": 4864,
+                      "id": 5194,
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
@@ -3379,13 +3379,13 @@
                         4294967278
                       ],
                       "referencedDeclaration": 4294967278,
-                      "src": "1905:7:19",
+                      "src": "1905:7:21",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
                         "typeString": "function (bool,string memory) pure"
                       }
                     },
-                    "id": 4872,
+                    "id": 5202,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -3393,31 +3393,31 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "1905:68:19",
+                    "src": "1905:68:21",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 4873,
+                  "id": 5203,
                   "nodeType": "ExpressionStatement",
-                  "src": "1905:68:19"
+                  "src": "1905:68:21"
                 },
                 {
                   "assignments": [
-                    4875
+                    5205
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 4875,
+                      "id": 5205,
                       "mutability": "mutable",
                       "name": "accountBalance",
-                      "nameLocation": "1991:14:19",
+                      "nameLocation": "1991:14:21",
                       "nodeType": "VariableDeclaration",
-                      "scope": 4914,
-                      "src": "1983:22:19",
+                      "scope": 5244,
+                      "src": "1983:22:21",
                       "stateVariable": false,
                       "storageLocation": "default",
                       "typeDescriptions": {
@@ -3425,10 +3425,10 @@
                         "typeString": "uint256"
                       },
                       "typeName": {
-                        "id": 4874,
+                        "id": 5204,
                         "name": "uint256",
                         "nodeType": "ElementaryTypeName",
-                        "src": "1983:7:19",
+                        "src": "1983:7:21",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -3437,43 +3437,43 @@
                       "visibility": "internal"
                     }
                   ],
-                  "id": 4880,
+                  "id": 5210,
                   "initialValue": {
                     "baseExpression": {
                       "expression": {
-                        "id": 4876,
+                        "id": 5206,
                         "name": "ss",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 4859,
-                        "src": "2008:2:19",
+                        "referencedDeclaration": 5189,
+                        "src": "2008:2:21",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_StarmStorage_$4783_storage_ptr",
+                          "typeIdentifier": "t_struct$_StarmStorage_$5113_storage_ptr",
                           "typeString": "struct LibStarm.StarmStorage storage pointer"
                         }
                       },
-                      "id": 4877,
+                      "id": 5207,
                       "isConstant": false,
                       "isLValue": true,
                       "isPure": false,
                       "lValueRequested": false,
                       "memberName": "_balances",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 4780,
-                      "src": "2008:12:19",
+                      "referencedDeclaration": 5110,
+                      "src": "2008:12:21",
                       "typeDescriptions": {
                         "typeIdentifier": "t_mapping$_t_address_$_t_uint256_$",
                         "typeString": "mapping(address => uint256)"
                       }
                     },
-                    "id": 4879,
+                    "id": 5209,
                     "indexExpression": {
-                      "id": 4878,
+                      "id": 5208,
                       "name": "_account",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 4850,
-                      "src": "2021:8:19",
+                      "referencedDeclaration": 5180,
+                      "src": "2021:8:21",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
                         "typeString": "address"
@@ -3484,14 +3484,14 @@
                     "isPure": false,
                     "lValueRequested": false,
                     "nodeType": "IndexAccess",
-                    "src": "2008:22:19",
+                    "src": "2008:22:21",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   },
                   "nodeType": "VariableDeclarationStatement",
-                  "src": "1983:47:19"
+                  "src": "1983:47:21"
                 },
                 {
                   "expression": {
@@ -3501,18 +3501,18 @@
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
                         },
-                        "id": 4884,
+                        "id": 5214,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
                         "leftExpression": {
-                          "id": 4882,
+                          "id": 5212,
                           "name": "accountBalance",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 4875,
-                          "src": "2048:14:19",
+                          "referencedDeclaration": 5205,
+                          "src": "2048:14:21",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
@@ -3521,18 +3521,18 @@
                         "nodeType": "BinaryOperation",
                         "operator": ">=",
                         "rightExpression": {
-                          "id": 4883,
+                          "id": 5213,
                           "name": "_amount",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 4852,
-                          "src": "2066:7:19",
+                          "referencedDeclaration": 5182,
+                          "src": "2066:7:21",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
                           }
                         },
-                        "src": "2048:25:19",
+                        "src": "2048:25:21",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bool",
                           "typeString": "bool"
@@ -3540,14 +3540,14 @@
                       },
                       {
                         "hexValue": "45524332303a206275726e20616d6f756e7420657863656564732062616c616e6365",
-                        "id": 4885,
+                        "id": 5215,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
                         "kind": "string",
                         "lValueRequested": false,
                         "nodeType": "Literal",
-                        "src": "2075:36:19",
+                        "src": "2075:36:21",
                         "typeDescriptions": {
                           "typeIdentifier": "t_stringliteral_149b126e7125232b4200af45303d04fba8b74653b1a295a6a561a528c33fefdd",
                           "typeString": "literal_string \"ERC20: burn amount exceeds balance\""
@@ -3566,7 +3566,7 @@
                           "typeString": "literal_string \"ERC20: burn amount exceeds balance\""
                         }
                       ],
-                      "id": 4881,
+                      "id": 5211,
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
@@ -3574,13 +3574,13 @@
                         4294967278
                       ],
                       "referencedDeclaration": 4294967278,
-                      "src": "2040:7:19",
+                      "src": "2040:7:21",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
                         "typeString": "function (bool,string memory) pure"
                       }
                     },
-                    "id": 4886,
+                    "id": 5216,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -3588,25 +3588,25 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "2040:72:19",
+                    "src": "2040:72:21",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 4887,
+                  "id": 5217,
                   "nodeType": "ExpressionStatement",
-                  "src": "2040:72:19"
+                  "src": "2040:72:21"
                 },
                 {
-                  "id": 4898,
+                  "id": 5228,
                   "nodeType": "UncheckedBlock",
-                  "src": "2122:84:19",
+                  "src": "2122:84:21",
                   "statements": [
                     {
                       "expression": {
-                        "id": 4896,
+                        "id": 5226,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -3614,39 +3614,39 @@
                         "leftHandSide": {
                           "baseExpression": {
                             "expression": {
-                              "id": 4888,
+                              "id": 5218,
                               "name": "ss",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 4859,
-                              "src": "2146:2:19",
+                              "referencedDeclaration": 5189,
+                              "src": "2146:2:21",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_struct$_StarmStorage_$4783_storage_ptr",
+                                "typeIdentifier": "t_struct$_StarmStorage_$5113_storage_ptr",
                                 "typeString": "struct LibStarm.StarmStorage storage pointer"
                               }
                             },
-                            "id": 4891,
+                            "id": 5221,
                             "isConstant": false,
                             "isLValue": true,
                             "isPure": false,
                             "lValueRequested": false,
                             "memberName": "_balances",
                             "nodeType": "MemberAccess",
-                            "referencedDeclaration": 4780,
-                            "src": "2146:12:19",
+                            "referencedDeclaration": 5110,
+                            "src": "2146:12:21",
                             "typeDescriptions": {
                               "typeIdentifier": "t_mapping$_t_address_$_t_uint256_$",
                               "typeString": "mapping(address => uint256)"
                             }
                           },
-                          "id": 4892,
+                          "id": 5222,
                           "indexExpression": {
-                            "id": 4890,
+                            "id": 5220,
                             "name": "_account",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 4850,
-                            "src": "2159:8:19",
+                            "referencedDeclaration": 5180,
+                            "src": "2159:8:21",
                             "typeDescriptions": {
                               "typeIdentifier": "t_address",
                               "typeString": "address"
@@ -3657,7 +3657,7 @@
                           "isPure": false,
                           "lValueRequested": true,
                           "nodeType": "IndexAccess",
-                          "src": "2146:22:19",
+                          "src": "2146:22:21",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
@@ -3670,18 +3670,18 @@
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
                           },
-                          "id": 4895,
+                          "id": 5225,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
                           "leftExpression": {
-                            "id": 4893,
+                            "id": 5223,
                             "name": "accountBalance",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 4875,
-                            "src": "2171:14:19",
+                            "referencedDeclaration": 5205,
+                            "src": "2171:14:21",
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
                               "typeString": "uint256"
@@ -3690,64 +3690,64 @@
                           "nodeType": "BinaryOperation",
                           "operator": "-",
                           "rightExpression": {
-                            "id": 4894,
+                            "id": 5224,
                             "name": "_amount",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 4852,
-                            "src": "2188:7:19",
+                            "referencedDeclaration": 5182,
+                            "src": "2188:7:21",
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
                               "typeString": "uint256"
                             }
                           },
-                          "src": "2171:24:19",
+                          "src": "2171:24:21",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
                           }
                         },
-                        "src": "2146:49:19",
+                        "src": "2146:49:21",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
                         }
                       },
-                      "id": 4897,
+                      "id": 5227,
                       "nodeType": "ExpressionStatement",
-                      "src": "2146:49:19"
+                      "src": "2146:49:21"
                     }
                   ]
                 },
                 {
                   "expression": {
-                    "id": 4903,
+                    "id": 5233,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
                       "expression": {
-                        "id": 4899,
+                        "id": 5229,
                         "name": "ss",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 4859,
-                        "src": "2215:2:19",
+                        "referencedDeclaration": 5189,
+                        "src": "2215:2:21",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_StarmStorage_$4783_storage_ptr",
+                          "typeIdentifier": "t_struct$_StarmStorage_$5113_storage_ptr",
                           "typeString": "struct LibStarm.StarmStorage storage pointer"
                         }
                       },
-                      "id": 4901,
+                      "id": 5231,
                       "isConstant": false,
                       "isLValue": true,
                       "isPure": false,
                       "lValueRequested": true,
                       "memberName": "_totalSupply",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 4782,
-                      "src": "2215:15:19",
+                      "referencedDeclaration": 5112,
+                      "src": "2215:15:21",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -3756,37 +3756,37 @@
                     "nodeType": "Assignment",
                     "operator": "-=",
                     "rightHandSide": {
-                      "id": 4902,
+                      "id": 5232,
                       "name": "_amount",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 4852,
-                      "src": "2234:7:19",
+                      "referencedDeclaration": 5182,
+                      "src": "2234:7:21",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
                       }
                     },
-                    "src": "2215:26:19",
+                    "src": "2215:26:21",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   },
-                  "id": 4904,
+                  "id": 5234,
                   "nodeType": "ExpressionStatement",
-                  "src": "2215:26:19"
+                  "src": "2215:26:21"
                 },
                 {
                   "eventCall": {
                     "arguments": [
                       {
-                        "id": 4906,
+                        "id": 5236,
                         "name": "_account",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 4850,
-                        "src": "2266:8:19",
+                        "referencedDeclaration": 5180,
+                        "src": "2266:8:21",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
                           "typeString": "address"
@@ -3796,14 +3796,14 @@
                         "arguments": [
                           {
                             "hexValue": "30",
-                            "id": 4909,
+                            "id": 5239,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
                             "kind": "number",
                             "lValueRequested": false,
                             "nodeType": "Literal",
-                            "src": "2284:1:19",
+                            "src": "2284:1:21",
                             "typeDescriptions": {
                               "typeIdentifier": "t_rational_0_by_1",
                               "typeString": "int_const 0"
@@ -3818,26 +3818,26 @@
                               "typeString": "int_const 0"
                             }
                           ],
-                          "id": 4908,
+                          "id": 5238,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": true,
                           "lValueRequested": false,
                           "nodeType": "ElementaryTypeNameExpression",
-                          "src": "2276:7:19",
+                          "src": "2276:7:21",
                           "typeDescriptions": {
                             "typeIdentifier": "t_type$_t_address_$",
                             "typeString": "type(address)"
                           },
                           "typeName": {
-                            "id": 4907,
+                            "id": 5237,
                             "name": "address",
                             "nodeType": "ElementaryTypeName",
-                            "src": "2276:7:19",
+                            "src": "2276:7:21",
                             "typeDescriptions": {}
                           }
                         },
-                        "id": 4910,
+                        "id": 5240,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
@@ -3845,7 +3845,7 @@
                         "lValueRequested": false,
                         "names": [],
                         "nodeType": "FunctionCall",
-                        "src": "2276:10:19",
+                        "src": "2276:10:21",
                         "tryCall": false,
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
@@ -3853,12 +3853,12 @@
                         }
                       },
                       {
-                        "id": 4911,
+                        "id": 5241,
                         "name": "_amount",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 4852,
-                        "src": "2288:7:19",
+                        "referencedDeclaration": 5182,
+                        "src": "2288:7:21",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -3880,18 +3880,18 @@
                           "typeString": "uint256"
                         }
                       ],
-                      "id": 4905,
+                      "id": 5235,
                       "name": "Transfer",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 4772,
-                      "src": "2257:8:19",
+                      "referencedDeclaration": 5102,
+                      "src": "2257:8:21",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_event_nonpayable$_t_address_$_t_address_$_t_uint256_$returns$__$",
                         "typeString": "function (address,address,uint256)"
                       }
                     },
-                    "id": 4912,
+                    "id": 5242,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -3899,45 +3899,45 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "2257:39:19",
+                    "src": "2257:39:21",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 4913,
+                  "id": 5243,
                   "nodeType": "EmitStatement",
-                  "src": "2252:44:19"
+                  "src": "2252:44:21"
                 }
               ]
             },
             "documentation": {
-              "id": 4848,
+              "id": 5178,
               "nodeType": "StructuredDocumentation",
-              "src": "1589:165:19",
+              "src": "1589:165:21",
               "text": " @notice burns Starm\n @param _account address of the owner of the newly minted starm tokens\n @param _amount amount of starm tokens to mint"
             },
-            "id": 4915,
+            "id": 5245,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "_burnStarm",
-            "nameLocation": "1772:10:19",
+            "nameLocation": "1772:10:21",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 4853,
+              "id": 5183,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 4850,
+                  "id": 5180,
                   "mutability": "mutable",
                   "name": "_account",
-                  "nameLocation": "1791:8:19",
+                  "nameLocation": "1791:8:21",
                   "nodeType": "VariableDeclaration",
-                  "scope": 4915,
-                  "src": "1783:16:19",
+                  "scope": 5245,
+                  "src": "1783:16:21",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -3945,10 +3945,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 4849,
+                    "id": 5179,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1783:7:19",
+                    "src": "1783:7:21",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -3959,13 +3959,13 @@
                 },
                 {
                   "constant": false,
-                  "id": 4852,
+                  "id": 5182,
                   "mutability": "mutable",
                   "name": "_amount",
-                  "nameLocation": "1809:7:19",
+                  "nameLocation": "1809:7:21",
                   "nodeType": "VariableDeclaration",
-                  "scope": 4915,
-                  "src": "1801:15:19",
+                  "scope": 5245,
+                  "src": "1801:15:21",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -3973,10 +3973,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 4851,
+                    "id": 5181,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1801:7:19",
+                    "src": "1801:7:21",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -3985,27 +3985,27 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1782:35:19"
+              "src": "1782:35:21"
             },
             "returnParameters": {
-              "id": 4854,
+              "id": 5184,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "1827:0:19"
+              "src": "1827:0:21"
             },
-            "scope": 4916,
-            "src": "1763:539:19",
+            "scope": 5246,
+            "src": "1763:539:21",
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "internal"
           }
         ],
-        "scope": 4917,
-        "src": "59:2245:19",
+        "scope": 5247,
+        "src": "59:2245:21",
         "usedErrors": []
       }
     ],
-    "src": "33:2272:19"
+    "src": "33:2272:21"
   },
   "compiler": {
     "name": "solc",
@@ -4013,7 +4013,7 @@
   },
   "networks": {},
   "schemaVersion": "3.4.4",
-  "updatedAt": "2022-01-28T19:35:16.053Z",
+  "updatedAt": "2022-02-02T16:40:26.486Z",
   "devdoc": {
     "events": {
       "Transfer(address,address,uint256)": {

@@ -1,18 +1,21 @@
 import React from 'react'
-import jsonData from './addresses.json'
+// import jsonData from './addresses.json'
 import "./styles/Pages.css"
+import 'dotenv/config'
 
 export default class MintPage extends React.Component {
         state = {
             showMint: "no",
             mintedDixel: null,
             mintedURI: "",
-            freeMintTickets: 0
+            freeMintTickets: 0,
+            jsonData: {}
         }
 
         componentDidMount = async () => {
             this.setState(this.fetchFreeTickets())
         }
+
 
         random = (modulus) => {
             let array = new Uint32Array(10);
@@ -31,7 +34,7 @@ export default class MintPage extends React.Component {
             let freeMintTickets = await getterFacet.methods.returnFreeMintTickets().call({
                 from: accounts[0]
             })
-
+            await fetch(`https://ipfs.io/ipfs/Qme4ZW9K2Mus9Nv3FvSvmovcnYV7sz4cwBnnSQx5EbVcQS`).then(async response => {this.setState({jsonData: await response.json()})})
             this.setState({
                 freeMintTickets
             })
@@ -48,36 +51,36 @@ export default class MintPage extends React.Component {
             })
             let dixels = await getterFacet.methods.getDixels().call();
             let addressesArray = []
-            let commonAvailable = jsonData.common;
-            let uncommonAvailable = jsonData.uncommon;
-            let rareAvailable = jsonData.rare;
-            let legendaryAvailable = jsonData.legendary;
+            let commonAvailable = this.state.jsonData.common;
+            let uncommonAvailable = this.state.jsonData.uncommon;
+            let rareAvailable = this.state.jsonData.rare;
+            let legendaryAvailable = this.state.jsonData.legendary;
 
             dixels.forEach(e => {
                 if (Number(e.rarity) === 1) {
-                    for (let i = 0; i < jsonData.common.length; i++) {
-                        if (jsonData.common[i][0] === e.URI) {
+                    for (let i = 0; i < this.state.jsonData.common.length; i++) {
+                        if (this.state.jsonData.common[i][0] === e.URI) {
                             commonAvailable.splice(i, 1)
                         }
                     }
                 }
                 if (Number(e.rarity) === 2) {
-                    for (let i = 0; i < jsonData.uncommon.length; i++) {
-                        if (jsonData.uncommon[i][0] === e.URI) {
+                    for (let i = 0; i < this.state.jsonData.uncommon.length; i++) {
+                        if (this.state.jsonData.uncommon[i][0] === e.URI) {
                             uncommonAvailable.splice(i, 1)
                         }
                     }
                 }
                 if (Number(e.rarity) === 3) {
-                    for (let i = 0; i < jsonData.rare.length; i++) {
-                        if (jsonData.rare[i][0] === e.URI) {
+                    for (let i = 0; i < this.state.jsonData.rare.length; i++) {
+                        if (this.state.jsonData.rare[i][0] === e.URI) {
                             rareAvailable.splice(i, 1)
                         }
                     }
                 }
                 if (Number(e.rarity) === 4) {
-                    for (let i = 0; i < jsonData.legendary.length; i++) {
-                        if (jsonData.legendary[i][0] === e.URI) {
+                    for (let i = 0; i < this.state.jsonData.legendary.length; i++) {
+                        if (this.state.jsonData.legendary[i][0] === e.URI) {
                             legendaryAvailable.splice(i, 1)
                         }
                     }

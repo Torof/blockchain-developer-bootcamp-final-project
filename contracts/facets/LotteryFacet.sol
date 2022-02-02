@@ -8,6 +8,7 @@ import {
 import {
     LibStarm
 } from "../libraries/LibStarm.sol";
+import {LibOracle} from "../libraries/LibOracle.sol";
 
 contract LotteryFacet {
 
@@ -112,8 +113,11 @@ contract LotteryFacet {
         require(ls.players.length >= 20, "not enough players");
         address[] memory players = ls.players;
 
-        uint p = _generateRandomnessLottery("Dixel") % players.length;
-        uint p2 = _generateRandomnessLottery("Lottery") % players.length;
+        uint rand = LibOracle.getRandomNumber();
+        uint[] memory moreRand = LibOracle.expand(rand, 2); 
+
+        uint p = moreRand[0] % players.length;
+        uint p2 = moreRand[1] % players.length;
 
         address winnerD = players[p];
         address winnerS = players[p2];
