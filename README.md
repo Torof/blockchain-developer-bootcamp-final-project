@@ -48,12 +48,11 @@ This projects is built using React.js and Truffle.
 
 _TEST INSTRUCTIONS_:
 
-//  ./test/.diamondTest.js : testing the diamond 
-//   framework before use. Was removed for production. 
-//   All tests passing.
 
-./test/dixelDiamond.js : $ truffle test
-   => Make sure that facets are deployed and added to the diamondCut and that the facet instances are used from the diamond address.
+
+./test/dixelDiamond.js : $ truffle test --network Rinkeby
+  Tests cannot be made locally (or only with a previous commit) because chainlink RNG is implemented.
+  //All tests passing
 
 _INSTALL_: 
 
